@@ -1,0 +1,142 @@
+[
+  {
+    "tile_id": "sat_000",
+    "type": "sat",
+    "bbox": [
+      -95.37,
+      29.75,
+      -95.36,
+      29.76
+    ],
+    "timestamp": "2017-08-27T12:00:00",
+    "zip": "77002",
+    "h3": "h3_0",
+    "uri": "https://example.com/tiles/0.jpg"
+  },
+  {
+    "tile_id": "sat_001",
+    "type": "aerial",
+    "bbox": [
+      -95.36,
+      29.75,
+      -95.35,
+      29.76
+    ],
+    "timestamp": "2017-08-27T18:00:00",
+    "zip": "77002",
+    "h3": "h3_1",
+    "uri": "https://example.com/tiles/1.jpg"
+  },
+  {
+    "tile_id": "sat_002",
+    "type": "sat",
+    "bbox": [
+      -95.35000000000001,
+      29.75,
+      -95.34,
+      29.76
+    ],
+    "timestamp": "2017-08-28T00:00:00",
+    "zip": "77002",
+    "h3": "h3_2",
+    "uri": "https://example.com/tiles/2.jpg"
+  },
+  {
+    "tile_id": "sat_003",
+    "type": "aerial",
+    "bbox": [
+      -95.34,
+      29.75,
+      -95.33,
+      29.76
+    ],
+    "timestamp": "2017-08-28T06:00:00",
+    "zip": "77002",
+    "h3": "h3_3",
+    "uri": "https://example.com/tiles/3.jpg"
+  },
+  {
+    "tile_id": "sat_004",
+    "type": "sat",
+    "bbox": [
+      -95.33,
+      29.75,
+      -95.32,
+      29.76
+    ],
+    "timestamp": "2017-08-28T12:00:00",
+    "zip": "77002",
+    "h3": "h3_4",
+    "uri": "https://example.com/tiles/4.jpg"
+  },
+  {
+    "tile_id": "sat_005",
+    "type": "aerial",
+    "bbox": [
+      -95.32000000000001,
+      29.75,
+      -95.31,
+      29.76
+    ],
+    "timestamp": "2017-08-28T18:00:00",
+    "zip": "77002",
+    "h3": "h3_5",
+    "uri": "https://example.com/tiles/5.jpg"
+  },
+  {
+    "tile_id": "sat_006",
+    "type": "sat",
+    "bbox": [
+      -95.31,
+      29.75,
+      -95.3,
+      29.76
+    ],
+    "timestamp": "2017-08-29T00:00:00",
+    "zip": "77002",
+    "h3": "h3_6",
+    "uri": "https://example.com/tiles/6.jpg"
+  },
+  {
+    "tile_id": "sat_007",
+    "type": "aerial",
+    "bbox": [
+      -95.30000000000001,
+      29.75,
+      -95.29,
+      29.76
+    ],
+    "timestamp": "2017-08-29T06:00:00",
+    "zip": "77002",
+    "h3": "h3_7",
+    "uri": "https://example.com/tiles/7.jpg"
+  },
+  {
+    "tile_id": "sat_008",
+    "type": "sat",
+    "bbox": [
+      -95.29,
+      29.75,
+      -95.28,
+      29.76
+    ],
+    "timestamp": "2017-08-29T12:00:00",
+    "zip": "77002",
+    "h3": "h3_8",
+    "uri": "https://example.com/tiles/8.jpg"
+  },
+  {
+    "tile_id": "sat_009",
+    "type": "aerial",
+    "bbox": [
+      -95.28,
+      29.75,
+      -95.27,
+      29.76
+    ],
+    "timestamp": "2017-08-29T18:00:00",
+    "zip": "77002",
+    "h3": "h3_9",
+    "uri": "https://example.com/tiles/9.jpg"
+  }
+]

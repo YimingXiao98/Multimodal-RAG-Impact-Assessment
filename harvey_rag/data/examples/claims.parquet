@@ -1,0 +1,92 @@
+[
+  {
+    "claim_id": "claim_0",
+    "lat": 29.74,
+    "lon": -95.33,
+    "timestamp": "2017-08-27T12:00:00",
+    "severity": "high",
+    "zip": "77002",
+    "amount": 5000
+  },
+  {
+    "claim_id": "claim_1",
+    "lat": 29.742,
+    "lon": -95.332,
+    "timestamp": "2017-08-28T12:00:00",
+    "severity": "moderate",
+    "zip": "77002",
+    "amount": 5100
+  },
+  {
+    "claim_id": "claim_2",
+    "lat": 29.744,
+    "lon": -95.334,
+    "timestamp": "2017-08-29T12:00:00",
+    "severity": "moderate",
+    "zip": "77002",
+    "amount": 5200
+  },
+  {
+    "claim_id": "claim_3",
+    "lat": 29.746,
+    "lon": -95.336,
+    "timestamp": "2017-08-27T12:00:00",
+    "severity": "high",
+    "zip": "77002",
+    "amount": 5300
+  },
+  {
+    "claim_id": "claim_4",
+    "lat": 29.748,
+    "lon": -95.338,
+    "timestamp": "2017-08-28T12:00:00",
+    "severity": "moderate",
+    "zip": "77002",
+    "amount": 5400
+  },
+  {
+    "claim_id": "claim_5",
+    "lat": 29.75,
+    "lon": -95.34,
+    "timestamp": "2017-08-29T12:00:00",
+    "severity": "moderate",
+    "zip": "77002",
+    "amount": 5500
+  },
+  {
+    "claim_id": "claim_6",
+    "lat": 29.752,
+    "lon": -95.342,
+    "timestamp": "2017-08-27T12:00:00",
+    "severity": "high",
+    "zip": "77002",
+    "amount": 5600
+  },
+  {
+    "claim_id": "claim_7",
+    "lat": 29.754,
+    "lon": -95.344,
+    "timestamp": "2017-08-28T12:00:00",
+    "severity": "moderate",
+    "zip": "77002",
+    "amount": 5700
+  },
+  {
+    "claim_id": "claim_8",
+    "lat": 29.756,
+    "lon": -95.346,
+    "timestamp": "2017-08-29T12:00:00",
+    "severity": "moderate",
+    "zip": "77002",
+    "amount": 5800
+  },
+  {
+    "claim_id": "claim_9",
+    "lat": 29.758,
+    "lon": -95.348,
+    "timestamp": "2017-08-27T12:00:00",
+    "severity": "high",
+    "zip": "77002",
+    "amount": 5900
+  }
+]

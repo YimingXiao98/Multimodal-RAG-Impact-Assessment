@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harvey-rag"
+version = "0.1.0"
+description = "Multimodal RAG skeleton for Hurricane Harvey impact assessment"
+readme = "README.md"
+authors = [{name = "OpenAI Assistant"}]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "python-dotenv",
+    "pandas",
+    "polars",
+    "pyarrow",
+    "geopandas",
+    "shapely",
+    "h3",
+    "faiss-cpu",
+    "rasterio",
+    "httpx",
+    "requests",
+    "scikit-learn",
+    "numpy",
+    "pyproj",
+    "rtree",
+    "tqdm",
+    "loguru"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-asyncio"]
+
+[tool.setuptools]
+packages = ["app", "app.core", "app.core.indexing", "app.core.retrieval", "app.core.models", "app.core.eval", "app.core.dataio", "app.routers"]
+package-dir = {"" = "app"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

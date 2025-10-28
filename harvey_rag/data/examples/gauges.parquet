@@ -1,0 +1,102 @@
+[
+  {
+    "sensor_id": "hcfcd_000",
+    "kind": "rain",
+    "lat": 29.7,
+    "lon": -95.4,
+    "zip": "77002",
+    "timestamp": "2017-08-27T12:00:00",
+    "value": 5.0,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_001",
+    "kind": "stage",
+    "lat": 29.702,
+    "lon": -95.398,
+    "zip": "77002",
+    "timestamp": "2017-08-27T13:00:00",
+    "value": 5.5,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_002",
+    "kind": "rain",
+    "lat": 29.704,
+    "lon": -95.396,
+    "zip": "77002",
+    "timestamp": "2017-08-27T14:00:00",
+    "value": 6.0,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_003",
+    "kind": "stage",
+    "lat": 29.706,
+    "lon": -95.394,
+    "zip": "77002",
+    "timestamp": "2017-08-27T15:00:00",
+    "value": 6.5,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_004",
+    "kind": "rain",
+    "lat": 29.708,
+    "lon": -95.392,
+    "zip": "77002",
+    "timestamp": "2017-08-27T16:00:00",
+    "value": 7.0,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_005",
+    "kind": "stage",
+    "lat": 29.71,
+    "lon": -95.39,
+    "zip": "77002",
+    "timestamp": "2017-08-27T17:00:00",
+    "value": 7.5,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_006",
+    "kind": "rain",
+    "lat": 29.712,
+    "lon": -95.388,
+    "zip": "77002",
+    "timestamp": "2017-08-27T18:00:00",
+    "value": 8.0,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_007",
+    "kind": "stage",
+    "lat": 29.714,
+    "lon": -95.386,
+    "zip": "77002",
+    "timestamp": "2017-08-27T19:00:00",
+    "value": 8.5,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_008",
+    "kind": "rain",
+    "lat": 29.716,
+    "lon": -95.384,
+    "zip": "77002",
+    "timestamp": "2017-08-27T20:00:00",
+    "value": 9.0,
+    "unit": "in"
+  },
+  {
+    "sensor_id": "hcfcd_009",
+    "kind": "stage",
+    "lat": 29.718,
+    "lon": -95.382,
+    "zip": "77002",
+    "timestamp": "2017-08-27T21:00:00",
+    "value": 9.5,
+    "unit": "in"
+  }
+]
