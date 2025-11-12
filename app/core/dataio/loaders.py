@@ -13,8 +13,30 @@ from .utils_geo import to_h3
 
 
 def _parse_datetime(value: str) -> datetime:
-    dt = datetime.fromisoformat(value) if "T" in value else datetime.strptime(value, "%Y-%m-%d %H:%M:%S")
-    return dt
+    """Parse various timestamp formats produced by partner exports."""
+
+    if not value:
+        raise ValueError("Missing datetime value")
+    value = value.strip()
+
+    try:
+        return datetime.fromisoformat(value)
+    except ValueError:
+        pass
+
+    formats = [
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d %H:%M",
+        "%Y/%m/%d %H:%M:%S",
+        "%Y/%m/%d %H:%M",
+    ]
+    for fmt in formats:
+        try:
+            return datetime.strptime(value, fmt)
+        except ValueError:
+            continue
+    raise ValueError(f"Unrecognized datetime format: {value}")
+
 
 
 def _normalize_common(records: List[dict], lat_key: str | None, lon_key: str | None) -> List[dict]:

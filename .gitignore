@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Compiled extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+wheels/
+*.egg-info/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Type checkers
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Environment variables & virtualenvs
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+ENV/
+.idea/
+.vscode/
+
+# Editor swaps & OS junk
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Local data outputs
+data/raw/
+data/processed/
+data/indexes/
+logs/
+
+# Miscellaneous
+RAW_DATA_REQUIREMENTS.md
+*.pdf

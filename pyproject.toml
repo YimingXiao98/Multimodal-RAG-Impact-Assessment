@@ -35,9 +35,9 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest", "pytest-asyncio"]
 
-[tool.setuptools]
-packages = ["app", "app.core", "app.core.indexing", "app.core.retrieval", "app.core.models", "app.core.eval", "app.core.dataio", "app.routers"]
-package-dir = {"" = "app"}
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
