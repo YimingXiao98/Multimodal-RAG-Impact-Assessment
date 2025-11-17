@@ -17,7 +17,7 @@ from ..dataio.schemas import RAGQuery
 from ..dataio.storage import DataLocator
 from ..indexing.spatial_index import SpatialIndex
 from .query_planner import build_plan
-from .retriever import RetrievalResult
+from .types import RetrievalResult
 
 
 class HybridTextRetriever:
@@ -50,8 +50,8 @@ class HybridTextRetriever:
             raise RuntimeError("No overlapping docs between corpus and embedding index")
         self.bm25 = BM25Okapi(bm25_tokens)
 
-        imagery_path = locator.table_path("imagery_tiles", example=True)
-        gauges_path = locator.table_path("gauges", example=True)
+        imagery_path = self._resolve_table_path("imagery_tiles")
+        gauges_path = self._resolve_table_path("gauges")
         self.spatial_index = SpatialIndex.from_parquet(imagery_path, gauges_path)
 
         self.enable_reranker = bool(getattr(settings, "enable_reranker", False))
@@ -70,16 +70,18 @@ class HybridTextRetriever:
     # ------------------------------------------------------------------
     def retrieve(self, query: RAGQuery) -> RetrievalResult:
         plan = build_plan(query)
-        start_dt = datetime.combine(query.start, datetime.min.time())
-        end_dt = datetime.combine(query.end, datetime.max.time())
+        start_date = self._coerce_date(query.start)
+        end_date = self._coerce_date(query.end)
+        start_dt = datetime.combine(start_date, datetime.min.time())
+        end_dt = datetime.combine(end_date, datetime.max.time())
         imagery = self.spatial_index.get_tiles_by_zip(query.zip, start_dt, end_dt, plan.imagery_k)
         sensors = self.spatial_index.nearest_sensors_by_zip(query.zip, n=3)
 
         text_docs = self._hybrid_search(
-            query_text=f"Harvey impact summary for zip {query.zip} between {query.start} and {query.end}.",
+            query_text=f"Harvey impact summary for zip {query.zip} between {start_date} and {end_date}.",
             zip_code=query.zip,
-            start=query.start,
-            end=query.end,
+            start=start_date,
+            end=end_date,
             limit=max(plan.text_n * 3, 50),
         )
 
@@ -99,7 +101,12 @@ class HybridTextRetriever:
     def _hybrid_search(self, query_text: str, zip_code: str, start: date, end: date, limit: int) -> List[dict]:
         allowed_ids = self._filter_doc_ids(zip_code, start, end)
         if not allowed_ids:
-            logger.warning("Hybrid retriever found no docs in time/zip window", zip=zip_code)
+            logger.warning("Hybrid retriever found no docs in time/zip window; falling back to time-only filter", zip=zip_code)
+            allowed_ids = self._filter_doc_ids(None, start, end)
+        if not allowed_ids:
+            logger.warning("Hybrid retriever found no docs in time window; falling back to full corpus", zip=zip_code)
+            allowed_ids = [doc["doc_id"] for doc in self.bm25_docs]
+        if not allowed_ids:
             return []
 
         bm25_scores = self._bm25_scores(query_text, allowed_ids)
@@ -158,7 +165,7 @@ class HybridTextRetriever:
             raise RuntimeError(f"Embedding metadata missing model entry: {path}")
         return meta
 
-    def _filter_doc_ids(self, zip_code: str, start: date, end: date) -> List[str]:
+    def _filter_doc_ids(self, zip_code: Optional[str], start: date, end: date) -> List[str]:
         allowed: List[str] = []
         for doc in self.bm25_docs:
             if zip_code and doc.get("zip") and doc.get("zip") != zip_code:
@@ -223,3 +230,26 @@ class HybridTextRetriever:
             return date_parser.parse(value)
         except (ValueError, TypeError):
             return None
+
+    def _resolve_table_path(self, name: str) -> Path:
+        processed = self.locator.table_path(name)
+        if processed.exists():
+            return processed
+        example = self.locator.table_path(name, example=True)
+        if example.exists():
+            logger.warning("Falling back to example %s table", name)
+            return example
+        raise RuntimeError(f"Required table '{name}' not found in processed or example directories.")
+
+    def _coerce_date(self, value) -> date:
+        if isinstance(value, datetime):
+            return value.date()
+        if isinstance(value, date):
+            return value
+        if isinstance(value, str):
+            try:
+                return date.fromisoformat(value)
+            except ValueError:
+                parsed = date_parser.parse(value)
+                return parsed.date()
+        raise TypeError(f"Unsupported date value: {value!r}")

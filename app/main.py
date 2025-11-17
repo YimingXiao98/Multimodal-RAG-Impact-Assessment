@@ -13,7 +13,6 @@ from .core.dataio.storage import DataLocator
 from .core.models.vlm_client import VLMClient
 from .core.retrieval.context_packager import package_context
 from .core.retrieval.retriever import Retriever
-from .core.retrieval.hybrid_text_retriever import HybridTextRetriever
 from .core.retrieval.selector import select_candidates
 from .routers import health
 from .routers.chat import router as chat_router
@@ -36,10 +35,7 @@ app.add_middleware(
 async def startup_event() -> None:
     settings = get_settings()
     app.state.locator = DataLocator(Path(settings.data_dir))
-    if settings.retriever_mode.lower() == "hybrid":
-        app.state.retriever = HybridTextRetriever(app.state.locator, settings=settings)
-    else:
-        app.state.retriever = Retriever(app.state.locator)
+    app.state.retriever = Retriever(app.state.locator, settings=settings)
     app.state.vlm_client = VLMClient(settings.model_provider)
 
 

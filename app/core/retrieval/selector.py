@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Dict, List
 
-from .retriever import RetrievalResult
+from .types import RetrievalResult
 
 
 def select_candidates(results: RetrievalResult, k_tiles: int, n_text: int, n_sensors: int = 3) -> Dict[str, object]:

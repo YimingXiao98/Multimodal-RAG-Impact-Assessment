@@ -13,7 +13,6 @@ class Settings(BaseSettings):
     """Runtime configuration loaded from environment variables."""
 
     model_provider: str = Field("mock", env="MODEL_PROVIDER")
-    retriever_mode: str = Field("legacy", env="HARVEY_RETRIEVER_MODE")
     openai_api_key: Optional[str] = Field(default=None, env="OPENAI_API_KEY")
     gemini_api_key: Optional[str] = Field(default=None, env="GEMINI_API_KEY")
     default_time_window_days: int = Field(7, env="DEFAULT_TIME_WINDOW_DAYS")

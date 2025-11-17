@@ -26,6 +26,7 @@ DATE_PATTERNS = [
     (re.compile(r"(\d{1,2})-(\d{1,2})-(\d{4})"), "%m-%d-%Y"),
     (re.compile(r"(\d{4})_(\d{2})_(\d{2})"), "%Y_%m_%d"),
     (re.compile(r"(\d{4})-(\d{2})-(\d{2})"), "%Y-%m-%d"),
+    (re.compile(r"(\d{8})"), "%Y%m%d"),
 ]
 
 
