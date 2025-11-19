@@ -23,6 +23,7 @@ class Settings(BaseModel):
     hybrid_ids_path: Path = Path("data/processed/text_embeddings_ids.json")
     hybrid_meta_path: Path = Path("data/processed/text_embeddings_meta.json")
     enable_reranker: bool = False
+    dense_top_k: int = 1000
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -44,7 +45,9 @@ class Settings(BaseModel):
         _assign("hybrid_index_path", "HARVEY_EMBED_INDEX_PATH", Path)
         _assign("hybrid_ids_path", "HARVEY_EMBED_IDS_PATH", Path)
         _assign("hybrid_meta_path", "HARVEY_EMBED_META_PATH", Path)
-        _assign("enable_reranker", "HARVEY_ENABLE_RERANKER", lambda v: v.lower() in {"1", "true", "yes", "on"})
+        _assign("enable_reranker", "HARVEY_ENABLE_RERANKER",
+                lambda v: v.lower() in {"1", "true", "yes", "on"})
+        _assign("dense_top_k", "DENSE_TOP_K", int)
 
         return cls(**data)
 

@@ -24,13 +24,19 @@ def package_context(candidates: Dict[str, object]) -> Dict[str, object]:
 
     text_snippets: List[str] = []
     text_snippets.extend((tweet.get("text") or "")[:400] for tweet in tweets)
-    text_snippets.extend((call.get("description") or "")[:400] for call in calls)
+    text_snippets.extend((call.get("description") or "")
+                         [:400] for call in calls)
 
-    sensor_table = _list_to_markdown(sensors, ["sensor_id", "timestamp", "value", "unit"]) if sensors else ""
+    sensor_table = _list_to_markdown(
+        sensors, ["sensor_id", "timestamp", "value", "unit"]) if sensors else ""
     kb_summary = _list_to_markdown(fema, ["year", "loss_mean"]) if fema else ""
 
     return {
         "imagery_tiles": imagery,
+        "tweets": tweets,
+        "calls": calls,
+        "sensors": sensors,
+        "fema": fema,
         "text_snippets": [snippet for snippet in text_snippets if snippet],
         "sensor_table": sensor_table,
         "kb_summary": kb_summary,

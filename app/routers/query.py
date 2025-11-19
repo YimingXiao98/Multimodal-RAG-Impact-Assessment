@@ -38,5 +38,9 @@ def run_rag_pipeline(payload: RAGQuery, request: Request) -> Dict[str, Any]:
         text_snippets=context.get("text_snippets", []),
         sensor_table=context.get("sensor_table", ""),
         kb_summary=context.get("kb_summary", ""),
+        tweets=context.get("tweets", []),
+        calls=context.get("calls", []),
+        sensors=context.get("sensors", []),
+        fema=context.get("fema", []),
     )
     return answer

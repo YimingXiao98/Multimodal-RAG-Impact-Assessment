@@ -96,6 +96,7 @@ class RAGQuery(BaseModel):
     end: date
     k_tiles: int = 6
     n_text: int = 20
+    text_query: Optional[str] = None
 
 
 class RAGAnswer(BaseModel):

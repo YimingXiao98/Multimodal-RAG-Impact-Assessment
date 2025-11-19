@@ -73,7 +73,7 @@ class HybridTextRetriever:
         self.bm25_weight = 0.4
         self.dense_weight = 0.6
         self.bm25_top_k = 100
-        self.dense_top_k = 1000
+        self.dense_top_k = settings.dense_top_k
         self.rerank_k = 20
 
     # ------------------------------------------------------------------
@@ -87,8 +87,16 @@ class HybridTextRetriever:
             query.zip, start_dt, end_dt, plan.imagery_k)
         sensors = self.spatial_index.nearest_sensors_by_zip(query.zip, n=3)
 
+        # Semantic Query Generation
+        # If we have a natural language query, use it directly for retrieval.
+        # Otherwise, fall back to a constructed summary query.
+        if query.text_query and len(query.text_query.strip()) > 5:
+            search_text = query.text_query
+        else:
+            search_text = f"Harvey flood damage impact summary for zip {query.zip} between {start_date} and {end_date}."
+
         text_docs = self._hybrid_search(
-            query_text=f"Harvey flood damage impact summary for zip {query.zip} between {start_date} and {end_date}.",
+            query_text=search_text,
             zip_code=query.zip,
             start=start_date,
             end=end_date,

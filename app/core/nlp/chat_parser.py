@@ -25,22 +25,51 @@ def build_chat_query(
     *,
     default_window_days: int,
     locator: Optional[DataLocator] = None,
+    vlm_client: Optional[object] = None,
 ) -> RAGQuery:
     """Convert the chat request into a concrete `RAGQuery`."""
 
     message = chat.message or ""
-    zip_code = chat.zip or _extract_zip(message)
-    if not zip_code:
-        raise ValueError("Please include a 5-digit ZIP code in your prompt or payload.")
 
+    # 1. Try LLM parsing if available
+    llm_zip = None
+    llm_start = None
+    llm_end = None
+
+    if vlm_client and hasattr(vlm_client, "parse_query"):
+        try:
+            parsed = vlm_client.parse_query(message)
+            llm_zip = parsed.get("zip")
+            if parsed.get("start"):
+                llm_start = date.fromisoformat(parsed["start"])
+            if parsed.get("end"):
+                llm_end = date.fromisoformat(parsed["end"])
+        except Exception:
+            # Ignore LLM errors and fall back to regex
+            pass
+
+    # 2. Resolve ZIP
+    zip_code = chat.zip or llm_zip or _extract_zip(message)
+    if not zip_code:
+        raise ValueError(
+            "Please include a 5-digit ZIP code in your prompt or payload.")
+
+    # 3. Resolve Dates
     dates: List[date] = []
     if chat.start:
         dates.append(chat.start)
     if chat.end:
         dates.append(chat.end)
 
-    extracted = _extract_dates(message)
-    dates.extend(extracted)
+    if llm_start:
+        dates.append(llm_start)
+    if llm_end:
+        dates.append(llm_end)
+
+    # Only use regex extraction if we don't have enough dates from explicit/LLM sources
+    if not dates:
+        extracted = _extract_dates(message)
+        dates.extend(extracted)
 
     unique_dates = sorted({d for d in dates})
 
@@ -58,7 +87,14 @@ def build_chat_query(
     k_tiles = chat.k_tiles or RAGQuery.model_fields["k_tiles"].default
     n_text = chat.n_text or RAGQuery.model_fields["n_text"].default
 
-    return RAGQuery(zip=zip_code, start=start_date, end=end_date, k_tiles=k_tiles, n_text=n_text)
+    return RAGQuery(
+        zip=zip_code,
+        start=start_date,
+        end=end_date,
+        k_tiles=k_tiles,
+        n_text=n_text,
+        text_query=message
+    )
 
 
 def _extract_zip(message: str) -> Optional[str]:
