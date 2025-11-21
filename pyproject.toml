@@ -45,7 +45,7 @@ dev = ["pytest", "pytest-asyncio"]
 package-dir = {"" = "."}
 
 [tool.setuptools.packages.find]
-where = ["app"]
+where = ["."]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

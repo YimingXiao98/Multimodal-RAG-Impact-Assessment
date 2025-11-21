@@ -97,6 +97,8 @@ class RAGQuery(BaseModel):
     k_tiles: int = 6
     n_text: int = 20
     text_query: Optional[str] = None
+    lat: Optional[float] = None
+    lon: Optional[float] = None
 
 
 class RAGAnswer(BaseModel):

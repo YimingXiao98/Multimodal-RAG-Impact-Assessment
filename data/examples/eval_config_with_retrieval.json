@@ -1,0 +1,9 @@
+{
+  "data_dir": "data",
+  "provider": null,
+  "ground_truth": "claims",
+  "retrieval_gt": "data/examples/retrieval_gt.json",
+  "queries": [
+    {"zip": "77002", "start": "2017-08-26", "end": "2017-08-30", "k_tiles": 4, "n_text": 10}
+  ]
+}

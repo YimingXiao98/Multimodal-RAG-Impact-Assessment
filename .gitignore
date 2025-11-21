@@ -58,6 +58,10 @@ ENV/
 *.swp
 *.swo
 *.DS_Store
+
+# Personal notes and logs (not tracked)
+NOTES/
+
 Thumbs.db
 
 # Local data outputs

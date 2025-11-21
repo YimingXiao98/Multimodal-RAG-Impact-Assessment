@@ -13,7 +13,7 @@ from pydantic import BaseModel, Field
 class Settings(BaseModel):
     """Runtime configuration loaded from environment variables."""
 
-    model_provider: str = Field(default="mock")
+    model_provider: Optional[str] = Field(default=None)
     openai_api_key: Optional[str] = None
     gemini_api_key: Optional[str] = None
     default_time_window_days: int = 7

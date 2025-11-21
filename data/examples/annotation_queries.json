@@ -1,0 +1,202 @@
+[
+    {
+        "zip": "77002",
+        "start": "2017-08-26",
+        "end": "2017-08-30",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Downtown Houston, peak flooding period"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-08-27",
+        "end": "2017-08-31",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Strong sensor+imagery overlap area"
+    },
+    {
+        "zip": "77096",
+        "start": "2017-08-25",
+        "end": "2017-09-05",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Residential area, longer window"
+    },
+    {
+        "zip": "77063",
+        "start": "2017-08-26",
+        "end": "2017-08-29",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "West Houston area"
+    },
+    {
+        "zip": "77002",
+        "start": "2017-08-28",
+        "end": "2017-09-02",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Downtown, extended window"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-08-25",
+        "end": "2017-08-28",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77089 early period"
+    },
+    {
+        "zip": "77096",
+        "start": "2017-08-27",
+        "end": "2017-08-30",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77096 peak flooding"
+    },
+    {
+        "zip": "77063",
+        "start": "2017-08-27",
+        "end": "2017-09-03",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77063 extended recovery period"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-09-01",
+        "end": "2017-09-10",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77089 post-flood recovery"
+    },
+    {
+        "zip": "77002",
+        "start": "2017-09-05",
+        "end": "2017-09-15",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Downtown post-flood assessment"
+    },
+    {
+        "zip": "77096",
+        "start": "2017-09-01",
+        "end": "2017-09-07",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77096 early recovery"
+    },
+    {
+        "zip": "77063",
+        "start": "2017-09-05",
+        "end": "2017-09-12",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77063 recovery phase"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-08-26",
+        "end": "2017-09-05",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77089 full Harvey period"
+    },
+    {
+        "zip": "77002",
+        "start": "2017-08-25",
+        "end": "2017-08-28",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Downtown short peak window"
+    },
+    {
+        "zip": "77096",
+        "start": "2017-09-08",
+        "end": "2017-09-15",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77096 late recovery"
+    },
+    {
+        "zip": "77063",
+        "start": "2017-08-25",
+        "end": "2017-08-30",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77063 Harvey landfall period"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-09-10",
+        "end": "2017-09-20",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77089 late assessment"
+    },
+    {
+        "zip": "77002",
+        "start": "2017-09-15",
+        "end": "2017-09-25",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Downtown late recovery"
+    },
+    {
+        "zip": "77096",
+        "start": "2017-08-26",
+        "end": "2017-08-29",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77096 narrow peak window"
+    },
+    {
+        "zip": "77063",
+        "start": "2017-09-01",
+        "end": "2017-09-08",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77063 immediate recovery"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-08-28",
+        "end": "2017-09-02",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77089 peak to early recovery"
+    },
+    {
+        "zip": "77002",
+        "start": "2017-08-27",
+        "end": "2017-09-10",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "Downtown wide window"
+    },
+    {
+        "zip": "77096",
+        "start": "2017-09-15",
+        "end": "2017-09-25",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77096 very late period"
+    },
+    {
+        "zip": "77063",
+        "start": "2017-09-10",
+        "end": "2017-09-20",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77063 late recovery assessment"
+    },
+    {
+        "zip": "77089",
+        "start": "2017-08-25",
+        "end": "2017-09-20",
+        "k_tiles": 10,
+        "n_text": 20,
+        "comment": "77089 very wide window - entire event"
+    }
+]

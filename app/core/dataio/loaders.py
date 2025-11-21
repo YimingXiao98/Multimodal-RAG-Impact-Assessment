@@ -115,21 +115,44 @@ def load_roads(input_path: Path) -> List[dict]:
     return records
 
 
-def save_parquet(records: List[dict], output_path: Path) -> None:
-    """Persist records as JSON array stored in a .parquet file for mock mode."""
+import pandas as pd
 
+def save_parquet(records: List[dict], output_path: Path) -> None:
+    """Persist records as real Parquet file."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(records, indent=2, default=str))
-    logger.info("Saved records", path=output_path, rows=len(records))
+    if not records:
+        logger.warning("No records to save", path=output_path)
+        return
+        
+    try:
+        df = pd.DataFrame(records)
+        # Ensure timestamps are strings for consistency if they aren't already
+        # (This depends on how downstream consumers expect them)
+        df.to_parquet(output_path, index=False)
+        logger.info("Saved records", path=output_path, rows=len(records))
+    except Exception as e:
+        logger.error(f"Failed to save parquet {output_path}: {e}")
 
 
 def load_parquet_table(path: Path) -> List[dict]:
-    """Load records from JSON-backed parquet file."""
-
+    """Load records from Parquet file (supports both real Parquet and legacy JSON)."""
     if not path.exists():
         logger.warning("Missing table", path=path)
         return []
-    return json.loads(path.read_text())
+    
+    try:
+        # Try reading as real Parquet first
+        df = pd.read_parquet(path)
+        # Convert to list of dicts for compatibility with existing code
+        # This might be memory intensive for large files
+        return df.to_dict(orient="records")
+    except Exception:
+        # Fallback to legacy JSON reading
+        try:
+            return json.loads(path.read_text())
+        except Exception as e:
+            logger.error(f"Failed to load table {path}: {e}")
+            return []
 
 
 def _read_csv(path: Path) -> List[dict]:

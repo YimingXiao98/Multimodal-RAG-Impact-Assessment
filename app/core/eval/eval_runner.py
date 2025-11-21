@@ -16,22 +16,32 @@ from ..models.vlm_client import VLMClient
 from ..retrieval.context_packager import package_context
 from ..retrieval.retriever import Retriever
 from ..retrieval.selector import select_candidates
+from .eval_retrieval import RetrievalEvaluator
 from .ground_truth import ClaimsGroundTruth
 
 
 @dataclass
 class EvalConfig:
     queries: List[RAGQuery]
-    provider: str = "mock"
+    provider: Optional[str] = None
     ground_truth: Optional[str] = "claims"
+    retrieval_gt: Optional[str] = None
 
 
 class EvalRunner:
-    def __init__(self, locator: DataLocator, provider: str = "mock", ground_truth: Optional[str] = "claims") -> None:
+    def __init__(self, locator: DataLocator, provider: Optional[str] = None, ground_truth: Optional[str] = "claims", retrieval_gt: Optional[str] = None) -> None:
         self.locator = locator
         self.retriever = Retriever(locator)
         self.client = VLMClient(provider)
         self.gt = ClaimsGroundTruth(locator.table_path("claims")) if ground_truth == "claims" else None
+        
+        self.retrieval_evaluator = None
+        if retrieval_gt:
+            gt_path = Path(retrieval_gt)
+            if gt_path.exists():
+                self.retrieval_evaluator = RetrievalEvaluator(json.loads(gt_path.read_text()))
+            else:
+                logger.warning("Retrieval ground truth file not found", path=retrieval_gt)
 
     def run(self, queries: List[RAGQuery]) -> Dict[str, Path]:
         metrics_rows = []
@@ -40,6 +50,11 @@ class EvalRunner:
         for query in queries:
             logger.info("Evaluating query", zip=query.zip)
             result = self.retriever.retrieve(query)
+            
+            retrieval_metrics = {}
+            if self.retrieval_evaluator:
+                retrieval_metrics = self.retrieval_evaluator.evaluate(query.zip, result)
+            
             candidates = select_candidates(result, query.k_tiles, query.n_text)
             context = package_context(candidates)
             answer = self.client.infer(
@@ -57,6 +72,7 @@ class EvalRunner:
                 "pred_damage_pct": float(answer["estimates"].get("structural_damage_pct", 0.0)),
                 "confidence": float(answer["estimates"].get("confidence", 0.0)),
             }
+            row.update(retrieval_metrics)
             if self.gt:
                 truth = self.gt.score(query.zip, query.start, query.end)
                 row.update(
@@ -87,7 +103,12 @@ def main(config_path: str) -> None:
     config = json.loads(Path(config_path).read_text())
     queries = [RAGQuery(**q) for q in config["queries"]]
     locator = DataLocator(Path(config.get("data_dir", "data")))
-    runner = EvalRunner(locator, provider=config.get("provider", "mock"), ground_truth=config.get("ground_truth", "claims"))
+    runner = EvalRunner(
+        locator, 
+        provider=config.get("provider"), 
+        ground_truth=config.get("ground_truth", "claims"),
+        retrieval_gt=config.get("retrieval_gt")
+    )
     outputs = runner.run(queries)
     logger.info("Evaluation complete", outputs={k: str(v) for k, v in outputs.items()})
 

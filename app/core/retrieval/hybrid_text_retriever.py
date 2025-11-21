@@ -83,9 +83,15 @@ class HybridTextRetriever:
         end_date = self._coerce_date(query.end)
         start_dt = datetime.combine(start_date, datetime.min.time())
         end_dt = datetime.combine(end_date, datetime.max.time())
-        imagery = self.spatial_index.get_tiles_by_zip(
-            query.zip, start_dt, end_dt, plan.imagery_k)
-        sensors = self.spatial_index.nearest_sensors_by_zip(query.zip, n=3)
+        if query.lat is not None and query.lon is not None:
+            imagery = self.spatial_index.get_tiles_by_point(
+                query.lat, query.lon, radius_km=5.0, start=start_dt, end=end_dt, k=plan.imagery_k)
+            sensors = self.spatial_index.get_sensors_by_point(
+                query.lat, query.lon, radius_km=10.0, n=3)
+        else:
+            imagery = self.spatial_index.get_tiles_by_zip(
+                query.zip, start_dt, end_dt, plan.imagery_k)
+            sensors = self.spatial_index.nearest_sensors_by_zip(query.zip, n=3)
 
         query_str = query.text_query or f"Harvey flood damage impact summary for zip {query.zip} between {start_date} and {end_date}."
         text_docs = self._hybrid_search(
