@@ -7,7 +7,7 @@ name = "harvey-rag"
 version = "0.1.0"
 description = "Multimodal RAG skeleton for Hurricane Harvey impact assessment"
 readme = "README.md"
-authors = [{name = "OpenAI Assistant"}]
+authors = [{name = "Yiming Xiao"}]
 requires-python = ">=3.11"
 dependencies = [
     "fastapi",
