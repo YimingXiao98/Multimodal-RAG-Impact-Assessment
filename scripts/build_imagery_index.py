@@ -96,7 +96,7 @@ def extract_centroid_from_filename(filename: str) -> Optional[tuple]:
     return None
 
 
-def extract_metadata(filepath: Path, imagery_dir: Path) -> Dict:
+def extract_metadata(filepath: Path, imagery_dir: Path, data_root: Path) -> Dict:
     """Extract all available metadata from an imagery file."""
     filename = filepath.name
     relative_path = filepath.relative_to(imagery_dir)
@@ -129,9 +129,18 @@ def extract_metadata(filepath: Path, imagery_dir: Path) -> Dict:
     # Infer ZIP from coordinates (approximate Houston ZIPs)
     zip_code = infer_zip_from_coords(lat, lon)
     
+    # Generate URI relative to project root (e.g., "data/raw/imagery/tiles/file.tif")
+    # We need paths that start with "data/" for the visual index to resolve correctly
+    try:
+        rel_to_data = filepath.relative_to(data_root)
+        uri = f"data/{rel_to_data}"
+    except ValueError:
+        # Fallback if filepath is not under data_root
+        uri = f"data/raw/imagery/{relative_path}"
+    
     metadata = {
         'tile_id': tile_id,
-        'uri': str(filepath),
+        'uri': uri,
         'timestamp': timestamp,
         'lat': lat,
         'lon': lon,
@@ -161,14 +170,24 @@ def infer_zip_from_coords(lat: float, lon: float) -> str:
         return '77002'
 
 
-def scan_imagery_directory(imagery_dir: Path) -> List[Dict]:
-    """Scan directory for TIFF files and extract metadata."""
+def scan_imagery_directory(imagery_dir: Path, data_root: Path) -> List[Dict]:
+    """Scan directory for TIFF files and extract metadata.
+    
+    Skips files in 'originals/' subdirectory (large files moved during tiling).
+    """
     logger.info(f"Scanning {imagery_dir} for imagery files...")
     
     # Find all TIFF files
-    tif_files = list(imagery_dir.glob('**/*.tif')) + list(imagery_dir.glob('**/*.tiff'))
+    all_tif_files = list(imagery_dir.glob('**/*.tif')) + list(imagery_dir.glob('**/*.tiff'))
     
-    logger.info(f"Found {len(tif_files)} TIFF files")
+    # Filter out files in 'originals' directory (these are the large untiled originals)
+    tif_files = [f for f in all_tif_files if 'originals' not in f.parts]
+    
+    skipped = len(all_tif_files) - len(tif_files)
+    if skipped > 0:
+        logger.info(f"Skipping {skipped} files in originals/ directory")
+    
+    logger.info(f"Found {len(tif_files)} TIFF files to index")
     
     metadata_list = []
     for i, filepath in enumerate(tif_files, 1):
@@ -176,7 +195,7 @@ def scan_imagery_directory(imagery_dir: Path) -> List[Dict]:
             logger.info(f"Processing {i}/{len(tif_files)}...")
         
         try:
-            metadata = extract_metadata(filepath, imagery_dir)
+            metadata = extract_metadata(filepath, imagery_dir, data_root)
             metadata_list.append(metadata)
         except Exception as e:
             logger.warning(f"Failed to process {filepath.name}: {e}")
@@ -189,6 +208,9 @@ def main():
     parser.add_argument('--imagery-dir', type=Path, 
                         default=Path('data/raw/imagery'),
                         help='Directory containing imagery TIFF files')
+    parser.add_argument('--data-root', type=Path,
+                        default=Path('data'),
+                        help='Root data directory (for generating relative URIs)')
     parser.add_argument('--output', type=Path,
                         default=Path('data/processed/imagery_tiles.parquet'),
                         help='Output parquet file path')
@@ -199,7 +221,7 @@ def main():
         return 1
     
     # Scan and extract metadata
-    metadata_list = scan_imagery_directory(args.imagery_dir)
+    metadata_list = scan_imagery_directory(args.imagery_dir, args.data_root)
     
     if not metadata_list:
         logger.error("No imagery files found or processed")

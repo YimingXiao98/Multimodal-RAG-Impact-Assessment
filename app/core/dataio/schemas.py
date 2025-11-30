@@ -97,6 +97,8 @@ class RAGQuery(BaseModel):
     k_tiles: int = 6
     n_text: int = 20
     text_query: Optional[str] = None
+    visual_query: Optional[str] = None  # Semantic visual search (e.g., "flooded streets")
+    enable_visual_search: bool = True  # Auto-infer visual concepts from text_query
     lat: Optional[float] = None
     lon: Optional[float] = None
 

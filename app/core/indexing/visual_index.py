@@ -55,16 +55,22 @@ class VisualIndex:
 
             # Handle different path types:
             # 1. Absolute paths - use as-is
-            # 2. Paths starting with "data/" - relative to project root, not image_dir
-            # 3. Other paths - relative to image_dir
+            # 2. Paths starting with "data/raw/imagery/" - strip prefix, use relative to image_dir
+            # 3. Paths starting with "data/" - resolve relative to project root
+            # 4. Other paths - relative to image_dir
             path_obj = Path(rel_path)
             if path_obj.is_absolute():
                 full_path = path_obj
+            elif str(rel_path).startswith("data/raw/imagery/"):
+                # Strip the common prefix since image_dir already points there
+                relative_part = str(rel_path).replace("data/raw/imagery/", "", 1)
+                full_path = image_dir / relative_part
             elif str(rel_path).startswith("data/"):
-                # Path is relative to project root (parent of image_dir)
-                project_root = (
-                    image_dir.parent.parent
-                )  # Go up from data/raw/imagery to project root
+                # Path is relative to project root
+                # Resolve image_dir to absolute path first for reliable navigation
+                abs_image_dir = image_dir.resolve()
+                # Go up 3 levels: data/raw/imagery -> data/raw -> data -> project_root
+                project_root = abs_image_dir.parent.parent.parent
                 full_path = project_root / rel_path
             else:
                 full_path = image_dir / rel_path
@@ -171,8 +177,22 @@ class VisualIndex:
 
         np.save(embeddings_path, self.embeddings)
 
+        # Convert any numpy arrays in metadata to lists for JSON serialization
+        def convert_numpy(obj):
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            elif isinstance(obj, dict):
+                return {k: convert_numpy(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_numpy(item) for item in obj]
+            elif isinstance(obj, (np.integer, np.floating)):
+                return float(obj)
+            return obj
+
+        clean_metadata = [convert_numpy(m) for m in self.metadata]
+
         with open(metadata_path, "w") as f:
-            json.dump(self.metadata, f, indent=2)
+            json.dump(clean_metadata, f, indent=2)
 
         logger.info(f"Visual index saved to {embeddings_path} and {metadata_path}")
 

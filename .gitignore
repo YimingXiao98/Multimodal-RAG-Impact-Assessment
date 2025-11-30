@@ -58,28 +58,31 @@ ENV/
 *.swp
 *.swo
 *.DS_Store
+Thumbs.db
 
 # Personal notes and logs (not tracked)
 NOTES/
 
-Thumbs.db
+# Logs
+logs/
+*.log
 
-# Local data outputs
+# Local data (large files, not tracked)
 data/raw/
 data/processed/
 data/indexes/
-logs/
+data/examples/
+data/annotations/
 
-# Miscellaneous
-RAW_DATA_REQUIREMENTS.md
-*.pdf
-LOCAL_WORKLOG.md
-*.log
-inspect_data.py
-PUBLICATION_ROADMAP.md
-# Documentation
+# Documentation (only README tracked)
 *.md
 !README.md
 
-data/examples/
-data/annotations/*
+# Personal/local scripts
+inspect_data.py
+LOCAL_WORKLOG.md
+RAW_DATA_REQUIREMENTS.md
+PUBLICATION_ROADMAP.md
+
+# Other
+*.pdf
