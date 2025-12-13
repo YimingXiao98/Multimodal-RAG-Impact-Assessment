@@ -60,6 +60,10 @@ ENV/
 *.DS_Store
 Thumbs.db
 
+# Cursor IDE (keep commands for team sharing)
+.cursor/*
+!.cursor/commands/
+
 # Personal notes and logs (not tracked)
 NOTES/
 
