@@ -105,5 +105,8 @@ LOCAL_WORKLOG.md
 RAW_DATA_REQUIREMENTS.md
 PUBLICATION_ROADMAP.md
 
+# Paper (private - not for public repo)
+paper/
+
 # Other
 *.pdf
