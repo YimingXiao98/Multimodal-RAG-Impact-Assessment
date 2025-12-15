@@ -1,12 +1,61 @@
-"""Ground-truth helpers sourced from insurance claims."""
+"""Ground-truth helpers for flood and damage assessment."""
 from __future__ import annotations
 
+import json
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Dict
 
 from ..dataio.loaders import load_parquet_table
+
+
+class FloodDepthGroundTruth:
+    """Ground truth from FEMA flood depth grid (flood_depth_by_zip.json)."""
+
+    def __init__(self, path: Path) -> None:
+        if not path.exists():
+            raise FileNotFoundError(f"Flood depth file not found: {path}")
+        self.data = json.loads(path.read_text())
+
+    def score(self, zip_code: str, start_date=None, end_date=None) -> Dict[str, float]:
+        """Return flood metrics for a ZIP code.
+        
+        Note: start_date and end_date are accepted for API compatibility
+        but ignored since flood depth is a static snapshot.
+        """
+        entry = self.data.get(str(zip_code), {})
+        return {
+            "mean_depth_m": entry.get("mean_depth_m", 0.0),
+            "max_depth_m": entry.get("max_depth_m", 0.0),
+            "flooded_pct": entry.get("flooded_pct", 0.0),
+        }
+
+
+class PDEGroundTruth:
+    """Ground truth from Point Damage Estimates (pde_by_zip.json)."""
+
+    def __init__(self, path: Path) -> None:
+        if not path.exists():
+            raise FileNotFoundError(f"PDE file not found: {path}")
+        self.data = json.loads(path.read_text())
+        # Compute max for normalization
+        self.max_pde = max(
+            (entry.get("mean_pde", 0.0) for entry in self.data.values()),
+            default=1.0
+        )
+
+    def score(self, zip_code: str) -> Dict[str, float]:
+        """Return damage metrics for a ZIP code (normalized to 0-100%)."""
+        entry = self.data.get(str(zip_code), {})
+        mean_pde = entry.get("mean_pde", 0.0)
+        # Normalize to percentage (0-100)
+        damage_pct = (mean_pde / self.max_pde) * 100.0 if self.max_pde > 0 else 0.0
+        return {
+            "damage_pct": round(damage_pct, 2),
+            "mean_pde": mean_pde,
+            "point_count": entry.get("point_count", 0),
+        }
 
 
 class ClaimsGroundTruth:

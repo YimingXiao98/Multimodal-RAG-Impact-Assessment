@@ -1,6 +1,6 @@
 {
   "data_dir": "data",
-  "provider": "openai",
+  "provider": "gemini",
   "ground_truth": "claims",
   "queries": [
     {

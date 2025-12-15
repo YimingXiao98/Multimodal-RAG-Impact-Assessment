@@ -1,0 +1,2151 @@
+{
+  "metadata": {
+    "experiment_name": "exp_multimodal_v4_textguided",
+    "timestamp": "2025-12-13T16:34:28.876505",
+    "config_path": "config/queries_20_random.json",
+    "config_hash": "a89450db",
+    "settings": {
+      "enable_reranker": true,
+      "enable_geo_boost": false,
+      "filter_negative_captions": false,
+      "dense_top_k": 1000
+    },
+    "total_queries": 20,
+    "summary_stats": {
+      "successful_queries": 20,
+      "failed_queries": 0,
+      "extent_mae": 20.94,
+      "damage_mae": 43.4,
+      "mae": 20.94
+    }
+  },
+  "records": [
+    {
+      "query_id": 1,
+      "query": {
+        "zip": "78412",
+        "start_date": "2017-09-01",
+        "end_date": "2017-09-07",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "903419965331697664",
+          "903422881648054277",
+          "903460810483265540",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903989728726454273",
+          "903992796763348992",
+          "904122831713251328",
+          "904445834288406529",
+          "904487470984830976",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905219842688634882",
+          "905435273726746624",
+          "905450598950109185",
+          "905820640015511552",
+          "905920666096078848"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "78412",
+          "time_window": {
+            "start": "2017-09-01",
+            "end": "2017-09-07"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 60.0,
+            "confidence": 0.8
+          },
+          "conflicts": [
+            "Visual observations showed areas with no visible flooding, but text indicated significant flooding occurred.",
+            "One tile showed structural damage while others showed none, conflicting with the text's assertion of severe damage."
+          ],
+          "conflict_resolution": "Flood extent is based on text analysis indicating major flooding, while damage severity was boosted by visual assessments that confirmed structural damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "903419965331697664",
+              "903422881648054277",
+              "903460810483265540",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903989728726454273",
+              "903992796763348992",
+              "904122831713251328",
+              "904445834288406529",
+              "904487470984830976",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905219842688634882",
+              "905435273726746624",
+              "905450598950109185",
+              "905820640015511552",
+              "905920666096078848"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "Area1_post_reshaped_tile_007_004",
+              "Area1_post_reshaped_tile_018_005",
+              "Area2_post_reshaped_tile_018_001",
+              "Area1_post_reshaped_tile_003_000"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis indicates that significant flooding and damage occurred in ZIP 78412 during the specified time period, while the visual analysis provided supporting evidence of structural damage and past flooding in certain areas. Due to conflicts in visibility and internal damage not captured in post-event imagery, I prioritized textual evidence for flood extent and supplemented the damage estimate with confirmed structural damage from visuals.",
+          "natural_language_summary": "During the period from September 1st to September 7th, 2017, ZIP code 78412 experienced significant flooding and property damage due to Hurricane Harvey. Text reports confirm high flood extent and severe impacts, with visuals corroborating some areas of structural damage, leading to an overall damage severity increase.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: During the period from September 1st to September 7th, 2017, ZIP code 78412 experienced significant flooding and property damage due to Hurricane Harvey. Text reports confirm high flood extent and severe impacts, with visuals corroborating some areas of structural damage, leading to an overall damage severity increase.\nDamage Estimate: N/A%\nConfidence: 0.8\nCited Tweets: 903419965331697664, 903422881648054277, 903460810483265540, 903656280010711042, 903823717926567936\nReasoning: The text analysis indicates that significant flooding and damage occurred in ZIP 78412 during the specified time period, while the visual analysis provided supporting evidence of structural damage and past flooding in certain areas. Due to conflicts in visibility and internal damage not captured in post-event imagery, I prioritized textual evidence for flood extent and supplemented the damage estimate with confirmed structural damage from visuals.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.8,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 60.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.872,
+        "max_depth_m": 23.461,
+        "flooded_pct": 43.46,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 2,
+      "query": {
+        "zip": "77007",
+        "start_date": "2017-08-25",
+        "end_date": "2017-08-31",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901086383942639617",
+          "901826476210876417",
+          "901849278003372034",
+          "901899756414357508",
+          "901901311779766272",
+          "901901604969959424",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902525075416547328",
+          "902526486233702400",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77007",
+          "time_window": {
+            "start": "2017-08-25",
+            "end": "2017-08-31"
+          },
+          "estimates": {
+            "flood_extent_pct": 65.0,
+            "damage_severity_pct": 70.0,
+            "confidence": 0.95
+          },
+          "conflicts": [],
+          "conflict_resolution": "There were no conflicts; visual analysis confirmed the text reports for both flooding and damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901086383942639617",
+              "901826476210876417",
+              "901849278003372034",
+              "901899756414357508",
+              "901901311779766272",
+              "901901604969959424",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901952250620379136",
+              "901976639000760320",
+              "902525075416547328",
+              "902526486233702400",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0952700w294630n",
+              "20170831bC0952530w294630n",
+              "20170831bC0952400w294630n",
+              "20170831bC0952230w294630n",
+              "20170831bC0952700w294800n",
+              "20170831bC0952530w294800n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis details severe flooding and widespread damage within ZIP 77007, with specific references to areas affected. The visual analysis provides strong confirmation of these reports, showing extensive flood evidence and structural damage. While flood extent is solely based on text, damage severity is boosted based on the visible evidence of structural issues observed in imagery.",
+          "natural_language_summary": "From August 25th to August 31st, 2017, ZIP code 77007 faced significant flooding and damage from Hurricane Harvey. Real-time reports indicated that 65% of the area was affected by flooding, described as 'historic' and compared to a '1,000-year flood'. The visual assessment confirmed extensive damage, leading to an adjusted damage severity estimate of 70%. Aerial and satellite imagery corroborated the reported structural damages, confirming the severity of the disaster.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: From August 25th to August 31st, 2017, ZIP code 77007 faced significant flooding and damage from Hurricane Harvey. Real-time reports indicated that 65% of the area was affected by flooding, described as 'historic' and compared to a '1,000-year flood'. The visual assessment confirmed extensive damage, leading to an adjusted damage severity estimate of 70%. Aerial and satellite imagery corroborated the reported structural damages, confirming the severity of the disaster.\nDamage Estimate: N/A%\nConfidence: 0.95\nCited Tweets: 901086383942639617, 901826476210876417, 901849278003372034, 901899756414357508, 901901311779766272\nReasoning: The text analysis details severe flooding and widespread damage within ZIP 77007, with specific references to areas affected. The visual analysis provides strong confirmation of these reports, showing extensive flood evidence and structural damage. While flood extent is solely based on text, damage severity is boosted based on the visible evidence of structural issues observed in imagery.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.95,
+        "flood_extent_pct": 65.0,
+        "damage_severity_pct": 70.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 8.444,
+        "max_depth_m": 51.995,
+        "flooded_pct": 37.79,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.15453957262033471
+      }
+    },
+    {
+      "query_id": 3,
+      "query": {
+        "zip": "77008",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902388226442264576",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77008",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 82.5,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual imagery shows structural damage not as extensive as reported in text.",
+            "Some visual assessments indicate no damage where text reports high severity."
+          ],
+          "conflict_resolution": "For flood extent, trusted text completely as visual confirmed flooding areas consistent with reports. For damage, boosted the damage estimate considering visual observations of structural damage that aligned with text reports, even though some areas showed non-damage in visual data.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902388226442264576",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0952830w294630n",
+              "20170831bC0952700w294630n",
+              "20170831bC0952530w294630n",
+              "20170831bC0952400w294630n",
+              "20170831bC0952230w294630n",
+              "20170831bC0952830w294800n"
+            ],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "reasoning": "The analysis shows high confidence in both flood extent and damage severity for ZIP 77008 based on corroborating text data and supportive but not contradictory imagery. Text analysis indicated significant flooding and the potential for severe damage across various areas, while visual assessments confirmed the presence of flood evidence and structural damages, aligning with the qualitative reports, albeit with some variances in the extent of visualized damage. Trusting text for flood extent due to the timing of the visuals, and adjusting damage assessment based on visual backing led to a better-rounded estimate.",
+          "natural_language_summary": "Between August 26 and September 1, 2017, the area of ZIP 77008 faced extensive flooding and structural damage due to Hurricane Harvey. Text analysis suggested that approximately 85% of the area was flooded and reported significant damage, with observations of severe impacts, while satellite imagery provided supportive evidence of flooding and visual structural damage. Combined textual and visual evidence resulted in an adjusted damage estimate of 82.5%, indicating high severity in consequence.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between August 26 and September 1, 2017, the area of ZIP 77008 faced extensive flooding and structural damage due to Hurricane Harvey. Text analysis suggested that approximately 85% of the area was flooded and reported significant damage, with observations of severe impacts, while satellite imagery provided supportive evidence of flooding and visual structural damage. Combined textual and visual evidence resulted in an adjusted damage estimate of 82.5%, indicating high severity in consequence.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417, 901849278003372034\nReasoning: The analysis shows high confidence in both flood extent and damage severity for ZIP 77008 based on corroborating text data and supportive but not contradictory imagery. Text analysis indicated significant flooding and the potential for severe damage across various areas, while visual assessments confirmed the presence of flood evidence and structural damages, aligning with the qualitative reports, albeit with some variances in the extent of visualized damage. Trusting text for flood extent due to the timing of the visuals, and adjusting damage assessment based on visual backing led to a better-rounded estimate.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 82.5
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.31,
+        "max_depth_m": 38.238,
+        "flooded_pct": 54.44,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.1665957908480095
+      }
+    },
+    {
+      "query_id": 4,
+      "query": {
+        "zip": "77018",
+        "start_date": "2017-08-28",
+        "end_date": "2017-09-03",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901976639000760320",
+          "902555174073499650",
+          "902835549135917056",
+          "902889458860785664",
+          "902910691132280832",
+          "902933605168685056",
+          "902946518239387648",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903460810483265540",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904445834288406529"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77018",
+          "time_window": {
+            "start": "2017-08-28",
+            "end": "2017-09-03"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 73.0,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual shows some locations with no visible structural damage while text indicates extensive damage."
+          ],
+          "conflict_resolution": "For flood extent, text estimates were used as they indicated significant flooding during the event. For damage severity, visual observations of structural damage were used to boost the already reported damage from text.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901976639000760320",
+              "902555174073499650",
+              "902835549135917056",
+              "902889458860785664",
+              "902910691132280832",
+              "902933605168685056",
+              "902946518239387648",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903460810483265540",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904445834288406529"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0952830w294800n",
+              "20170831bC0952700w294800n",
+              "20170831bC0952530w294800n",
+              "20170831bC0952830w294930n",
+              "20170831bC0952700w294930n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis highlighted significant flooding and damage during Hurricane Harvey, which was consistent with visual observations. While some visual tiles indicated no visible damage, the text compelled evidence of hidden internal damage that could not have been visible in the imagery, leading to a slight boost in the assessed damage severity. The flood extent was strictly based on text as the water had receded by the time of the visual assessment.",
+          "natural_language_summary": "Between August 28 and September 3, 2017, ZIP 77018 faced substantial flooding and damage due to Hurricane Harvey, with numerous reports confirming a flooding extent of around 70% and severe structural damage evidenced through both resident reports and visual confirmations. Structural damage was rated higher based on visual assessments that showed visible destruction in some areas.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between August 28 and September 3, 2017, ZIP 77018 faced substantial flooding and damage due to Hurricane Harvey, with numerous reports confirming a flooding extent of around 70% and severe structural damage evidenced through both resident reports and visual confirmations. Structural damage was rated higher based on visual assessments that showed visible destruction in some areas.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901976639000760320, 902555174073499650, 902835549135917056, 902889458860785664, 902910691132280832\nReasoning: The text analysis highlighted significant flooding and damage during Hurricane Harvey, which was consistent with visual observations. While some visual tiles indicated no visible damage, the text compelled evidence of hidden internal damage that could not have been visible in the imagery, leading to a slight boost in the assessed damage severity. The flood extent was strictly based on text as the water had receded by the time of the visual assessment.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 73.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.642,
+        "max_depth_m": 32.887,
+        "flooded_pct": 49.47,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.22765991656631632
+      }
+    },
+    {
+      "query_id": 5,
+      "query": {
+        "zip": "77035",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77035",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 50.0,
+            "damage_severity_pct": 55.0,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual analysis confirmed structural damage and flooding evidence, but potentially did not capture peak flooding due to timing."
+          ],
+          "conflict_resolution": "Text estimates for flood extent were prioritized due to the potential for visual underreporting caused by receding waters. Visual assessments were used to boost the damage severity based on observed structural impacts.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901952250620379136",
+              "901976639000760320",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0953300w294200n",
+              "20170831bC0953130w294200n",
+              "20170831bC0953000w294200n",
+              "20170831bC0952830w294200n",
+              "20170831bC0952700w294200n",
+              "20170901bC0953130w293730n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The visual analysis confirmed significant structural damage and flooding evidence but was limited by its timing post-peak flooding. The text analysis provided a clear understanding of the flood extent and severity based on real-time resident reports during the event. Flood extent was retained from the text analysis since visual confirmation came after most water had receded. The damage severity was boosted based on multiple visual assessments that confirmed and added credibility to the text reports.",
+          "natural_language_summary": "Between August 26 and September 1, 2017, ZIP code 77035 faced severe impacts from Hurricane Harvey. Reports indicated that around 50% of the area was flooded based on extensive Twitter commentary characterizing it as 'historic flooding'. While floodwaters had receded by the time of satellite imagery analysis, the damage was substantial, with visual evidence confirming external structural issues, leading to a revised damage estimate of 55%. This suggests a persistent concern about internal damage that is not visible from aerial views.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between August 26 and September 1, 2017, ZIP code 77035 faced severe impacts from Hurricane Harvey. Reports indicated that around 50% of the area was flooded based on extensive Twitter commentary characterizing it as 'historic flooding'. While floodwaters had receded by the time of satellite imagery analysis, the damage was substantial, with visual evidence confirming external structural issues, leading to a revised damage estimate of 55%. This suggests a persistent concern about internal damage that is not visible from aerial views.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417, 901849278003372034\nReasoning: The visual analysis confirmed significant structural damage and flooding evidence but was limited by its timing post-peak flooding. The text analysis provided a clear understanding of the flood extent and severity based on real-time resident reports during the event. Flood extent was retained from the text analysis since visual confirmation came after most water had receded. The damage severity was boosted based on multiple visual assessments that confirmed and added credibility to the text reports.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 50.0,
+        "damage_severity_pct": 55.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.56,
+        "max_depth_m": 27.156,
+        "flooded_pct": 49.95,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.2595580089271433
+      }
+    },
+    {
+      "query_id": 6,
+      "query": {
+        "zip": "77025",
+        "start_date": "2017-08-25",
+        "end_date": "2017-08-31",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901086383942639617",
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901916864099516416",
+          "901917030970003457",
+          "901917813392199684",
+          "901920412006838272",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77025",
+          "time_window": {
+            "start": "2017-08-25",
+            "end": "2017-08-31"
+          },
+          "estimates": {
+            "flood_extent_pct": 65.0,
+            "damage_severity_pct": 80.0,
+            "confidence": 0.87
+          },
+          "conflicts": [
+            "Visual confirms evidence of flooding but shows no active water, suggesting receded water levels contrary to the flood extent report in text.",
+            "Mixed indications of structural damage where some visual observations confirmed damage while others showed none."
+          ],
+          "conflict_resolution": "Flood extent is trusted from text due to strong reports of flooding. Damage estimates were boosted based on visual observations of debris and damage where confirmed.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901086383942639617",
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901916864099516416",
+              "901917030970003457",
+              "901917813392199684",
+              "901920412006838272",
+              "901952108655775744",
+              "901952250620379136",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0953000w294200n",
+              "20170831bC0952830w294200n",
+              "20170831bC0952700w294200n",
+              "20170831bC0952530w294200n",
+              "20170831bC0953000w294330n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "Flood extent is based on text reports indicating widespread flooding in 77025, with a strong estimate of 65% area impacted. The visual analysis supports the presence of flood evidence, although showing no active water, which confirms the text assessment that indicates receded floodwaters. Damage estimates were increased from 70% to 80% based on substantial visual debris and confirmed damage visible in several areas, validating the text reports of significant structural impact. The overall confidence level of 0.87 takes into account the quality of evidence from both sources.",
+          "natural_language_summary": "During the period from August 25 to August 31, 2017, ZIP code 77025 encountered substantial flooding and damage due to Hurricane Harvey. Text reports detail significant flooding impacting approximately 65% of the area, emphasizing the scale of the event. Numerous accounts indicated extensive damage, leading to a damage severity estimate of 80%, boosted by visual observations of debris and damage in the aftermath. Overall confidence in these assessments remains moderately high, reflecting strong corroboration from diverse reporting channels.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: During the period from August 25 to August 31, 2017, ZIP code 77025 encountered substantial flooding and damage due to Hurricane Harvey. Text reports detail significant flooding impacting approximately 65% of the area, emphasizing the scale of the event. Numerous accounts indicated extensive damage, leading to a damage severity estimate of 80%, boosted by visual observations of debris and damage in the aftermath. Overall confidence in these assessments remains moderately high, reflecting strong corroboration from diverse reporting channels.\nDamage Estimate: N/A%\nConfidence: 0.87\nCited Tweets: 901086383942639617, 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417\nReasoning: Flood extent is based on text reports indicating widespread flooding in 77025, with a strong estimate of 65% area impacted. The visual analysis supports the presence of flood evidence, although showing no active water, which confirms the text assessment that indicates receded floodwaters. Damage estimates were increased from 70% to 80% based on substantial visual debris and confirmed damage visible in several areas, validating the text reports of significant structural impact. The overall confidence level of 0.87 takes into account the quality of evidence from both sources.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.87,
+        "flood_extent_pct": 65.0,
+        "damage_severity_pct": 80.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.085,
+        "max_depth_m": 30.895,
+        "flooded_pct": 52.1,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.30397725375174384
+      }
+    },
+    {
+      "query_id": 7,
+      "query": {
+        "zip": "77088",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902388226442264576",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77088",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 80.0,
+            "damage_severity_pct": 65.0,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual shows some structural damage, but extent is not as high as indicated by text."
+          ],
+          "conflict_resolution": "Relied on text estimate for flooding extent due to strong eyewitness reports. Used visual data to boost damage severity estimate due to confirmed structural damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902388226442264576",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170901bC0952700w295100n",
+              "20170901bC0953000w295230n",
+              "20170901bC0952700w295230n",
+              "20170901bC0952530w295230n",
+              "20170901bC0952830w295700n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis indicated a high level of flooding (80%) based on real-time reports extensively documenting the impacts of Hurricane Harvey. The visual analysis confirmed damage and the presence of flood-related debris, which supports and slightly boosts the damage severity estimate. Trusting the eyewitness reports for flood extent over the visual imagery, while boosting the damage severity due to the observed structural issues, leads to a combined assessment.",
+          "natural_language_summary": "During Hurricane Harvey (August 26 - September 1, 2017), ZIP code 77088 suffered significant flooding affecting an estimated 80% of the area. The severity of structural damage was rated at approximately 65%, corroborated by visible damage in multiple locations reported in tweets. The assessments indicate high confidence in the flooding extent based on numerous eyewitness accounts while allowing for a data-driven boost to damage severity from visual evidence.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: During Hurricane Harvey (August 26 - September 1, 2017), ZIP code 77088 suffered significant flooding affecting an estimated 80% of the area. The severity of structural damage was rated at approximately 65%, corroborated by visible damage in multiple locations reported in tweets. The assessments indicate high confidence in the flooding extent based on numerous eyewitness accounts while allowing for a data-driven boost to damage severity from visual evidence.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417, 901849278003372034\nReasoning: The text analysis indicated a high level of flooding (80%) based on real-time reports extensively documenting the impacts of Hurricane Harvey. The visual analysis confirmed damage and the presence of flood-related debris, which supports and slightly boosts the damage severity estimate. Trusting the eyewitness reports for flood extent over the visual imagery, while boosting the damage severity due to the observed structural issues, leads to a combined assessment.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 80.0,
+        "damage_severity_pct": 65.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.526,
+        "max_depth_m": 24.826,
+        "flooded_pct": 61.6,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.44973104671905617
+      }
+    },
+    {
+      "query_id": 8,
+      "query": {
+        "zip": "77075",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906567125384364032",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77075",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 40.0,
+            "damage_severity_pct": 45.0,
+            "confidence": 0.75
+          },
+          "conflicts": [
+            "Visual analysis indicated structural damage only in certain areas, while text reports widespread damage.",
+            "Visual did not show extensive flooding while text reported significant flooding."
+          ],
+          "conflict_resolution": "For flood extent, used text estimate due to reported flooding despite visual evidence showing no water. For damage, boosted the severity based on visual evidence of structural issues, while prioritizing the broader text reports of damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906567125384364032",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "9-10-2017_Ortho_ColorBalance_tile_024_015",
+              "9-10-2017_Ortho_ColorBalance_tile_029_004",
+              "9-10-2017_Ortho_ColorBalance_tile_018_021",
+              "9-10-2017_Ortho_ColorBalance_tile_020_016",
+              "9-10-2017_Ortho_ColorBalance_tile_029_023"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis indicates significant flood and structural damage in ZIP code 77075 during the event timeframe. Visual analysis supports reports of flooding through evidence of debris and erosion, with some structural damage confirmed through imagery. The estimates for flood extent largely rely on the text analysis due to receded waters by the time of the visual capture. Structural damage estimate is boosted based on visual confirmations of damage.",
+          "natural_language_summary": "From September 4th to September 10th, 2017, ZIP code 77075 experienced substantial impacts from Hurricane Harvey. Text analysis suggests a significant 40% area affected by flooding, with widespread reports of structural damage, particularly around Fondren Road and Bissonnet Street. Visual analysis corroborated some damage, especially missing roof shingles, but did not fully capture the extent of flooding due to the receded waters at the time of imaging. Overall confidence in the estimates is moderate to high.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: From September 4th to September 10th, 2017, ZIP code 77075 experienced substantial impacts from Hurricane Harvey. Text analysis suggests a significant 40% area affected by flooding, with widespread reports of structural damage, particularly around Fondren Road and Bissonnet Street. Visual analysis corroborated some damage, especially missing roof shingles, but did not fully capture the extent of flooding due to the receded waters at the time of imaging. Overall confidence in the estimates is moderate to high.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: The text analysis indicates significant flood and structural damage in ZIP code 77075 during the event timeframe. Visual analysis supports reports of flooding through evidence of debris and erosion, with some structural damage confirmed through imagery. The estimates for flood extent largely rely on the text analysis due to receded waters by the time of the visual capture. Structural damage estimate is boosted based on visual confirmations of damage.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 40.0,
+        "damage_severity_pct": 45.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.141,
+        "max_depth_m": 24.593,
+        "flooded_pct": 65.28,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.33320374920189666
+      }
+    },
+    {
+      "query_id": 9,
+      "query": {
+        "zip": "77048",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906567125384364032",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77048",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 35.0,
+            "damage_severity_pct": 25.0,
+            "confidence": 0.65
+          },
+          "conflicts": [
+            "Visual analysis shows no evidence of flooding or structural damage, conflicting with consistent text reports of damage from flooding."
+          ],
+          "conflict_resolution": "Flood extent estimate is derived entirely from text analysis, as visual observations did not confirm any flood evidence. Damage estimate is kept based on text, since no visible structural damage was noted in the imagery despite text indicating internal damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906567125384364032",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis indicated significant flooding and ongoing damage assessments, leading to an estimate of 35% flood extent and 25% damage severity. Visual analysis, however, showed no flood evidence or structural damage, leading to a conflict. The flood extent is maintained from the text as the water likely receded before imaging. The damage severity is attributed solely to text reports since internal damages are not visible.",
+          "natural_language_summary": "Between September 4th and September 10th, 2017, ZIP code 77048 experienced significant damage due to flooding from Hurricane Harvey, with reports suggesting up to 35% of the area affected by floodwaters. Despite visual assessments showing no signs of flooding or structural damage, consistent text reports suggest ongoing internal damage. The estimates maintain this conflict, with 25% of structures reported damaged based on social media and community reports.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between September 4th and September 10th, 2017, ZIP code 77048 experienced significant damage due to flooding from Hurricane Harvey, with reports suggesting up to 35% of the area affected by floodwaters. Despite visual assessments showing no signs of flooding or structural damage, consistent text reports suggest ongoing internal damage. The estimates maintain this conflict, with 25% of structures reported damaged based on social media and community reports.\nDamage Estimate: N/A%\nConfidence: 0.65\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: The text analysis indicated significant flooding and ongoing damage assessments, leading to an estimate of 35% flood extent and 25% damage severity. Visual analysis, however, showed no flood evidence or structural damage, leading to a conflict. The flood extent is maintained from the text as the water likely receded before imaging. The damage severity is attributed solely to text reports since internal damages are not visible.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.65,
+        "flood_extent_pct": 35.0,
+        "damage_severity_pct": 25.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.405,
+        "max_depth_m": 37.784,
+        "flooded_pct": 65.23,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.3142219596986083
+      }
+    },
+    {
+      "query_id": 10,
+      "query": {
+        "zip": "77009",
+        "start_date": "2017-09-01",
+        "end_date": "2017-09-07",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "903419082963333120",
+          "903419965331697664",
+          "903422881648054277",
+          "903460810483265540",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904122831713251328",
+          "904123475685777409",
+          "904445834288406529",
+          "904837837140484096",
+          "905085480231993344",
+          "905120736003727362",
+          "905152576756137984",
+          "905219842688634882",
+          "905435273726746624",
+          "905450598950109185",
+          "905820640015511552"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77009",
+          "time_window": {
+            "start": "2017-09-01",
+            "end": "2017-09-07"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 71.0,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual damage assessment did not show any structural damage in some instances while text reported high internal damage.",
+            "Some imagery tiles showed flooding indications but did not confirm structural damage, conflicting with text reports stating extensive damage."
+          ],
+          "conflict_resolution": "Flood extent was trusted from text (85%). For damage, I used the highest structural damage % from visual observations (67%) and boosted it using visual evidence of debris and roof damage, resulting in a final damage estimate of 71%.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "903419082963333120",
+              "903419965331697664",
+              "903422881648054277",
+              "903460810483265540",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904122831713251328",
+              "904123475685777409",
+              "904445834288406529",
+              "904837837140484096",
+              "905085480231993344",
+              "905120736003727362",
+              "905152576756137984",
+              "905219842688634882",
+              "905435273726746624",
+              "905450598950109185",
+              "905820640015511552"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170901bC0952530w294930n",
+              "20170901bC0952230w294930n",
+              "20170901bC0952400w295100n",
+              "20170901bC0952530w295100n",
+              "20170901bC0952230w295100n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis overwhelmingly indicated significant flooding and damage reported during the event, which I used as the primary evidence for flood extent. While the visual analysis showed damage and debris in some areas, it did not comprehensively confirm all structural damage noted in the text. Therefore, I used visual observations to support and slightly boost the overall damage estimate.",
+          "natural_language_summary": "Between September 1st and September 7th, 2017, ZIP 77009 experienced extensive flooding and damage due to Hurricane Harvey. Text reports characterized the flood as a '1,000-year event,' indicating severe impacts across a majority of the area. Aerial imagery corroborated this with evidence of debris and some structure damage, though not universally. The final assessments estimate that approximately 85% of the area was flooded with an overall structural damage severity of around 71%.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between September 1st and September 7th, 2017, ZIP 77009 experienced extensive flooding and damage due to Hurricane Harvey. Text reports characterized the flood as a '1,000-year event,' indicating severe impacts across a majority of the area. Aerial imagery corroborated this with evidence of debris and some structure damage, though not universally. The final assessments estimate that approximately 85% of the area was flooded with an overall structural damage severity of around 71%.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 903419082963333120, 903419965331697664, 903422881648054277, 903460810483265540, 903656280010711042\nReasoning: The text analysis overwhelmingly indicated significant flooding and damage reported during the event, which I used as the primary evidence for flood extent. While the visual analysis showed damage and debris in some areas, it did not comprehensively confirm all structural damage noted in the text. Therefore, I used visual observations to support and slightly boost the overall damage estimate.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 71.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.225,
+        "max_depth_m": 49.046,
+        "flooded_pct": 59.98,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.29647092201404146
+      }
+    },
+    {
+      "query_id": 11,
+      "query": {
+        "zip": "77642",
+        "start_date": "2017-08-27",
+        "end_date": "2017-09-02",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77642",
+          "time_window": {
+            "start": "2017-08-27",
+            "end": "2017-09-02"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 83.33,
+            "confidence": 0.75
+          },
+          "conflicts": [
+            "Visual analysis showed some areas without visible flood evidence, while text indicated extensive flooding.",
+            "Visual analysis reported no structural damage in certain areas, but text indicated significant internal damage."
+          ],
+          "conflict_resolution": "Flood extent is based on text analysis since it reported significant flooding during the event. Damage severity was boosted based on visual evidence showing some roof damage in addition to text reports of severe damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0953600w294630n",
+              "20170831bC0951500w294800n",
+              "20170831bC0953600w294200n",
+              "20170831bC0950730w294930n",
+              "20170831bC0953430w294800n",
+              "20170831bC0952400w294800n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis indicates significant flooding and damage during the event, which is corroborated by some visual evidence of flooding and roof damage. Due to the timing of the imagery, some areas might have appeared dry, but the historical context provided by the text is prioritized. Visual observations showing roof damage were used to increase the damage estimate.",
+          "natural_language_summary": "Between August 27 and September 2, 2017, ZIP code 77642 experienced extensive flooding and significant damage due to Hurricane Harvey. Text reports indicated 'historic flooding' affecting 85% of the area, while visual evidence confirmed some flooding and showed roof damage in certain areas. The damage estimate was slightly increased to reflect additional evidence observed in satellite imagery.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between August 27 and September 2, 2017, ZIP code 77642 experienced extensive flooding and significant damage due to Hurricane Harvey. Text reports indicated 'historic flooding' affecting 85% of the area, while visual evidence confirmed some flooding and showed roof damage in certain areas. The damage estimate was slightly increased to reflect additional evidence observed in satellite imagery.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 901629053211480066, 901826476210876417, 901849278003372034, 901917030970003457, 901917813392199684\nReasoning: The text analysis indicates significant flooding and damage during the event, which is corroborated by some visual evidence of flooding and roof damage. Due to the timing of the imagery, some areas might have appeared dry, but the historical context provided by the text is prioritized. Visual observations showing roof damage were used to increase the damage estimate.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 83.33
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.213,
+        "max_depth_m": 76.078,
+        "flooded_pct": 72.7,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 12,
+      "query": {
+        "zip": "77063",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450186343927808",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77063",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 30.0,
+            "damage_severity_pct": 40.0,
+            "confidence": 0.8
+          },
+          "conflicts": [
+            "Visual analysis showed some images without evidence of flooding while text indicated significant flooding.",
+            "Visual analysis indicated structural damage only in some cases but text reported widespread damage."
+          ],
+          "conflict_resolution": "For flood extent, resolved by trusting the text analysis as it reported flooding during the event despite visual evidence showing no standing water. For damage severity, visual damage observations were utilized to boost the text estimate, reflecting higher certainty of damage severity.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450186343927808",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906480493083983872",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "9-10-2017_Ortho_ColorBalance_tile_024_015",
+              "9-10-2017_Ortho_ColorBalance_tile_029_004",
+              "9-10-2017_Ortho_ColorBalance_tile_020_016",
+              "9-10-2017_Ortho_ColorBalance_tile_023_004",
+              "9-10-2017_Ortho_ColorBalance_tile_029_023"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "Flood extent was assessed primarily based on text analysis, as it provided real-time reports on flooding conditions during the event. Text indicated significant structural damage, which aligned with visual observations that documented roof damage and debris. The estimate for damage severity was adjusted upward to reflect new findings from visual analysis while maintaining the text\u2019s authority on overall flood conditions due to the timing of the imagery capturing.",
+          "natural_language_summary": "From September 4th to September 10th, 2017, ZIP code 77063 faced significant impacts from Hurricane Harvey, with text reports indicating extensive flooding and structural damage. Although aerial imagery showed no flooding evidence in some locations due to water receding, it still confirmed damage like roof impairments. Textual insights suggesting a 30% flood extent and a 25% damage severity were bolstered by visual evidence, leading to the conclusion of 30% flood extent and a 40% severity of damage overall.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: From September 4th to September 10th, 2017, ZIP code 77063 faced significant impacts from Hurricane Harvey, with text reports indicating extensive flooding and structural damage. Although aerial imagery showed no flooding evidence in some locations due to water receding, it still confirmed damage like roof impairments. Textual insights suggesting a 30% flood extent and a 25% damage severity were bolstered by visual evidence, leading to the conclusion of 30% flood extent and a 40% severity of damage overall.\nDamage Estimate: N/A%\nConfidence: 0.8\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: Flood extent was assessed primarily based on text analysis, as it provided real-time reports on flooding conditions during the event. Text indicated significant structural damage, which aligned with visual observations that documented roof damage and debris. The estimate for damage severity was adjusted upward to reflect new findings from visual analysis while maintaining the text\u2019s authority on overall flood conditions due to the timing of the imagery capturing.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.8,
+        "flood_extent_pct": 30.0,
+        "damage_severity_pct": 40.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.382,
+        "max_depth_m": 38.813,
+        "flooded_pct": 51.98,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.1388168938669343
+      }
+    },
+    {
+      "query_id": 13,
+      "query": {
+        "zip": "77022",
+        "start_date": "2017-08-27",
+        "end_date": "2017-09-02",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77022",
+          "time_window": {
+            "start": "2017-08-27",
+            "end": "2017-09-02"
+          },
+          "estimates": {
+            "flood_extent_pct": 75.0,
+            "damage_severity_pct": 65.0,
+            "confidence": 0.83
+          },
+          "conflicts": [
+            "Visual observations show flooding evidence but not as widespread as reported in text.",
+            "Visual estimated damage severity lower than text reported, but visuals confirm some damage."
+          ],
+          "conflict_resolution": "The flood extent estimate remains based on text due to higher confidence in real-time reports despite visual evidence showing less extensive flooding. Damage severity was boosted due to multiple visual confirmations of visible structural damage, even though some imagery showed no damage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0952530w294800n",
+              "20170831bC0952400w294800n",
+              "20170831bC0952230w294800n",
+              "20170831bC0952400w294930n",
+              "20170831bC0952230w294930n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis provides a robust estimate of both flood extent and damage severity based on real-time reports of flooding and destruction. Visual analysis confirms the existence of some structural damage and flooding evidence, but given the timing of the imagery versus peak flooding, the visible extent is not as severe as reported in the text. Therefore, we maintain the flood estimate from text and boost the structural damage estimate due to visual confirmations.",
+          "natural_language_summary": "From August 27 to September 2, 2017, ZIP code 77022 faced significant flooding and damage due to Hurricane Harvey. Text reports indicate that approximately 75% of the area experienced flooding, with a substantial approximate damage severity of 55%. Visual analysis confirms structural damage, allowing for an increase in the damage severity estimate to about 65%. While some visual observations showed flooding, overall, the extent and severity reported in the text are upheld as more credible due to the timing of the imagery.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: From August 27 to September 2, 2017, ZIP code 77022 faced significant flooding and damage due to Hurricane Harvey. Text reports indicate that approximately 75% of the area experienced flooding, with a substantial approximate damage severity of 55%. Visual analysis confirms structural damage, allowing for an increase in the damage severity estimate to about 65%. While some visual observations showed flooding, overall, the extent and severity reported in the text are upheld as more credible due to the timing of the imagery.\nDamage Estimate: N/A%\nConfidence: 0.83\nCited Tweets: 901629053211480066, 901826476210876417, 901849278003372034, 901917030970003457, 901917813392199684\nReasoning: The text analysis provides a robust estimate of both flood extent and damage severity based on real-time reports of flooding and destruction. Visual analysis confirms the existence of some structural damage and flooding evidence, but given the timing of the imagery versus peak flooding, the visible extent is not as severe as reported in the text. Therefore, we maintain the flood estimate from text and boost the structural damage estimate due to visual confirmations.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.83,
+        "flood_extent_pct": 75.0,
+        "damage_severity_pct": 65.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.277,
+        "max_depth_m": 29.362,
+        "flooded_pct": 61.74,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.4044520501071532
+      }
+    },
+    {
+      "query_id": 14,
+      "query": {
+        "zip": "77386",
+        "start_date": "2017-09-01",
+        "end_date": "2017-09-07",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "903419965331697664",
+          "903460810483265540",
+          "903572820738932736",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904122831713251328",
+          "904445834288406529",
+          "904487470984830976",
+          "904837837140484096",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905820640015511552",
+          "905920666096078848"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77386",
+          "time_window": {
+            "start": "2017-09-01",
+            "end": "2017-09-07"
+          },
+          "estimates": {
+            "flood_extent_pct": 35.0,
+            "damage_severity_pct": 35.0,
+            "confidence": 0.75
+          },
+          "conflicts": [
+            "Visual analysis shows no structural damage, while text reports significant damage."
+          ],
+          "conflict_resolution": "Flood extent and damage severity estimates rely on text analysis as visual evidence does not confirm structural damage. The flooding estimate remains as per the text since the visual analysis indicates receding waters but does show some areas with water coverage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "903419965331697664",
+              "903460810483265540",
+              "903572820738932736",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904122831713251328",
+              "904445834288406529",
+              "904487470984830976",
+              "904837837140484096",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905820640015511552",
+              "905920666096078848"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "Area2_post_reshaped_tile_018_001"
+            ],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "reasoning": "The text analysis indicates significant flooding and structural damage based on numerous reports, while the visual analysis primarily shows no visible structural damage, which negates visual evidence for damage. However, there was one area where floodwaters were visible in the imagery. As such, the estimates for flood extent are maintained from the text, while the structural damage percentage stays consistent due to a lack of visual confirmation, despite the text reports indicating substantial damage from internal sources.",
+          "natural_language_summary": "Between September 1st and September 7th, 2017, ZIP code 77386 experienced significant impacts from Hurricane Harvey, with reports indicating that about 35% of the area was affected by flooding and that structural damage severity averaged approximately 35%. Notably, while text reports suggest high damage levels, the visual analysis primarily shows no visible structural damage, indicating potential internal damage not captured in the imagery.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between September 1st and September 7th, 2017, ZIP code 77386 experienced significant impacts from Hurricane Harvey, with reports indicating that about 35% of the area was affected by flooding and that structural damage severity averaged approximately 35%. Notably, while text reports suggest high damage levels, the visual analysis primarily shows no visible structural damage, indicating potential internal damage not captured in the imagery.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 903419965331697664, 903460810483265540, 903572820738932736, 903656280010711042, 903823717926567936\nReasoning: The text analysis indicates significant flooding and structural damage based on numerous reports, while the visual analysis primarily shows no visible structural damage, which negates visual evidence for damage. However, there was one area where floodwaters were visible in the imagery. As such, the estimates for flood extent are maintained from the text, while the structural damage percentage stays consistent due to a lack of visual confirmation, despite the text reports indicating substantial damage from internal sources.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 35.0,
+        "damage_severity_pct": 35.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 9.987,
+        "max_depth_m": 48.405,
+        "flooded_pct": 57.64,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 15,
+      "query": {
+        "zip": "77546",
+        "start_date": "2017-08-25",
+        "end_date": "2017-08-31",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901086383942639617",
+          "901323184695382017",
+          "901377628594196481",
+          "901377762476392449",
+          "901479837122125825",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901859997184802816",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77546",
+          "time_window": {
+            "start": "2017-08-25",
+            "end": "2017-08-31"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 80.0,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual shows structural damage in some tiles but not universally, while text reports significant internal damage.",
+            "Some imagery shows evidence of flooding, but not all, indicating possible receding floodwaters."
+          ],
+          "conflict_resolution": "Flood extent fully trusts the text due to the evidence of prior flooding even when post-event visuals show dryness. For damage, visuals indicating damage were used to boost the estimate, but where no damage was seen in visuals yet text reported significant damage, text was trusted.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901086383942639617",
+              "901323184695382017",
+              "901377628594196481",
+              "901377762476392449",
+              "901479837122125825",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901859997184802816",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0953600w294630n",
+              "20170831bC0951500w294800n",
+              "20170831bC0953600w294200n",
+              "20170831bC0953430w294800n",
+              "20170831bC0952400w294800n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis clearly indicates significant flooding and damage during the event. Despite the satellite imagery being captured after the floodwaters receded, it still confirms some damage and flooding signs. The extent of flooding is maintained based on text due to overwhelming evidence from tweets. Damage severity has been slightly boosted based on visible evidence of structural damage from the imagery, despite some visuals showing no damage at all, where the internal damage not visible from the aerial perspective remains valid.",
+          "natural_language_summary": "During Hurricane Harvey (August 25-31, 2017), ZIP 77546 experienced severe and widespread impact characterized by numerous Twitter reports of 'historic flooding' and significant structural damage. Visual analysis confirmed flooding through sediment deposits and structural damage through collapsed buildings and debris, albeit post-event imagery showed some areas may have dried out before capture. The conflicting visuals were resolved by trusting text for flood extent due to consistent reporting while allowing visual observations of damage to provide a basis for boosting the damage severity estimate.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: During Hurricane Harvey (August 25-31, 2017), ZIP 77546 experienced severe and widespread impact characterized by numerous Twitter reports of 'historic flooding' and significant structural damage. Visual analysis confirmed flooding through sediment deposits and structural damage through collapsed buildings and debris, albeit post-event imagery showed some areas may have dried out before capture. The conflicting visuals were resolved by trusting text for flood extent due to consistent reporting while allowing visual observations of damage to provide a basis for boosting the damage severity estimate.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901086383942639617, 901323184695382017, 901377628594196481, 901377762476392449, 901479837122125825\nReasoning: The text analysis clearly indicates significant flooding and damage during the event. Despite the satellite imagery being captured after the floodwaters receded, it still confirms some damage and flooding signs. The extent of flooding is maintained based on text due to overwhelming evidence from tweets. Damage severity has been slightly boosted based on visible evidence of structural damage from the imagery, despite some visuals showing no damage at all, where the internal damage not visible from the aerial perspective remains valid.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 80.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.946,
+        "max_depth_m": 31.563,
+        "flooded_pct": 47.01,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.474709980518752
+      }
+    },
+    {
+      "query_id": 16,
+      "query": {
+        "zip": "77033",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906567125384364032",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77033",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 25.0,
+            "damage_severity_pct": 50.0,
+            "confidence": 0.75
+          },
+          "conflicts": [
+            "Visual observations indicate structural damage and flood evidence, but not all imagery confirms damage.",
+            "Text analysis consistently reports house damage, while some visual tiles showed no flood evidence."
+          ],
+          "conflict_resolution": "Flood extent is based solely on text as visual evidence varies. For damage severity, the visual evidence of structural damage in multiple images boosts the estimate derived from text.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906567125384364032",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "9-10-2017_Ortho_ColorBalance_tile_024_015",
+              "9-10-2017_Ortho_ColorBalance_tile_029_004",
+              "9-10-2017_Ortho_ColorBalance_tile_023_004",
+              "9-10-2017_Ortho_ColorBalance_tile_029_023"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis reveals significant reports of house damage and flood impact. The visual analysis confirms some structural damage and flood indicators, though not universally. In line with critical fusion rules, I prioritized the textual evidence for flood extent and leveraged the visual evidence to boost the damage estimate, resulting in a comprehensive damage assessment.",
+          "natural_language_summary": "Between September 4th and September 10th, 2017, ZIP code 77033 experienced widespread reports of house damage due to Hurricane Harvey. Despite some imagery showing no flooding, strong textual evidence supports a 25% flood extent. Damage severity is boosted to 50% based on visual cues of structural damage and debris observed in aerial imagery.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between September 4th and September 10th, 2017, ZIP code 77033 experienced widespread reports of house damage due to Hurricane Harvey. Despite some imagery showing no flooding, strong textual evidence supports a 25% flood extent. Damage severity is boosted to 50% based on visual cues of structural damage and debris observed in aerial imagery.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: The text analysis reveals significant reports of house damage and flood impact. The visual analysis confirms some structural damage and flood indicators, though not universally. In line with critical fusion rules, I prioritized the textual evidence for flood extent and leveraged the visual evidence to boost the damage estimate, resulting in a comprehensive damage assessment.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 25.0,
+        "damage_severity_pct": 50.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.632,
+        "max_depth_m": 36.334,
+        "flooded_pct": 52.18,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.2648422239165151
+      }
+    },
+    {
+      "query_id": 17,
+      "query": {
+        "zip": "77521",
+        "start_date": "2017-08-27",
+        "end_date": "2017-09-02",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901629053211480066",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 3,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77521",
+          "time_window": {
+            "start": "2017-08-27",
+            "end": "2017-09-02"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 80.0,
+            "confidence": 0.9
+          },
+          "conflicts": [
+            "Visual analysis showed no flood evidence while text analysis reported severe flooding.",
+            "Visual analysis indicated no structural damage while text analysis reported substantial damage."
+          ],
+          "conflict_resolution": "For flood extent, I relied on the text analysis indicating 85% of the area was affected by floodwaters despite visual assessments showing no flooding (as floodwaters had receded). For damage severity, I maintained the text estimate of 80% as the visual analysis found no damage, which does not negate the likelihood of hidden internal damage reported in the text.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901629053211480066",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901952250620379136",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [],
+            "sensor_ids": []
+          },
+          "reasoning": "The text analysis revealed extensive flooding and significant damage claims during the hurricane, supported by numerous real-time reports from residents. Conversely, the visual analysis conducted 3-4 days later showed no evidence of flooding or structural damage, likely due to the timing of the imagery capture after the peak flooding event. As such, I prioritized the text data for both flood extent and damage estimates, while recognizing visual data has limitations in reflecting internal damage.",
+          "natural_language_summary": "During Hurricane Harvey from August 27 to September 2, 2017, ZIP code 77521 experienced extensive flooding and significant structural damage according to real-time Twitter reports. Estimates indicate that approximately 85% of the area was affected by floodwaters, with an average structural damage severity of 80%. However, it's important to note that visual analysis conducted 3-4 days later showed no visible evidence of flooding or structural damage, necessitating reliance on text data due to the timing of the imagery capture.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: During Hurricane Harvey from August 27 to September 2, 2017, ZIP code 77521 experienced extensive flooding and significant structural damage according to real-time Twitter reports. Estimates indicate that approximately 85% of the area was affected by floodwaters, with an average structural damage severity of 80%. However, it's important to note that visual analysis conducted 3-4 days later showed no visible evidence of flooding or structural damage, necessitating reliance on text data due to the timing of the imagery capture.\nDamage Estimate: N/A%\nConfidence: 0.9\nCited Tweets: 901629053211480066, 901849278003372034, 901917030970003457, 901917813392199684, 901952108655775744\nReasoning: The text analysis revealed extensive flooding and significant damage claims during the hurricane, supported by numerous real-time reports from residents. Conversely, the visual analysis conducted 3-4 days later showed no evidence of flooding or structural damage, likely due to the timing of the imagery capture after the peak flooding event. As such, I prioritized the text data for both flood extent and damage estimates, while recognizing visual data has limitations in reflecting internal damage.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.9,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 80.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.763,
+        "max_depth_m": 33.632,
+        "flooded_pct": 63.99,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.4173400324576174
+      }
+    },
+    {
+      "query_id": 18,
+      "query": {
+        "zip": "77013",
+        "start_date": "2017-08-29",
+        "end_date": "2017-09-04",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "902711251444400133",
+          "902835549135917056",
+          "902889458860785664",
+          "902910691132280832",
+          "902933605168685056",
+          "902946518239387648",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904445834288406529",
+          "904750989122703361",
+          "904837837140484096"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77013",
+          "time_window": {
+            "start": "2017-08-29",
+            "end": "2017-09-04"
+          },
+          "estimates": {
+            "flood_extent_pct": 75.0,
+            "damage_severity_pct": 85.0,
+            "confidence": 0.9
+          },
+          "conflicts": [],
+          "conflict_resolution": "No disputes between text and visual; visual observations confirmed the severity of text reports, allowing for a boost in damage severity.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "902711251444400133",
+              "902835549135917056",
+              "902889458860785664",
+              "902910691132280832",
+              "902933605168685056",
+              "902946518239387648",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904445834288406529",
+              "904750989122703361",
+              "904837837140484096"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0951800w294630n",
+              "20170831bC0951630w294630n",
+              "20170831bC0951500w294630n",
+              "20170831bC0951330w294630n",
+              "20170831bC0951200w294630n",
+              "20170831bC0951800w294800n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "Text analysis highlighted significant flooding and damage in ZIP 77013 during the specified time window. Visual analysis supported this by providing evidence of structural damage and residual flood indicators such as sediment and debris. While the visual data captured flooding evidence potentially after waters receded, it confirmed the severe conditions described in the text, reinforcing the estimates for flood extent and damage severity. Damage severity was boosted due to visible structural evidence.",
+          "natural_language_summary": "From August 29 to September 4, 2017, ZIP code 77013 faced severe flooding and structural damage due to Hurricane Harvey. Text reports detailed substantial damage, including 'chest level' water in homes. Visual observations corroborated this, showing extensive debris, structural stress, and damaged roofs. The overall assessment estimates that approximately 75% of the area experienced flooding with an 85% severity of structural damage, indicating a highly impacted area in the aftermath of the disaster.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: From August 29 to September 4, 2017, ZIP code 77013 faced severe flooding and structural damage due to Hurricane Harvey. Text reports detailed substantial damage, including 'chest level' water in homes. Visual observations corroborated this, showing extensive debris, structural stress, and damaged roofs. The overall assessment estimates that approximately 75% of the area experienced flooding with an 85% severity of structural damage, indicating a highly impacted area in the aftermath of the disaster.\nDamage Estimate: N/A%\nConfidence: 0.9\nCited Tweets: 902711251444400133, 902835549135917056, 902889458860785664, 902910691132280832, 902933605168685056\nReasoning: Text analysis highlighted significant flooding and damage in ZIP 77013 during the specified time window. Visual analysis supported this by providing evidence of structural damage and residual flood indicators such as sediment and debris. While the visual data captured flooding evidence potentially after waters receded, it confirmed the severe conditions described in the text, reinforcing the estimates for flood extent and damage severity. Damage severity was boosted due to visible structural evidence.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.9,
+        "flood_extent_pct": 75.0,
+        "damage_severity_pct": 85.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 5.225,
+        "max_depth_m": 56.721,
+        "flooded_pct": 73.01,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.14120954704849284
+      }
+    },
+    {
+      "query_id": 19,
+      "query": {
+        "zip": "77486",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901479837122125825",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901859997184802816",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77486",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 75.0,
+            "confidence": 0.85
+          },
+          "conflicts": [
+            "Visual analysis shows some flooding but also areas without visible flooding, conflicting with the high flooding reports in Text.",
+            "Visual evidence indicates minimal structural damage, whereas Text reports extensive flood damage."
+          ],
+          "conflict_resolution": "Flood extent is derived solely from text as it confirms widespread flooding despite some visual evidence showing dry areas. Damage severity is boosted by visual confirmation of minor roof damage and debris.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901479837122125825",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901859997184802816",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0953600w294630n",
+              "20170831bC0950730w294930n",
+              "20170831bC0953430w294800n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The Text Analysis indicates a high level of flooding and severe damage from Hurricane Harvey based on numerous reports from residents during the event. The Visual Analysis provides partial confirmation of flooding with some minor structural damage observed. While some visuals show dry areas causing potential conflict with text reports, the overall evidence supports the text estimates more strongly. Hence, flood extent is retained from text while minor visual damage is used to slightly boost structural damage estimates where applicable.",
+          "natural_language_summary": "During Hurricane Harvey from August 26 to September 1, 2017, ZIP 77486 faced historic flooding as reported by residents, with a significant percentage of the area flooded and considerable structural damage noted. Although some areas appeared dry in aerial imagery, the overall sentiment from text sources suggests widespread inundation and extensive damage due to the unprecedented nature of the flood event.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: During Hurricane Harvey from August 26 to September 1, 2017, ZIP 77486 faced historic flooding as reported by residents, with a significant percentage of the area flooded and considerable structural damage noted. Although some areas appeared dry in aerial imagery, the overall sentiment from text sources suggests widespread inundation and extensive damage due to the unprecedented nature of the flood event.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901377628594196481, 901377762476392449, 901479837122125825, 901629053211480066, 901826476210876417\nReasoning: The Text Analysis indicates a high level of flooding and severe damage from Hurricane Harvey based on numerous reports from residents during the event. The Visual Analysis provides partial confirmation of flooding with some minor structural damage observed. While some visuals show dry areas causing potential conflict with text reports, the overall evidence supports the text estimates more strongly. Hence, flood extent is retained from text while minor visual damage is used to slightly boost structural damage estimates where applicable.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 75.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 5.791,
+        "max_depth_m": 43.492,
+        "flooded_pct": 56.72,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 20,
+      "query": {
+        "zip": "77630",
+        "start_date": "2017-08-29",
+        "end_date": "2017-09-04",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "902388226442264576",
+          "902835549135917056",
+          "902855359995539457",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903112917180178432",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904445834288406529",
+          "904750989122703361",
+          "904837837140484096"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "zip": "77630",
+          "time_window": {
+            "start": "2017-08-29",
+            "end": "2017-09-04"
+          },
+          "estimates": {
+            "flood_extent_pct": 50.0,
+            "damage_severity_pct": 70.0,
+            "confidence": 0.75
+          },
+          "conflicts": [
+            "Visual assessments show varying degrees of structural damage, but some images report no visible damage despite confirmed text reports of severe damage.",
+            "Text indicates significant flooding impact, while some visual analyses show no visible standing water."
+          ],
+          "conflict_resolution": "Flood extent was trusted solely from text as visuals were taken post-event with water receded. Visual assessments showing structural damage were used to boost the damage severity percentage.",
+          "evidence_refs": {
+            "tweet_ids": [
+              "902388226442264576",
+              "902835549135917056",
+              "902855359995539457",
+              "903081533124247553",
+              "903112917180178432",
+              "903399005224357889",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "imagery_tile_ids": [
+              "20170831bC0953600w294630n",
+              "20170831bC0951500w294800n",
+              "20170831bC0953600w294200n",
+              "20170831bC0950730w294930n",
+              "20170831bC0953430w294800n",
+              "20170831bC0952400w294800n"
+            ],
+            "sensor_ids": []
+          },
+          "reasoning": "The flooding extent estimate was derived strictly from text analysis due to the timing of the visual captures, which indicated cases of structural damage. I used the visuals to enhance the damage severity percentage as they confirmed the presence of debris and damages not explicitly detailed in text reports.",
+          "natural_language_summary": "Between August 29 and September 4, 2017, ZIP code 77630 experienced significant flooding and damage due to Hurricane Harvey. Reports on social media detailed substantial flooding and restricted access due to water intrusion into homes. Visuals captured several days later confirmed the aftermath with visible roof damage and debris, leading to an increase in the estimated structural damage severity.",
+          "fusion_method": "llm"
+        },
+        "formatted": "Summary: Between August 29 and September 4, 2017, ZIP code 77630 experienced significant flooding and damage due to Hurricane Harvey. Reports on social media detailed substantial flooding and restricted access due to water intrusion into homes. Visuals captured several days later confirmed the aftermath with visible roof damage and debris, leading to an increase in the estimated structural damage severity.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 902388226442264576, 902835549135917056, 902855359995539457, 903081533124247553, 903112917180178432\nReasoning: The flooding extent estimate was derived strictly from text analysis due to the timing of the visual captures, which indicated cases of structural damage. I used the visuals to enhance the damage severity percentage as they confirmed the presence of debris and damages not explicitly detailed in text reports.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 50.0,
+        "damage_severity_pct": 70.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 6.103,
+        "max_depth_m": 35.576,
+        "flooded_pct": 65.53,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    }
+  ]
+}

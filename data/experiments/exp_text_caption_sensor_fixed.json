@@ -1,0 +1,1976 @@
+{
+  "metadata": {
+    "experiment_name": "exp_text_caption_sensor_fixed",
+    "timestamp": "2025-12-13T19:27:40.308340",
+    "config_path": "config/queries_20_random.json",
+    "config_hash": "6cfe10b1",
+    "settings": {
+      "enable_reranker": true,
+      "enable_geo_boost": false,
+      "filter_negative_captions": false,
+      "dense_top_k": 1000
+    },
+    "total_queries": 20,
+    "summary_stats": {
+      "successful_queries": 20,
+      "failed_queries": 0,
+      "extent_mae": 18.93,
+      "damage_mae": 17.77,
+      "mae": 18.93
+    }
+  },
+  "records": [
+    {
+      "query_id": 1,
+      "query": {
+        "zip": "78412",
+        "start_date": "2017-09-01",
+        "end_date": "2017-09-07",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "903419965331697664",
+          "903422881648054277",
+          "903460810483265540",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903989728726454273",
+          "903992796763348992",
+          "904122831713251328",
+          "904445834288406529",
+          "904487470984830976",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905219842688634882",
+          "905435273726746624",
+          "905450598950109185",
+          "905820640015511552",
+          "905920666096078848"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The provided sensor data for September 10, 2017, shows 0.0 inches of water, indicating that floodwaters had receded significantly by the query time window (September 1-7, 2017), which is after Hurricane Harvey's peak flooding (August 27-28, 2017). This aligns with the critical instruction that sensor data showing 0.0 after peak flooding means water receded. Therefore, the flood extent percentage for the query window is estimated to be low, reflecting residual pooling rather than widespread inundation.\n\nHowever, numerous tweets from within the 78412 ZIP code during this time window consistently report widespread and severe damage *from* Hurricane Harvey. Tweets such as [903656280010711042] describe the damage as 'unbelievable', while multiple tweets (e.g., [903823717926567936], [903834779384254465], [903942638411374592], [903992796763348992]) highlight that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones'. The existence of a 'property damage app' [904122831713251328] and ongoing 'flood damage assessments' by the Department of Neighborhoods [905820640015511552] further underscore the significant structural and property damage in the area due to the flood event. Tweets like [904487470984830976] and [905920666096078848] specifically mention 'Hurricane Harvey House Damage'. Given the description of Harvey as a '1,000-year flood event unprecedented in scale' [903422881648054277], it is reasonable to infer a substantial average damage per building across the ZIP, even if the active flooding had receded. No specific roads were mentioned as impacted or impassable, only a general area 'Fondren and Bissonnet' was mentioned for flood damage assessment [904837837140484096]. There were no 311 calls for this ZIP during the period.",
+          "zip": "78412",
+          "time_window": {
+            "start": "2017-09-01",
+            "end": "2017-09-07"
+          },
+          "estimates": {
+            "flood_extent_pct": 8.0,
+            "damage_severity_pct": 28.0,
+            "roads_impacted": [],
+            "confidence": 0.65
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "903419965331697664",
+              "903422881648054277",
+              "903460810483265540",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903989728726454273",
+              "903992796763348992",
+              "904122831713251328",
+              "904445834288406529",
+              "904487470984830976",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905219842688634882",
+              "905435273726746624",
+              "905450598950109185",
+              "905820640015511552",
+              "905920666096078848"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "In ZIP 78412 between September 1-7, 2017, floodwaters from Hurricane Harvey had largely receded, as indicated by sensor data showing 0.0 inches of water on September 10, 2017. Despite the recession, the area experienced significant and widespread damage from the event. Tweets consistently reported 'unbelievable' and extensive 'Hurricane Harvey House Damage' (e.g., Tweet ID 904487470984830976, 905920666096078848), with 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (e.g., Tweet ID 903823717926567936, 903992796763348992). 'Flood damage assessments' were actively 'in progress' by the Department of Neighborhoods (Tweet ID 905820640015511552), and a property damage reporting app was in use (Tweet ID 904122831713251328), reflecting the severity of the situation. While current flood extent was minimal due to recession, the average damage per building across the ZIP is estimated to be approximately 28% due to the widespread impact of this 'unprecedented' 1,000-year flood event (Tweet ID 903422881648054277). No specific roads were identified as impacted or impassable, and no 311 calls were received for this period."
+        },
+        "formatted": "Summary: In ZIP 78412 between September 1-7, 2017, floodwaters from Hurricane Harvey had largely receded, as indicated by sensor data showing 0.0 inches of water on September 10, 2017. Despite the recession, the area experienced significant and widespread damage from the event. Tweets consistently reported 'unbelievable' and extensive 'Hurricane Harvey House Damage' (e.g., Tweet ID 904487470984830976, 905920666096078848), with 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (e.g., Tweet ID 903823717926567936, 903992796763348992). 'Flood damage assessments' were actively 'in progress' by the Department of Neighborhoods (Tweet ID 905820640015511552), and a property damage reporting app was in use (Tweet ID 904122831713251328), reflecting the severity of the situation. While current flood extent was minimal due to recession, the average damage per building across the ZIP is estimated to be approximately 28% due to the widespread impact of this 'unprecedented' 1,000-year flood event (Tweet ID 903422881648054277). No specific roads were identified as impacted or impassable, and no 311 calls were received for this period.\nDamage Estimate: N/A%\nConfidence: 0.65\nCited Tweets: 903419965331697664, 903422881648054277, 903460810483265540, 903656280010711042, 903823717926567936\nReasoning: The provided sensor data for September 10, 2017, shows 0.0 inches of water, indicating that floodwaters had receded significantly by the query time window (September 1-7, 2017), which is after Hurricane Harvey's peak flooding (August 27-28, 2017). This aligns with the critical instruction that sensor data showing 0.0 after peak flooding means water receded. Therefore, the flood extent percentage for the query window is estimated to be low, reflecting residual pooling rather than widespread inundation.\n\nHowever, numerous tweets from within the 78412 ZIP code during this time window consistently report widespread and severe damage *from* Hurricane Harvey. Tweets such as [903656280010711042] describe the damage as 'unbelievable', while multiple tweets (e.g., [903823717926567936], [903834779384254465], [903942638411374592], [903992796763348992]) highlight that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones'. The existence of a 'property damage app' [904122831713251328] and ongoing 'flood damage assessments' by the Department of Neighborhoods [905820640015511552] further underscore the significant structural and property damage in the area due to the flood event. Tweets like [904487470984830976] and [905920666096078848] specifically mention 'Hurricane Harvey House Damage'. Given the description of Harvey as a '1,000-year flood event unprecedented in scale' [903422881648054277], it is reasonable to infer a substantial average damage per building across the ZIP, even if the active flooding had receded. No specific roads were mentioned as impacted or impassable, only a general area 'Fondren and Bissonnet' was mentioned for flood damage assessment [904837837140484096]. There were no 311 calls for this ZIP during the period.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.65,
+        "flood_extent_pct": 8.0,
+        "damage_severity_pct": 28.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.872,
+        "max_depth_m": 23.461,
+        "flooded_pct": 43.46,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 2,
+      "query": {
+        "zip": "77007",
+        "start_date": "2017-08-25",
+        "end_date": "2017-08-31",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901086383942639617",
+          "901826476210876417",
+          "901849278003372034",
+          "901899756414357508",
+          "901901311779766272",
+          "901901604969959424",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902525075416547328",
+          "902526486233702400",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The sensor data provided is from September 10, 2017, showing 0.0 inches. Given that the query time window is August 25-31, 2017, and Hurricane Harvey's peak flooding was August 27-28, this sensor data indicates that water had receded by September 10, rather than no flooding occurring during the event. Therefore, the flood extent and damage estimates are based entirely on real-time tweet reports from within the specified time window.\n\nTweets confirm widespread and historic flooding in ZIP 77007. Multiple reports specifically mention 'Houston flood 2017 - Waugh drive 77007' (Tweet IDs: 901899756414357508, 901901311779766272) and 'Spotts park and Waugh drive 77007' (Tweet ID: 901901604969959424), indicating specific locations impacted by floodwaters. Other tweets refer to 'historic flooding in Houston area' (Tweet ID: 901826476210876417) and suggest that areas prone to flooding would 'likely flood w/ #Harvey' (Tweet ID: 901952250620379136). The statement 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553) further points to significant impact. Given these widespread reports and specific flooded areas within the ZIP, a substantial portion of the area experienced flooding.\n\nDamage severity is indicated by multiple reports of 'Hurricane Harvey damage' (Tweet ID: 901849278003372034), 'flood damage' to the 'Theater District Houston' (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560) (relevant as reported by users in 77007), and the strong statement 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553). The general context provided by 'Texas Flood Damage From Harvey May Match Katrina' (Tweet IDs: 901917030970003457, 901952108655775744) reinforces the severity. 'Destroyed a lot' suggests that many buildings suffered severe to total damage, leading to a high average damage percentage across all buildings in the ZIP.",
+          "zip": "77007",
+          "time_window": {
+            "start": "2017-08-25",
+            "end": "2017-08-31"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 35.0,
+            "roads_impacted": [
+              "Waugh Drive"
+            ],
+            "confidence": 0.9
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901826476210876417",
+              "901849278003372034",
+              "901899756414357508",
+              "901901311779766272",
+              "901901604969959424",
+              "901917030970003457",
+              "901952108655775744",
+              "901952250620379136",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903081533124247553"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During Hurricane Harvey's peak flooding (August 25-31, 2017), ZIP code 77007 experienced extensive flooding, with an estimated 70% of the area impacted. Roads such as Waugh Drive, and areas like Spotts Park, were specifically reported as flooded. The average damage per building is estimated at 35%, driven by reports of 'historic flooding' and 'Hurricane Harvey destroyed a lot' within the ZIP. While sensor data from September 10 shows water receded, real-time tweets from the event confirm significant water levels and widespread damage."
+        },
+        "formatted": "Summary: During Hurricane Harvey's peak flooding (August 25-31, 2017), ZIP code 77007 experienced extensive flooding, with an estimated 70% of the area impacted. Roads such as Waugh Drive, and areas like Spotts Park, were specifically reported as flooded. The average damage per building is estimated at 35%, driven by reports of 'historic flooding' and 'Hurricane Harvey destroyed a lot' within the ZIP. While sensor data from September 10 shows water receded, real-time tweets from the event confirm significant water levels and widespread damage.\nDamage Estimate: N/A%\nConfidence: 0.9\nCited Tweets: 901826476210876417, 901849278003372034, 901899756414357508, 901901311779766272, 901901604969959424\nReasoning: The sensor data provided is from September 10, 2017, showing 0.0 inches. Given that the query time window is August 25-31, 2017, and Hurricane Harvey's peak flooding was August 27-28, this sensor data indicates that water had receded by September 10, rather than no flooding occurring during the event. Therefore, the flood extent and damage estimates are based entirely on real-time tweet reports from within the specified time window.\n\nTweets confirm widespread and historic flooding in ZIP 77007. Multiple reports specifically mention 'Houston flood 2017 - Waugh drive 77007' (Tweet IDs: 901899756414357508, 901901311779766272) and 'Spotts park and Waugh drive 77007' (Tweet ID: 901901604969959424), indicating specific locations impacted by floodwaters. Other tweets refer to 'historic flooding in Houston area' (Tweet ID: 901826476210876417) and suggest that areas prone to flooding would 'likely flood w/ #Harvey' (Tweet ID: 901952250620379136). The statement 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553) further points to significant impact. Given these widespread reports and specific flooded areas within the ZIP, a substantial portion of the area experienced flooding.\n\nDamage severity is indicated by multiple reports of 'Hurricane Harvey damage' (Tweet ID: 901849278003372034), 'flood damage' to the 'Theater District Houston' (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560) (relevant as reported by users in 77007), and the strong statement 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553). The general context provided by 'Texas Flood Damage From Harvey May Match Katrina' (Tweet IDs: 901917030970003457, 901952108655775744) reinforces the severity. 'Destroyed a lot' suggests that many buildings suffered severe to total damage, leading to a high average damage percentage across all buildings in the ZIP.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.9,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 35.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 8.444,
+        "max_depth_m": 51.995,
+        "flooded_pct": 37.79,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.15453957262033471
+      }
+    },
+    {
+      "query_id": 3,
+      "query": {
+        "zip": "77008",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902388226442264576",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The query time window (2017-08-26 to 2017-09-01) aligns with the peak flooding period of Hurricane Harvey. Numerous tweets confirm widespread and historic flooding within ZIP 77008 during this time. Tweet [901826476210876417] reports 'Harvey unleashes historic flooding in Houston area,' while [902835549135917056] mentions 'historic flooding,' and [903399005224357889] characterizes Harvey as a '1,000-year flood event unprecedented in scale.' The phrase 'till the flood end' in tweet [901629053211480066] also indicates active flooding. This strongly suggests a significant portion of the ZIP experienced inundation.\n\nDamage severity is consistently reported as very high. Tweet [901849278003372034] directly mentions 'Hurricane Harvey damage.' Several tweets, including [901917030970003457] and [901952108655775744], state that 'Texas Flood Damage From Harvey May Match Katrina,' indicating severe and widespread destruction. Specific reports like 'Theater District Houston suffers flood damage from Harvey' ([902889458860785664], [902933605168685056], [902967918874562560]) confirm structural damage. Further, [903081533124247553] states 'Hurricane Harvey destroyed a lot,' and [903656280010711042] describes 'The damage from Harvey is unbelievable.' These indicate substantial average damage per building.\n\nNo specific roads within ZIP 77008 were identified as impacted by name. The sensor data from 2017-09-10 showing 0.0 inches indicates that water had receded by that later date, not that flooding did not occur during the event, which is consistent with the widespread reports of flooding from the active event period.",
+          "zip": "77008",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 75.0,
+            "damage_severity_pct": 40.0,
+            "roads_impacted": [],
+            "confidence": 0.85
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902388226442264576",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the peak of Hurricane Harvey (August 26 - September 1, 2017), ZIP 77008 experienced widespread and historic flooding, impacting an estimated 75% of the area. Tweets describe 'historic flooding' ([901826476210876417], [902835549135917056]) and characterize the event as a '1,000-year flood unprecedented in scale' ([903399005224357889]). The damage severity was exceptionally high, with reports indicating 'Hurricane Harvey damage' ([901849278003372034]) that 'may match Katrina' ([901917030970003457], [901952108655775744]). Specific mentions include 'Theater District Houston suffers flood damage' ([902889458860785664], [902933605168685056], [902967918874562560]) and general statements that 'Hurricane Harvey destroyed a lot' ([903081533124247553]) and 'The damage from Harvey is unbelievable' ([903656280010711042]). Based on these accounts, the average structural damage per building is estimated at 40%. No specific roads were identified as impacted. Sensor data from September 10, 2017, showing 0.0 inches, indicates that floodwaters had receded by that date."
+        },
+        "formatted": "Summary: During the peak of Hurricane Harvey (August 26 - September 1, 2017), ZIP 77008 experienced widespread and historic flooding, impacting an estimated 75% of the area. Tweets describe 'historic flooding' ([901826476210876417], [902835549135917056]) and characterize the event as a '1,000-year flood unprecedented in scale' ([903399005224357889]). The damage severity was exceptionally high, with reports indicating 'Hurricane Harvey damage' ([901849278003372034]) that 'may match Katrina' ([901917030970003457], [901952108655775744]). Specific mentions include 'Theater District Houston suffers flood damage' ([902889458860785664], [902933605168685056], [902967918874562560]) and general statements that 'Hurricane Harvey destroyed a lot' ([903081533124247553]) and 'The damage from Harvey is unbelievable' ([903656280010711042]). Based on these accounts, the average structural damage per building is estimated at 40%. No specific roads were identified as impacted. Sensor data from September 10, 2017, showing 0.0 inches, indicates that floodwaters had receded by that date.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417, 901849278003372034\nReasoning: The query time window (2017-08-26 to 2017-09-01) aligns with the peak flooding period of Hurricane Harvey. Numerous tweets confirm widespread and historic flooding within ZIP 77008 during this time. Tweet [901826476210876417] reports 'Harvey unleashes historic flooding in Houston area,' while [902835549135917056] mentions 'historic flooding,' and [903399005224357889] characterizes Harvey as a '1,000-year flood event unprecedented in scale.' The phrase 'till the flood end' in tweet [901629053211480066] also indicates active flooding. This strongly suggests a significant portion of the ZIP experienced inundation.\n\nDamage severity is consistently reported as very high. Tweet [901849278003372034] directly mentions 'Hurricane Harvey damage.' Several tweets, including [901917030970003457] and [901952108655775744], state that 'Texas Flood Damage From Harvey May Match Katrina,' indicating severe and widespread destruction. Specific reports like 'Theater District Houston suffers flood damage from Harvey' ([902889458860785664], [902933605168685056], [902967918874562560]) confirm structural damage. Further, [903081533124247553] states 'Hurricane Harvey destroyed a lot,' and [903656280010711042] describes 'The damage from Harvey is unbelievable.' These indicate substantial average damage per building.\n\nNo specific roads within ZIP 77008 were identified as impacted by name. The sensor data from 2017-09-10 showing 0.0 inches indicates that water had receded by that later date, not that flooding did not occur during the event, which is consistent with the widespread reports of flooding from the active event period.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 75.0,
+        "damage_severity_pct": 40.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.31,
+        "max_depth_m": 38.238,
+        "flooded_pct": 54.44,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.1665957908480095
+      }
+    },
+    {
+      "query_id": 4,
+      "query": {
+        "zip": "77018",
+        "start_date": "2017-08-28",
+        "end_date": "2017-09-03",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901976639000760320",
+          "902555174073499650",
+          "902835549135917056",
+          "902889458860785664",
+          "902910691132280832",
+          "902933605168685056",
+          "902946518239387648",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903460810483265540",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904445834288406529"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Analysis of tweets confirms widespread and severe impact from Hurricane Harvey in ZIP 77018. Multiple reports indicate 'historic flooding' and 'unbelievable damage' (Tweet IDs: 902835549135917056, 903656280010711042). The 'Theater District Houston suffers flood damage' was reported multiple times (e.g., Tweet IDs: 902889458860785664, 902933605168685056). Tweets also explicitly state that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (e.g., Tweet IDs: 903823717926567936, 903992796763348992), indicating a very broad flood extent. The phrase 'Harvey spared few' (Tweet ID: 903028781920788480) further supports a high percentage of damaged properties. One tweet reports '77018 is without power and accessible from anywhere. No trucks to be found' (Tweet ID: 902555174073499650), suggesting significant infrastructure disruption including power outages and practical inaccessibility despite the confusing 'accessible from anywhere' phrasing. The sensor data for 2017-09-10 showing 0.0 inches indicates water had receded by that date, but does not contradict the severe flooding reported during the active event period.",
+          "zip": "77018",
+          "time_window": {
+            "start": "2017-08-28",
+            "end": "2017-09-03"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 50.0,
+            "roads_impacted": [],
+            "confidence": 0.85
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901976639000760320",
+              "902555174073499650",
+              "902835549135917056",
+              "902889458860785664",
+              "902910691132280832",
+              "902933605168685056",
+              "902946518239387648",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903460810483265540",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904445834288406529"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During August 28 to September 3, 2017, ZIP 77018 experienced severe and widespread flooding from Hurricane Harvey. Tweets confirm 'historic flooding' and 'unbelievable damage' (Tweet IDs: 902835549135917056, 903656280010711042), with significant water damage extending 'far beyond flood zones' (e.g., Tweet IDs: 903823717926567936, 903992796763348992). The Theater District Houston notably suffered flood damage (e.g., Tweet IDs: 902889458860785664, 902933605168685056). Reports indicate that 'Harvey spared few' (Tweet ID: 903028781920788480) and 'destroyed a lot' (Tweet ID: 903081533124247553), suggesting extensive structural damage. Power outages and practical inaccessibility were also reported (Tweet ID: 902555174073499650). Based on these reports, an estimated 85% of the ZIP area was affected by floodwaters, with an average damage severity of 50% per building. Sensor data from September 10 showing 0.0 inches indicates water had receded by that point."
+        },
+        "formatted": "Summary: During August 28 to September 3, 2017, ZIP 77018 experienced severe and widespread flooding from Hurricane Harvey. Tweets confirm 'historic flooding' and 'unbelievable damage' (Tweet IDs: 902835549135917056, 903656280010711042), with significant water damage extending 'far beyond flood zones' (e.g., Tweet IDs: 903823717926567936, 903992796763348992). The Theater District Houston notably suffered flood damage (e.g., Tweet IDs: 902889458860785664, 902933605168685056). Reports indicate that 'Harvey spared few' (Tweet ID: 903028781920788480) and 'destroyed a lot' (Tweet ID: 903081533124247553), suggesting extensive structural damage. Power outages and practical inaccessibility were also reported (Tweet ID: 902555174073499650). Based on these reports, an estimated 85% of the ZIP area was affected by floodwaters, with an average damage severity of 50% per building. Sensor data from September 10 showing 0.0 inches indicates water had receded by that point.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 901976639000760320, 902555174073499650, 902835549135917056, 902889458860785664, 902910691132280832\nReasoning: Analysis of tweets confirms widespread and severe impact from Hurricane Harvey in ZIP 77018. Multiple reports indicate 'historic flooding' and 'unbelievable damage' (Tweet IDs: 902835549135917056, 903656280010711042). The 'Theater District Houston suffers flood damage' was reported multiple times (e.g., Tweet IDs: 902889458860785664, 902933605168685056). Tweets also explicitly state that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (e.g., Tweet IDs: 903823717926567936, 903992796763348992), indicating a very broad flood extent. The phrase 'Harvey spared few' (Tweet ID: 903028781920788480) further supports a high percentage of damaged properties. One tweet reports '77018 is without power and accessible from anywhere. No trucks to be found' (Tweet ID: 902555174073499650), suggesting significant infrastructure disruption including power outages and practical inaccessibility despite the confusing 'accessible from anywhere' phrasing. The sensor data for 2017-09-10 showing 0.0 inches indicates water had receded by that date, but does not contradict the severe flooding reported during the active event period.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 50.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.642,
+        "max_depth_m": 32.887,
+        "flooded_pct": 49.47,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.22765991656631632
+      }
+    },
+    {
+      "query_id": 5,
+      "query": {
+        "zip": "77035",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Multiple tweets confirmed in ZIP 77035 indicate widespread and significant flooding during the specified time window. Tweet ID 901826476210876417 and 902835549135917056 describe 'historic flooding in Houston area', setting a severe context. More specifically, Tweet ID 903081533124247553 originating from 77035 mentions '#floodingcity', directly confirming inundation within the ZIP. Tweet ID 903399005224357889 refers to Harvey as a '1,000-year flood event', underscoring the severity. Based on this, a high flood extent is estimated. The sensor data from 2017-09-10 (sensor IDs 100, 105, 110) showing 0.0 inches indicates that water had receded by that date, which is after the query time window and the peak flooding, and therefore does not contradict the reports of severe flooding during the event.\n\nRegarding damage severity, Tweet ID 903081533124247553 from within ZIP 77035 explicitly states 'Hurricane Harvey destroyed a lot #floodingcity', indicating substantial structural damage. General mentions of 'Hurricane Harvey damage' (Tweet ID 901849278003372034) and 'The damage from Harvey is unbelievable' (Tweet ID 903656280010711042) from within the ZIP, while qualitative, support widespread property damage. Although no specific count of destroyed buildings is provided, the strong language suggests a considerable average damage percentage across buildings in the area. There were no specific roads mentioned as impacted by name, and no 311 calls were found for this ZIP and time window.",
+          "zip": "77035",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 80.0,
+            "damage_severity_pct": 40.0,
+            "roads_impacted": [],
+            "confidence": 0.75
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901826476210876417",
+              "902835549135917056",
+              "903081533124247553",
+              "903399005224357889",
+              "901849278003372034",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During Hurricane Harvey (August 26 - September 1, 2017), ZIP 77035 experienced widespread and historic flooding. Tweets from the area, such as ID 903081533124247553, confirmed '#floodingcity' conditions, consistent with broader reports of 'historic flooding' (Tweet IDs 901826476210876417, 902835549135917056) and Harvey being a '1,000-year flood event' (Tweet ID 903399005224357889). The flood extent is estimated at 80% of the ZIP area. Structural damage was significant, with Tweet ID 903081533124247553 reporting that 'Hurricane Harvey destroyed a lot #floodingcity', supported by general statements of 'unbelievable damage' (Tweet ID 903656280010711042). The average damage severity per building is estimated at 40%. No specific road impacts were reported, and 311 calls were not available. Sensor data from September 10, 2017, showing 0.0 inches (IDs 100, 105, 110) indicates water had receded post-event."
+        },
+        "formatted": "Summary: During Hurricane Harvey (August 26 - September 1, 2017), ZIP 77035 experienced widespread and historic flooding. Tweets from the area, such as ID 903081533124247553, confirmed '#floodingcity' conditions, consistent with broader reports of 'historic flooding' (Tweet IDs 901826476210876417, 902835549135917056) and Harvey being a '1,000-year flood event' (Tweet ID 903399005224357889). The flood extent is estimated at 80% of the ZIP area. Structural damage was significant, with Tweet ID 903081533124247553 reporting that 'Hurricane Harvey destroyed a lot #floodingcity', supported by general statements of 'unbelievable damage' (Tweet ID 903656280010711042). The average damage severity per building is estimated at 40%. No specific road impacts were reported, and 311 calls were not available. Sensor data from September 10, 2017, showing 0.0 inches (IDs 100, 105, 110) indicates water had receded post-event.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 901826476210876417, 902835549135917056, 903081533124247553, 903399005224357889, 901849278003372034\nReasoning: Multiple tweets confirmed in ZIP 77035 indicate widespread and significant flooding during the specified time window. Tweet ID 901826476210876417 and 902835549135917056 describe 'historic flooding in Houston area', setting a severe context. More specifically, Tweet ID 903081533124247553 originating from 77035 mentions '#floodingcity', directly confirming inundation within the ZIP. Tweet ID 903399005224357889 refers to Harvey as a '1,000-year flood event', underscoring the severity. Based on this, a high flood extent is estimated. The sensor data from 2017-09-10 (sensor IDs 100, 105, 110) showing 0.0 inches indicates that water had receded by that date, which is after the query time window and the peak flooding, and therefore does not contradict the reports of severe flooding during the event.\n\nRegarding damage severity, Tweet ID 903081533124247553 from within ZIP 77035 explicitly states 'Hurricane Harvey destroyed a lot #floodingcity', indicating substantial structural damage. General mentions of 'Hurricane Harvey damage' (Tweet ID 901849278003372034) and 'The damage from Harvey is unbelievable' (Tweet ID 903656280010711042) from within the ZIP, while qualitative, support widespread property damage. Although no specific count of destroyed buildings is provided, the strong language suggests a considerable average damage percentage across buildings in the area. There were no specific roads mentioned as impacted by name, and no 311 calls were found for this ZIP and time window.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 80.0,
+        "damage_severity_pct": 40.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.56,
+        "max_depth_m": 27.156,
+        "flooded_pct": 49.95,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.2595580089271433
+      }
+    },
+    {
+      "query_id": 6,
+      "query": {
+        "zip": "77025",
+        "start_date": "2017-08-25",
+        "end_date": "2017-08-31",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901086383942639617",
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901916864099516416",
+          "901917030970003457",
+          "901917813392199684",
+          "901920412006838272",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Analysis of tweets confirms widespread and historic flooding in ZIP 77025 during the specified time window, consistent with Hurricane Harvey's peak impact. Multiple reports mention 'historic flooding' (Tweet ID: 901826476210876417) and that Harvey 'destroyed a lot' (Tweet ID: 903081533124247553). One tweet explicitly mentions significant flood damage in the adjacent area of Bellaire, stating 'Harvey spared few' (Tweet ID: 903028781920788480), implying similar widespread and severe impact in 77025. General mentions of 'Hurricane Harvey damage' (Tweet IDs: 901086383942639617, 901849278003372034, 901917030970003457, 901952108655775744) further corroborate the impact. Power outages were also reported (Tweet IDs: 901916864099516416, 901920412006838272). The sensor data from 2017-09-10 showing 0.0 inches indicates that floodwaters had receded by that date, which is after the peak flooding period of Aug 27-28 and the end of the query time window, and does not contradict the reports of severe flooding during the event.",
+          "zip": "77025",
+          "time_window": {
+            "start": "2017-08-25",
+            "end": "2017-08-31"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 40.0,
+            "roads_impacted": [],
+            "confidence": 0.8
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901086383942639617",
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901916864099516416",
+              "901917030970003457",
+              "901917813392199684",
+              "901920412006838272",
+              "901952108655775744",
+              "901952250620379136",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "ZIP code 77025 experienced widespread and historic flooding during Hurricane Harvey, with an estimated 85% of the area inundated. Tweets indicated 'historic flooding' (Tweet ID: 901826476210876417) and that the event 'destroyed a lot' (Tweet ID: 903081533124247553) of properties. Reports from an adjacent area stating 'Harvey spared few' (Tweet ID: 903028781920788480) suggest significant structural damage across the region. Based on these reports of severe and widespread destruction, the average damage per building within the ZIP code is estimated at 40%. No specific roads were mentioned as impacted, but power outages were reported (Tweet IDs: 901916864099516416, 901920412006838272). Sensor data from September 10, 2017, showing 0.0 inches confirms that floodwaters had receded after the event's peak."
+        },
+        "formatted": "Summary: ZIP code 77025 experienced widespread and historic flooding during Hurricane Harvey, with an estimated 85% of the area inundated. Tweets indicated 'historic flooding' (Tweet ID: 901826476210876417) and that the event 'destroyed a lot' (Tweet ID: 903081533124247553) of properties. Reports from an adjacent area stating 'Harvey spared few' (Tweet ID: 903028781920788480) suggest significant structural damage across the region. Based on these reports of severe and widespread destruction, the average damage per building within the ZIP code is estimated at 40%. No specific roads were mentioned as impacted, but power outages were reported (Tweet IDs: 901916864099516416, 901920412006838272). Sensor data from September 10, 2017, showing 0.0 inches confirms that floodwaters had receded after the event's peak.\nDamage Estimate: N/A%\nConfidence: 0.8\nCited Tweets: 901086383942639617, 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417\nReasoning: Analysis of tweets confirms widespread and historic flooding in ZIP 77025 during the specified time window, consistent with Hurricane Harvey's peak impact. Multiple reports mention 'historic flooding' (Tweet ID: 901826476210876417) and that Harvey 'destroyed a lot' (Tweet ID: 903081533124247553). One tweet explicitly mentions significant flood damage in the adjacent area of Bellaire, stating 'Harvey spared few' (Tweet ID: 903028781920788480), implying similar widespread and severe impact in 77025. General mentions of 'Hurricane Harvey damage' (Tweet IDs: 901086383942639617, 901849278003372034, 901917030970003457, 901952108655775744) further corroborate the impact. Power outages were also reported (Tweet IDs: 901916864099516416, 901920412006838272). The sensor data from 2017-09-10 showing 0.0 inches indicates that floodwaters had receded by that date, which is after the peak flooding period of Aug 27-28 and the end of the query time window, and does not contradict the reports of severe flooding during the event.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.8,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 40.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.085,
+        "max_depth_m": 30.895,
+        "flooded_pct": 52.1,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.30397725375174384
+      }
+    },
+    {
+      "query_id": 7,
+      "query": {
+        "zip": "77088",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902388226442264576",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The analysis of tweets confirmed within ZIP 77088 indicates widespread and severe impact from Hurricane Harvey during the time window of August 26 to September 1, 2017. Multiple reports mention 'historic flooding' (Tweet IDs: 901826476210876417, 902835549135917056) and 'unprecedented' scale (Tweet ID: 903399005224357889). Specific mentions of 'Hurricane Harvey damage' (Tweet ID: 901849278003372034), 'flood damage' (Tweet IDs: 901917030970003457, 901952108655775744, 902889458860785664, 902933605168685056, 902967918874562560), and even that 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553) and 'The damage from Harvey is unbelievable' (Tweet ID: 903656280010711042) directly confirm significant structural consequences within the ZIP. While sensor data from September 10 shows 0.0 inches of water, this indicates water recession *after* the peak flooding event (Aug 27-28), not an absence of flooding during the queried period, as per critical instructions. No 311 calls or FEMA prior knowledge were available for this specific ZIP and time.",
+          "zip": "77088",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 80.0,
+            "damage_severity_pct": 45.0,
+            "roads_impacted": [
+              "Major roads",
+              "Minor roads"
+            ],
+            "confidence": 0.75
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902388226442264576",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "ZIP 77088 experienced widespread and historic flooding from Hurricane Harvey between August 26 and September 1, 2017. Tweets confirm 'historic flooding' (901826476210876417) and describe the event as 'unprecedented' (903399005224357889). Reports specifically mention 'Hurricane Harvey damage' (901849278003372034), with claims that Harvey 'destroyed a lot' (903081533124247553) and caused 'unbelievable' damage (903656280010711042). This suggests approximately 80% of the ZIP area was affected by floodwaters, leading to an estimated average structural damage of 45% per building. All major and minor roads within the ZIP were likely impacted by the floodwaters."
+        },
+        "formatted": "Summary: ZIP 77088 experienced widespread and historic flooding from Hurricane Harvey between August 26 and September 1, 2017. Tweets confirm 'historic flooding' (901826476210876417) and describe the event as 'unprecedented' (903399005224357889). Reports specifically mention 'Hurricane Harvey damage' (901849278003372034), with claims that Harvey 'destroyed a lot' (903081533124247553) and caused 'unbelievable' damage (903656280010711042). This suggests approximately 80% of the ZIP area was affected by floodwaters, leading to an estimated average structural damage of 45% per building. All major and minor roads within the ZIP were likely impacted by the floodwaters.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 901377628594196481, 901377762476392449, 901629053211480066, 901826476210876417, 901849278003372034\nReasoning: The analysis of tweets confirmed within ZIP 77088 indicates widespread and severe impact from Hurricane Harvey during the time window of August 26 to September 1, 2017. Multiple reports mention 'historic flooding' (Tweet IDs: 901826476210876417, 902835549135917056) and 'unprecedented' scale (Tweet ID: 903399005224357889). Specific mentions of 'Hurricane Harvey damage' (Tweet ID: 901849278003372034), 'flood damage' (Tweet IDs: 901917030970003457, 901952108655775744, 902889458860785664, 902933605168685056, 902967918874562560), and even that 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553) and 'The damage from Harvey is unbelievable' (Tweet ID: 903656280010711042) directly confirm significant structural consequences within the ZIP. While sensor data from September 10 shows 0.0 inches of water, this indicates water recession *after* the peak flooding event (Aug 27-28), not an absence of flooding during the queried period, as per critical instructions. No 311 calls or FEMA prior knowledge were available for this specific ZIP and time.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 80.0,
+        "damage_severity_pct": 45.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.526,
+        "max_depth_m": 24.826,
+        "flooded_pct": 61.6,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.44973104671905617
+      }
+    },
+    {
+      "query_id": 8,
+      "query": {
+        "zip": "77075",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906567125384364032",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The sensor data (sensor IDs 100, 105, 110) from September 10, 2017, shows 0.0 inches, indicating that floodwaters had receded by the end of this query time window. However, numerous tweets from September 4-10, 2017, confirm that significant flooding and damage did occur in ZIP 77075 during Hurricane Harvey's peak (Aug 27-28), with the reports detailing the aftermath of that event.\n\nFor flood extent, tweets mention the 'Houston Flood' (Tweet ID 904696071812784128), 'Fondren and Bissonnet area flood damage assessment' (Tweet ID 904837837140484096), and 'Harvey flooding impact' (Tweet ID 905152576756137984, 905336770635685888). These reports, despite being from after the peak, confirm that a substantial portion of the ZIP was affected by floodwaters during the event. Based on these widespread mentions of flooding and damage across the area, an estimated 30% of the ZIP area was covered by floodwater during the peak event.\n\nFor damage severity, there are multiple explicit mentions of 'Hurricane Harvey House Damage' (Tweet IDs 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) within ZIP 77075. Additionally, tweets discuss 'flood damage assessment' (Tweet IDs 904837837140484096, 905820640015511552), 'damage estimates rise' (Tweet ID 905085480231993344), and a 'Damage Report Feature Now On Harris County Appraisal District App' (Tweet ID 905524226022674436). The frequent and direct reports of residential damage across multiple tweets indicate that a significant number of properties experienced damage. Therefore, an estimated average damage severity of 35% per building in the ZIP is appropriate, reflecting widespread impact.\n\nNo specific roads were mentioned as impacted or closed in the provided reports.",
+          "zip": "77075",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 30.0,
+            "damage_severity_pct": 35.0,
+            "roads_impacted": [],
+            "confidence": 0.8
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906567125384364032",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of September 4-10, 2017, sensors indicated that floodwaters had receded from ZIP 77075. However, numerous on-the-ground reports from tweets confirm that extensive flooding occurred in the area during Hurricane Harvey's peak. Tweets mention a 'Fondren and Bissonnet area flood damage assessment' (Tweet ID 904837837140484096) and general 'Harvey flooding impact' (Tweet ID 905152576756137984, 905336770635685888), suggesting that approximately 30% of the ZIP was inundated at the flood's peak. Damage reports are significant, with multiple tweets explicitly detailing 'Hurricane Harvey House Damage' (Tweet IDs 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and ongoing 'flood damage assessments' (Tweet ID 905820640015511552). This indicates an average damage severity of about 35% per building across the ZIP. No specific road impacts were reported for this timeframe."
+        },
+        "formatted": "Summary: During the period of September 4-10, 2017, sensors indicated that floodwaters had receded from ZIP 77075. However, numerous on-the-ground reports from tweets confirm that extensive flooding occurred in the area during Hurricane Harvey's peak. Tweets mention a 'Fondren and Bissonnet area flood damage assessment' (Tweet ID 904837837140484096) and general 'Harvey flooding impact' (Tweet ID 905152576756137984, 905336770635685888), suggesting that approximately 30% of the ZIP was inundated at the flood's peak. Damage reports are significant, with multiple tweets explicitly detailing 'Hurricane Harvey House Damage' (Tweet IDs 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and ongoing 'flood damage assessments' (Tweet ID 905820640015511552). This indicates an average damage severity of about 35% per building across the ZIP. No specific road impacts were reported for this timeframe.\nDamage Estimate: N/A%\nConfidence: 0.8\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: The sensor data (sensor IDs 100, 105, 110) from September 10, 2017, shows 0.0 inches, indicating that floodwaters had receded by the end of this query time window. However, numerous tweets from September 4-10, 2017, confirm that significant flooding and damage did occur in ZIP 77075 during Hurricane Harvey's peak (Aug 27-28), with the reports detailing the aftermath of that event.\n\nFor flood extent, tweets mention the 'Houston Flood' (Tweet ID 904696071812784128), 'Fondren and Bissonnet area flood damage assessment' (Tweet ID 904837837140484096), and 'Harvey flooding impact' (Tweet ID 905152576756137984, 905336770635685888). These reports, despite being from after the peak, confirm that a substantial portion of the ZIP was affected by floodwaters during the event. Based on these widespread mentions of flooding and damage across the area, an estimated 30% of the ZIP area was covered by floodwater during the peak event.\n\nFor damage severity, there are multiple explicit mentions of 'Hurricane Harvey House Damage' (Tweet IDs 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) within ZIP 77075. Additionally, tweets discuss 'flood damage assessment' (Tweet IDs 904837837140484096, 905820640015511552), 'damage estimates rise' (Tweet ID 905085480231993344), and a 'Damage Report Feature Now On Harris County Appraisal District App' (Tweet ID 905524226022674436). The frequent and direct reports of residential damage across multiple tweets indicate that a significant number of properties experienced damage. Therefore, an estimated average damage severity of 35% per building in the ZIP is appropriate, reflecting widespread impact.\n\nNo specific roads were mentioned as impacted or closed in the provided reports.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.8,
+        "flood_extent_pct": 30.0,
+        "damage_severity_pct": 35.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.141,
+        "max_depth_m": 24.593,
+        "flooded_pct": 65.28,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.33320374920189666
+      }
+    },
+    {
+      "query_id": 9,
+      "query": {
+        "zip": "77048",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906567125384364032",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Sensor data from 2017-09-10 (sensors 100, 105, 110) shows water levels at 0.0 inches, indicating that floodwaters had receded in ZIP 77048 during the time window of September 4-10, 2017. However, numerous tweets from this period consistently report significant, widespread damage from Hurricane Harvey's peak flooding (Aug 27-28). Tweets refer to 'Houston Flood Brings Out the Best' (904696071812784128), 'Harvey - Fondren and Bissonnet area flood damage assessment' (904837837140484096), 'Hurricane Harvey House Damage' (905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872), 'extent of Harvey damage in Houston and Texas' (905435273726746624, 905450598950109185), and ongoing 'flood damage assessments' by the Dept of Neighborhoods (905820640015511552). Harris County also asked residents if their homes were 'damaged in Harvey' via a survey (906567125384364032). The sheer volume of reports on damage and assessments implies that a substantial portion of the ZIP was impacted by flooding during the peak event, leading to significant structural damage to properties. While floodwaters had receded, the damage caused by the prior flooding was still a primary concern. No 311 calls were reported for this period. Roads are assumed to be largely clear of water, but potential underlying damage is possible, although not explicitly reported as impacting traffic.",
+          "zip": "77048",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 50.0,
+            "damage_severity_pct": 25.0,
+            "roads_impacted": [],
+            "confidence": 0.8
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906567125384364032",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "In ZIP 77048 during September 4-10, 2017, sensor data (100, 105, 110) confirmed that floodwaters had receded to 0.0 inches. However, extensive on-the-ground reports from tweets indicate significant and widespread impact from Hurricane Harvey's previous flooding. Numerous tweets explicitly mention 'Hurricane Harvey House Damage' (e.g., 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and ongoing 'flood damage assessments' (904837837140484096, 905820640015511552) across the ZIP, including the Fondren and Bissonnet areas. Harris County also urged residents to report home damage (906567125384364032). This evidence suggests that approximately 50% of the ZIP's area was impacted by flooding during the peak of Harvey, resulting in an estimated average damage of 25% per building. No 311 calls were reported for this period."
+        },
+        "formatted": "Summary: In ZIP 77048 during September 4-10, 2017, sensor data (100, 105, 110) confirmed that floodwaters had receded to 0.0 inches. However, extensive on-the-ground reports from tweets indicate significant and widespread impact from Hurricane Harvey's previous flooding. Numerous tweets explicitly mention 'Hurricane Harvey House Damage' (e.g., 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and ongoing 'flood damage assessments' (904837837140484096, 905820640015511552) across the ZIP, including the Fondren and Bissonnet areas. Harris County also urged residents to report home damage (906567125384364032). This evidence suggests that approximately 50% of the ZIP's area was impacted by flooding during the peak of Harvey, resulting in an estimated average damage of 25% per building. No 311 calls were reported for this period.\nDamage Estimate: N/A%\nConfidence: 0.8\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: Sensor data from 2017-09-10 (sensors 100, 105, 110) shows water levels at 0.0 inches, indicating that floodwaters had receded in ZIP 77048 during the time window of September 4-10, 2017. However, numerous tweets from this period consistently report significant, widespread damage from Hurricane Harvey's peak flooding (Aug 27-28). Tweets refer to 'Houston Flood Brings Out the Best' (904696071812784128), 'Harvey - Fondren and Bissonnet area flood damage assessment' (904837837140484096), 'Hurricane Harvey House Damage' (905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872), 'extent of Harvey damage in Houston and Texas' (905435273726746624, 905450598950109185), and ongoing 'flood damage assessments' by the Dept of Neighborhoods (905820640015511552). Harris County also asked residents if their homes were 'damaged in Harvey' via a survey (906567125384364032). The sheer volume of reports on damage and assessments implies that a substantial portion of the ZIP was impacted by flooding during the peak event, leading to significant structural damage to properties. While floodwaters had receded, the damage caused by the prior flooding was still a primary concern. No 311 calls were reported for this period. Roads are assumed to be largely clear of water, but potential underlying damage is possible, although not explicitly reported as impacting traffic.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.8,
+        "flood_extent_pct": 50.0,
+        "damage_severity_pct": 25.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.405,
+        "max_depth_m": 37.784,
+        "flooded_pct": 65.23,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.3142219596986083
+      }
+    },
+    {
+      "query_id": 10,
+      "query": {
+        "zip": "77009",
+        "start_date": "2017-09-01",
+        "end_date": "2017-09-07",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "903419082963333120",
+          "903419965331697664",
+          "903422881648054277",
+          "903460810483265540",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904122831713251328",
+          "904123475685777409",
+          "904445834288406529",
+          "904837837140484096",
+          "905085480231993344",
+          "905120736003727362",
+          "905152576756137984",
+          "905219842688634882",
+          "905435273726746624",
+          "905450598950109185",
+          "905820640015511552"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Multiple tweets from the query time window (Sept 1-7, 2017) consistently describe Hurricane Harvey as an 'unprecedented' and '1,000-year flood event' with 'unbelievable damage' and 'water damage extended far beyond flood zones'. These reports indicate widespread flooding and significant property damage across Houston, which includes ZIP 77009. Tweets specifically mention 'property damage' and 'flood waters damage Houston businesses', along with ongoing 'flood damage assessments' and the need for a 'property damage app'. While sensor data from September 10 shows 0.0 inches of water, this indicates water had receded by that date, consistent with the peak flooding being in late August, and does not contradict the reports of extensive flooding and damage during the event and its immediate aftermath. The lack of specific details for 77009 (like exact water depths or number of affected buildings) means the flood extent and damage severity percentages are based on the general, but strong, indications of widespread impact for the Houston area as a whole.",
+          "zip": "77009",
+          "time_window": {
+            "start": "2017-09-01",
+            "end": "2017-09-07"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 30.0,
+            "roads_impacted": [],
+            "confidence": 0.6
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "903419082963333120",
+              "903419965331697664",
+              "903422881648054277",
+              "903460810483265540",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904122831713251328",
+              "904123475685777409",
+              "904445834288406529",
+              "904837837140484096",
+              "905085480231993344",
+              "905120736003727362",
+              "905152576756137984",
+              "905219842688634882",
+              "905435273726746624",
+              "905450598950109185",
+              "905820640015511552"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "Based on multiple tweets from the query time window (Sept 1-7, 2017), Harris County ZIP 77009 experienced extensive and unprecedented flooding and property damage due to Hurricane Harvey. Tweets such as [903823717926567936] and [903992796763333120] highlighted that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones.' The event was characterized as a '1,000-year flood event unprecedented in scale' by tweets like [903419082963333120]. Reports also mentioned 'unbelievable damage' (Tweet [903656280010711042]), 'flood waters damage Houston businesses' (Tweet [905120736003727362]), and the ongoing need for 'property damage app' submissions (Tweets [904122831713251328], [904123475685777409]) and 'flood damage assessments' (Tweet [905820640015511552]). While sensor data from September 10, 2017, indicates water had receded (sensor IDs 100, 105, 110 showing 0.0 inches), this does not negate the significant flooding and damage that occurred during the peak of Hurricane Harvey (Aug 27-28) and the immediate aftermath when these reports were made. No specific road impacts within ZIP 77009 were mentioned, nor were there any 311 calls."
+        },
+        "formatted": "Summary: Based on multiple tweets from the query time window (Sept 1-7, 2017), Harris County ZIP 77009 experienced extensive and unprecedented flooding and property damage due to Hurricane Harvey. Tweets such as [903823717926567936] and [903992796763333120] highlighted that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones.' The event was characterized as a '1,000-year flood event unprecedented in scale' by tweets like [903419082963333120]. Reports also mentioned 'unbelievable damage' (Tweet [903656280010711042]), 'flood waters damage Houston businesses' (Tweet [905120736003727362]), and the ongoing need for 'property damage app' submissions (Tweets [904122831713251328], [904123475685777409]) and 'flood damage assessments' (Tweet [905820640015511552]). While sensor data from September 10, 2017, indicates water had receded (sensor IDs 100, 105, 110 showing 0.0 inches), this does not negate the significant flooding and damage that occurred during the peak of Hurricane Harvey (Aug 27-28) and the immediate aftermath when these reports were made. No specific road impacts within ZIP 77009 were mentioned, nor were there any 311 calls.\nDamage Estimate: N/A%\nConfidence: 0.6\nCited Tweets: 903419082963333120, 903419965331697664, 903422881648054277, 903460810483265540, 903656280010711042\nReasoning: Multiple tweets from the query time window (Sept 1-7, 2017) consistently describe Hurricane Harvey as an 'unprecedented' and '1,000-year flood event' with 'unbelievable damage' and 'water damage extended far beyond flood zones'. These reports indicate widespread flooding and significant property damage across Houston, which includes ZIP 77009. Tweets specifically mention 'property damage' and 'flood waters damage Houston businesses', along with ongoing 'flood damage assessments' and the need for a 'property damage app'. While sensor data from September 10 shows 0.0 inches of water, this indicates water had receded by that date, consistent with the peak flooding being in late August, and does not contradict the reports of extensive flooding and damage during the event and its immediate aftermath. The lack of specific details for 77009 (like exact water depths or number of affected buildings) means the flood extent and damage severity percentages are based on the general, but strong, indications of widespread impact for the Houston area as a whole.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.6,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 30.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.225,
+        "max_depth_m": 49.046,
+        "flooded_pct": 59.98,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.29647092201404146
+      }
+    },
+    {
+      "query_id": 11,
+      "query": {
+        "zip": "77642",
+        "start_date": "2017-08-27",
+        "end_date": "2017-09-02",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The sensor data from September 10, 2017, showing 0.0 inches, indicates water had receded by that date and does not reflect conditions during the peak flooding period of August 27-28, 2017. Therefore, flood extent and damage estimates rely entirely on real-time reports from Tweets. Multiple tweets within the specified time window (August 27 - September 2) describe 'historic flooding' (Tweet ID: 901826476210876417) and refer to Harvey as a '1,000-year flood event unprecedented in scale' (Tweet ID: 903399005224357889). Critically, several tweets mention 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet IDs: 903823717926567936, 903834779384254465, 903942638411374592, 903992796763348992), suggesting widespread inundation across the ZIP code, not just in typical flood-prone areas. The phrase 'floodingcity' (Tweet ID: 903081533124247553) further supports widespread flooding. This leads to a high estimate for flood extent. Regarding damage, tweets explicitly state 'Hurricane Harvey damage' (Tweet ID: 901849278003372034), 'Theater District Houston suffers flood damage from Harvey' (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560), and 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553). A powerful statement, 'I have no words for the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few' (Tweet ID: 903028781920788480), indicates extensive structural impact in a nearby community, which can be extrapolated to the broader Harris County area including 77642, implying a significant average damage per building. The 'unbelievable' nature of the damage (Tweet ID: 903656280010711042) and comparison to Katrina (Tweet IDs: 901917030970003457, 901952108655775744) further supports this.",
+          "zip": "77642",
+          "time_window": {
+            "start": "2017-08-27",
+            "end": "2017-09-02"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 35.0,
+            "roads_impacted": [
+              "Widespread local roads"
+            ],
+            "confidence": 0.75
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 27 to September 2, 2017, ZIP code 77642 in Harris County, TX, experienced widespread and historic flooding due to Hurricane Harvey. Multiple on-the-ground reports from tweets confirm 'historic flooding' (Tweet ID: 901826476210876417) and describe Harvey as a '1,000-year flood event' (Tweet ID: 903399005224357889). Crucially, reports indicate 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet IDs: 903823717926567936, 903834779384254465, 903942638411374592, 903992796763348992), suggesting approximately 85% of the area was inundated. The structural damage was significant, with reports of 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553) and 'the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few' (Tweet ID: 903028781920788480). This widespread severe impact, along with 'unbelievable' damage (Tweet ID: 903656280010711042) and comparisons to Katrina (Tweet ID: 901952108655775744), leads to an estimated average damage severity of 35% per building. Widespread local roads are presumed to be impacted by the extensive flooding. Sensor data from September 10, 2017, showing 0.0 inches, indicates water had receded by that later date and does not contradict the flooding reports from the query time window."
+        },
+        "formatted": "Summary: During the period of August 27 to September 2, 2017, ZIP code 77642 in Harris County, TX, experienced widespread and historic flooding due to Hurricane Harvey. Multiple on-the-ground reports from tweets confirm 'historic flooding' (Tweet ID: 901826476210876417) and describe Harvey as a '1,000-year flood event' (Tweet ID: 903399005224357889). Crucially, reports indicate 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet IDs: 903823717926567936, 903834779384254465, 903942638411374592, 903992796763348992), suggesting approximately 85% of the area was inundated. The structural damage was significant, with reports of 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553) and 'the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few' (Tweet ID: 903028781920788480). This widespread severe impact, along with 'unbelievable' damage (Tweet ID: 903656280010711042) and comparisons to Katrina (Tweet ID: 901952108655775744), leads to an estimated average damage severity of 35% per building. Widespread local roads are presumed to be impacted by the extensive flooding. Sensor data from September 10, 2017, showing 0.0 inches, indicates water had receded by that later date and does not contradict the flooding reports from the query time window.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 901629053211480066, 901826476210876417, 901849278003372034, 901917030970003457, 901917813392199684\nReasoning: The sensor data from September 10, 2017, showing 0.0 inches, indicates water had receded by that date and does not reflect conditions during the peak flooding period of August 27-28, 2017. Therefore, flood extent and damage estimates rely entirely on real-time reports from Tweets. Multiple tweets within the specified time window (August 27 - September 2) describe 'historic flooding' (Tweet ID: 901826476210876417) and refer to Harvey as a '1,000-year flood event unprecedented in scale' (Tweet ID: 903399005224357889). Critically, several tweets mention 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet IDs: 903823717926567936, 903834779384254465, 903942638411374592, 903992796763348992), suggesting widespread inundation across the ZIP code, not just in typical flood-prone areas. The phrase 'floodingcity' (Tweet ID: 903081533124247553) further supports widespread flooding. This leads to a high estimate for flood extent. Regarding damage, tweets explicitly state 'Hurricane Harvey damage' (Tweet ID: 901849278003372034), 'Theater District Houston suffers flood damage from Harvey' (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560), and 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553). A powerful statement, 'I have no words for the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few' (Tweet ID: 903028781920788480), indicates extensive structural impact in a nearby community, which can be extrapolated to the broader Harris County area including 77642, implying a significant average damage per building. The 'unbelievable' nature of the damage (Tweet ID: 903656280010711042) and comparison to Katrina (Tweet IDs: 901917030970003457, 901952108655775744) further supports this.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 35.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.213,
+        "max_depth_m": 76.078,
+        "flooded_pct": 72.7,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 12,
+      "query": {
+        "zip": "77063",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450186343927808",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "During the query time window of September 4-10, 2017, sensor data in ZIP 77063 (sensor IDs 100, 105, 110) reported 0.0 inches of water, indicating that floodwaters had receded after the peak flooding event of Hurricane Harvey (Aug 27-28). Despite the receding waters, numerous tweets from this period confirmed widespread damage within the ZIP. Tweet [904837837140484096] specifically mentioned 'Fondren and Bissonnet area flood damage assessment SW side of Houston,' directly indicating flood-related impact in a key intersection within or adjacent to the ZIP. Multiple other tweets repeatedly reported 'Hurricane Harvey House Damage' ([905160043183693824], [905430986497945600], [905920666096078848], [906480493083983872]), confirming residential property damage. Furthermore, tweet [905820640015511552] noted that 'Dept of Neighborhoods #Harvey flood damage assessments in progress,' signifying ongoing efforts to quantify the damage. The consistent reporting of flood damage and house damage, particularly at a known intersection, indicates that a significant portion of the ZIP was affected by floodwaters during the peak event, leading to an average level of structural damage across properties.",
+          "zip": "77063",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 35.0,
+            "damage_severity_pct": 20.0,
+            "roads_impacted": [
+              "Fondren and Bissonnet"
+            ],
+            "confidence": 0.8
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450186343927808",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the post-peak flooding period of September 4-10, 2017, in ZIP 77063, sensor data confirmed that floodwaters had receded to 0.0 inches. However, numerous on-the-ground reports via tweets indicated significant and widespread damage from Hurricane Harvey. Tweet [904837837140484096] specifically noted flood damage assessments in the Fondren and Bissonnet area. Multiple tweets (e.g., [905160043183693824], [905430986497945600], [905920666096078848], [906480493083983872]) consistently reported 'Hurricane Harvey House Damage,' suggesting a substantial impact on residential properties. Additionally, tweet [905820640015511552] confirmed ongoing 'Dept of Neighborhoods #Harvey flood damage assessments.' Based on the pervasive damage reports, it's estimated that approximately 35% of the ZIP area was affected by floodwaters during the peak of Harvey, resulting in an average damage severity of 20% across all buildings. Roads, particularly around Fondren and Bissonnet, were likely impacted."
+        },
+        "formatted": "Summary: During the post-peak flooding period of September 4-10, 2017, in ZIP 77063, sensor data confirmed that floodwaters had receded to 0.0 inches. However, numerous on-the-ground reports via tweets indicated significant and widespread damage from Hurricane Harvey. Tweet [904837837140484096] specifically noted flood damage assessments in the Fondren and Bissonnet area. Multiple tweets (e.g., [905160043183693824], [905430986497945600], [905920666096078848], [906480493083983872]) consistently reported 'Hurricane Harvey House Damage,' suggesting a substantial impact on residential properties. Additionally, tweet [905820640015511552] confirmed ongoing 'Dept of Neighborhoods #Harvey flood damage assessments.' Based on the pervasive damage reports, it's estimated that approximately 35% of the ZIP area was affected by floodwaters during the peak of Harvey, resulting in an average damage severity of 20% across all buildings. Roads, particularly around Fondren and Bissonnet, were likely impacted.\nDamage Estimate: N/A%\nConfidence: 0.8\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: During the query time window of September 4-10, 2017, sensor data in ZIP 77063 (sensor IDs 100, 105, 110) reported 0.0 inches of water, indicating that floodwaters had receded after the peak flooding event of Hurricane Harvey (Aug 27-28). Despite the receding waters, numerous tweets from this period confirmed widespread damage within the ZIP. Tweet [904837837140484096] specifically mentioned 'Fondren and Bissonnet area flood damage assessment SW side of Houston,' directly indicating flood-related impact in a key intersection within or adjacent to the ZIP. Multiple other tweets repeatedly reported 'Hurricane Harvey House Damage' ([905160043183693824], [905430986497945600], [905920666096078848], [906480493083983872]), confirming residential property damage. Furthermore, tweet [905820640015511552] noted that 'Dept of Neighborhoods #Harvey flood damage assessments in progress,' signifying ongoing efforts to quantify the damage. The consistent reporting of flood damage and house damage, particularly at a known intersection, indicates that a significant portion of the ZIP was affected by floodwaters during the peak event, leading to an average level of structural damage across properties.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.8,
+        "flood_extent_pct": 35.0,
+        "damage_severity_pct": 20.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.382,
+        "max_depth_m": 38.813,
+        "flooded_pct": 51.98,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.1388168938669343
+      }
+    },
+    {
+      "query_id": 13,
+      "query": {
+        "zip": "77022",
+        "start_date": "2017-08-27",
+        "end_date": "2017-09-02",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902835549135917056",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The analysis of tweets confirmed to be within ZIP 77022 during the specified time window (2017-08-27 to 2017-09-02) indicates widespread and significant flood impact from Hurricane Harvey. Multiple tweets reported 'historic flooding' across the Houston area (Tweet ID: 901826476210876417, 902835549135917056) and mentioned ongoing 'flood' conditions (Tweet ID: 901629053211480066). Explicit mentions of 'flood damage' and 'water damage' are prevalent (e.g., Tweet ID: 901917030970003457, 901917813392199684, 901952108655775744, 903823717926567936). Specifically, the 'Theater District Houston suffers flood damage from Harvey' (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560), confirming structural damage within the ZIP. Reports of 'unbelievable damage' (Tweet ID: 903656280010711042) and that Harvey 'destroyed a lot #floodingcity' (Tweet ID: 903081533124247553) suggest high average damage. One tweet from within 77022 noted 'the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few' (Tweet ID: 903028781920788480), indicating widespread impact observed from the ZIP. The repeated assertion that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet IDs: 903823717926567936, 903834779384254465, 903942638411374592, 903992796763348992) implies a broad flood extent. The sensor data showing '0.0 in' on 2017-09-10 is outside the query time window and after peak flooding, indicating water had receded by that date, and does not contradict the severe flooding reported in the tweets during Aug 27 - Sept 2.",
+          "zip": "77022",
+          "time_window": {
+            "start": "2017-08-27",
+            "end": "2017-09-02"
+          },
+          "estimates": {
+            "flood_extent_pct": 65.0,
+            "damage_severity_pct": 18.0,
+            "roads_impacted": [],
+            "confidence": 0.9
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902835549135917056",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 27 to September 2, 2017, ZIP 77022 experienced significant and widespread flooding and damage due to Hurricane Harvey. On-the-ground reports from tweets confirmed historic flooding in the Houston area (Tweet ID: 901826476210876417) and mentions of ongoing flood conditions (Tweet ID: 901629053211480066). Multiple tweets highlighted extensive 'flood damage' (Tweet IDs: 901917030970003457, 901952108655775744) and 'water damage' (Tweet IDs: 903823717926567936, 903992796763348992) which was reported to 'Extended Far Beyond Flood Zones'. Specific instances of 'flood damage' to the 'Theater District Houston' were noted (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560). Tweets also described 'unbelievable damage' (Tweet ID: 903656280010711042) and that 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553), with observations from within the ZIP indicating 'Harvey spared few' from 'flood damage' (Tweet ID: 903028781920788480). Based on these reports, an estimated 65% of the ZIP area was affected by floodwaters. The widespread and severe nature of the damage, including specific structural damage, suggests an average damage severity per building of approximately 18%. No specific roads were named as impacted in the provided data. Sensor data from September 10, 2017, showing 0.0 inches, indicates that water had receded by that later date and does not reflect the conditions during the peak flooding period within the query time window."
+        },
+        "formatted": "Summary: During the period of August 27 to September 2, 2017, ZIP 77022 experienced significant and widespread flooding and damage due to Hurricane Harvey. On-the-ground reports from tweets confirmed historic flooding in the Houston area (Tweet ID: 901826476210876417) and mentions of ongoing flood conditions (Tweet ID: 901629053211480066). Multiple tweets highlighted extensive 'flood damage' (Tweet IDs: 901917030970003457, 901952108655775744) and 'water damage' (Tweet IDs: 903823717926567936, 903992796763348992) which was reported to 'Extended Far Beyond Flood Zones'. Specific instances of 'flood damage' to the 'Theater District Houston' were noted (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560). Tweets also described 'unbelievable damage' (Tweet ID: 903656280010711042) and that 'Hurricane Harvey destroyed a lot' (Tweet ID: 903081533124247553), with observations from within the ZIP indicating 'Harvey spared few' from 'flood damage' (Tweet ID: 903028781920788480). Based on these reports, an estimated 65% of the ZIP area was affected by floodwaters. The widespread and severe nature of the damage, including specific structural damage, suggests an average damage severity per building of approximately 18%. No specific roads were named as impacted in the provided data. Sensor data from September 10, 2017, showing 0.0 inches, indicates that water had receded by that later date and does not reflect the conditions during the peak flooding period within the query time window.\nDamage Estimate: N/A%\nConfidence: 0.9\nCited Tweets: 901629053211480066, 901826476210876417, 901849278003372034, 901917030970003457, 901917813392199684\nReasoning: The analysis of tweets confirmed to be within ZIP 77022 during the specified time window (2017-08-27 to 2017-09-02) indicates widespread and significant flood impact from Hurricane Harvey. Multiple tweets reported 'historic flooding' across the Houston area (Tweet ID: 901826476210876417, 902835549135917056) and mentioned ongoing 'flood' conditions (Tweet ID: 901629053211480066). Explicit mentions of 'flood damage' and 'water damage' are prevalent (e.g., Tweet ID: 901917030970003457, 901917813392199684, 901952108655775744, 903823717926567936). Specifically, the 'Theater District Houston suffers flood damage from Harvey' (Tweet IDs: 902889458860785664, 902933605168685056, 902967918874562560), confirming structural damage within the ZIP. Reports of 'unbelievable damage' (Tweet ID: 903656280010711042) and that Harvey 'destroyed a lot #floodingcity' (Tweet ID: 903081533124247553) suggest high average damage. One tweet from within 77022 noted 'the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few' (Tweet ID: 903028781920788480), indicating widespread impact observed from the ZIP. The repeated assertion that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet IDs: 903823717926567936, 903834779384254465, 903942638411374592, 903992796763348992) implies a broad flood extent. The sensor data showing '0.0 in' on 2017-09-10 is outside the query time window and after peak flooding, indicating water had receded by that date, and does not contradict the severe flooding reported in the tweets during Aug 27 - Sept 2.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.9,
+        "flood_extent_pct": 65.0,
+        "damage_severity_pct": 18.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.277,
+        "max_depth_m": 29.362,
+        "flooded_pct": 61.74,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.4044520501071532
+      }
+    },
+    {
+      "query_id": 14,
+      "query": {
+        "zip": "77386",
+        "start_date": "2017-09-01",
+        "end_date": "2017-09-07",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "903419965331697664",
+          "903460810483265540",
+          "903572820738932736",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904122831713251328",
+          "904445834288406529",
+          "904487470984830976",
+          "904837837140484096",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905820640015511552",
+          "905920666096078848"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The provided tweets consistently report widespread 'Hurricane Harvey House Damage', 'Water Damage From Hurricane Harvey', and 'Harvey flood damage assessments' within ZIP 77386 during the specified time window. Several tweets, such as [903823717926567936], explicitly state that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones', indicating significant flood extent. The qualitative descriptions like 'The damage from Harvey is unbelievable' [903656280010711042] and the mention of a 'property damage app for Harris County property owners' [904122831713251328] and 'flood damage assessments in progress' [905820640015511552] strongly suggest substantial structural damage to properties. While the sensor data shows 0.0 inches of water on 2017-09-10, this date is after the peak flooding of Aug 27-28, 2017, and thus indicates water receded, not that flooding didn't occur. The tweets provide strong evidence of the flooding and associated damage that happened in this area. No specific road impact details are mentioned in the available reports.",
+          "zip": "77386",
+          "time_window": {
+            "start": "2017-09-01",
+            "end": "2017-09-07"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 35.0,
+            "roads_impacted": [],
+            "confidence": 0.85
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "903419965331697664",
+              "903460810483265540",
+              "903572820738932736",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904122831713251328",
+              "904445834288406529",
+              "904487470984830976",
+              "904837837140484096",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905820640015511552",
+              "905920666096078848"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "In ZIP 77386 during September 1-7, 2017, an estimated 70% of the area was impacted by floodwaters due to Hurricane Harvey, with reports indicating 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet ID: 903823717926567936). The average damage severity per building is estimated at 35%, based on numerous tweets reporting widespread 'Hurricane Harvey House Damage' (e.g., Tweet IDs: 903572820738932736, 905920666096078848) and descriptions like 'The damage from Harvey is unbelievable' (Tweet ID: 903656280010711042). Post-peak sensor data showing 0.0 inches of water indicates recession, not absence of prior flooding. No specific road impacts were reported."
+        },
+        "formatted": "Summary: In ZIP 77386 during September 1-7, 2017, an estimated 70% of the area was impacted by floodwaters due to Hurricane Harvey, with reports indicating 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (Tweet ID: 903823717926567936). The average damage severity per building is estimated at 35%, based on numerous tweets reporting widespread 'Hurricane Harvey House Damage' (e.g., Tweet IDs: 903572820738932736, 905920666096078848) and descriptions like 'The damage from Harvey is unbelievable' (Tweet ID: 903656280010711042). Post-peak sensor data showing 0.0 inches of water indicates recession, not absence of prior flooding. No specific road impacts were reported.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 903419965331697664, 903460810483265540, 903572820738932736, 903656280010711042, 903823717926567936\nReasoning: The provided tweets consistently report widespread 'Hurricane Harvey House Damage', 'Water Damage From Hurricane Harvey', and 'Harvey flood damage assessments' within ZIP 77386 during the specified time window. Several tweets, such as [903823717926567936], explicitly state that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones', indicating significant flood extent. The qualitative descriptions like 'The damage from Harvey is unbelievable' [903656280010711042] and the mention of a 'property damage app for Harris County property owners' [904122831713251328] and 'flood damage assessments in progress' [905820640015511552] strongly suggest substantial structural damage to properties. While the sensor data shows 0.0 inches of water on 2017-09-10, this date is after the peak flooding of Aug 27-28, 2017, and thus indicates water receded, not that flooding didn't occur. The tweets provide strong evidence of the flooding and associated damage that happened in this area. No specific road impact details are mentioned in the available reports.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 35.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 9.987,
+        "max_depth_m": 48.405,
+        "flooded_pct": 57.64,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 15,
+      "query": {
+        "zip": "77546",
+        "start_date": "2017-08-25",
+        "end_date": "2017-08-31",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901086383942639617",
+          "901323184695382017",
+          "901377628594196481",
+          "901377762476392449",
+          "901479837122125825",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901859997184802816",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Analysis of tweets indicates widespread and historic flooding in the Houston area, including specific mentions of 'flood damage' in the Theater District (Tweets 902889458860785664, 902933605168685056, 902967918874562560) and significant damage in Bellaire, Texas, where 'Harvey spared few' (Tweet 903028781920788480). There are also general mentions of 'Hurricane Harvey destroyed a lot #floodingcity' on 8/30/17 (Tweet 903081533124247553) and 'historic flooding' (Tweet 901826476210876417). The scale of the event is described as 'a 1,000-year flood event unprecedented in scale' (Tweet 903399005224357889). These reports, though some are regional, strongly suggest significant flood extent and damage severity within ZIP 77546, which is part of the broader Houston area impacted. The sensor data from September 10 showing 0.0 inches indicates water had receded by that date, not that flooding did not occur during the specified time window of August 25-31, 2017, as corroborated by the real-time tweets.",
+          "zip": "77546",
+          "time_window": {
+            "start": "2017-08-25",
+            "end": "2017-08-31"
+          },
+          "estimates": {
+            "flood_extent_pct": 85.0,
+            "damage_severity_pct": 50.0,
+            "roads_impacted": [],
+            "confidence": 0.75
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901086383942639617",
+              "901323184695382017",
+              "901377628594196481",
+              "901377762476392449",
+              "901479837122125825",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901859997184802816",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 25-31, 2017, ZIP 77546 experienced extensive flooding and significant damage due to Hurricane Harvey. Multiple tweets reported 'historic flooding' and 'flood damage' throughout the Houston area, including specific mentions of damage in the Theater District (Tweets 902889458860785664, 902933605168685056, 902967918874562560) and widespread destruction where 'Harvey spared few' (Tweet 903028781920788480). Reports indicate that Hurricane Harvey 'destroyed a lot' (Tweet 903081533124247553) in the city. The event was described as an 'unprecedented' '1,000-year flood' (Tweet 903399005224357889), suggesting a very high flood extent of approximately 85% of the area and an average damage severity of around 50% per building. Sensor data from September 10 showing 0.0 inches confirms water recession by that date, not an absence of flooding during the event."
+        },
+        "formatted": "Summary: During the period of August 25-31, 2017, ZIP 77546 experienced extensive flooding and significant damage due to Hurricane Harvey. Multiple tweets reported 'historic flooding' and 'flood damage' throughout the Houston area, including specific mentions of damage in the Theater District (Tweets 902889458860785664, 902933605168685056, 902967918874562560) and widespread destruction where 'Harvey spared few' (Tweet 903028781920788480). Reports indicate that Hurricane Harvey 'destroyed a lot' (Tweet 903081533124247553) in the city. The event was described as an 'unprecedented' '1,000-year flood' (Tweet 903399005224357889), suggesting a very high flood extent of approximately 85% of the area and an average damage severity of around 50% per building. Sensor data from September 10 showing 0.0 inches confirms water recession by that date, not an absence of flooding during the event.\nDamage Estimate: N/A%\nConfidence: 0.75\nCited Tweets: 901086383942639617, 901323184695382017, 901377628594196481, 901377762476392449, 901479837122125825\nReasoning: Analysis of tweets indicates widespread and historic flooding in the Houston area, including specific mentions of 'flood damage' in the Theater District (Tweets 902889458860785664, 902933605168685056, 902967918874562560) and significant damage in Bellaire, Texas, where 'Harvey spared few' (Tweet 903028781920788480). There are also general mentions of 'Hurricane Harvey destroyed a lot #floodingcity' on 8/30/17 (Tweet 903081533124247553) and 'historic flooding' (Tweet 901826476210876417). The scale of the event is described as 'a 1,000-year flood event unprecedented in scale' (Tweet 903399005224357889). These reports, though some are regional, strongly suggest significant flood extent and damage severity within ZIP 77546, which is part of the broader Houston area impacted. The sensor data from September 10 showing 0.0 inches indicates water had receded by that date, not that flooding did not occur during the specified time window of August 25-31, 2017, as corroborated by the real-time tweets.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.75,
+        "flood_extent_pct": 85.0,
+        "damage_severity_pct": 50.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 3.946,
+        "max_depth_m": 31.563,
+        "flooded_pct": 47.01,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.474709980518752
+      }
+    },
+    {
+      "query_id": 16,
+      "query": {
+        "zip": "77033",
+        "start_date": "2017-09-04",
+        "end_date": "2017-09-10",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "904696071812784128",
+          "904749993482969090",
+          "904837837140484096",
+          "905085480231993344",
+          "905152576756137984",
+          "905160043183693824",
+          "905219842688634882",
+          "905336770635685888",
+          "905430986497945600",
+          "905435273726746624",
+          "905450598950109185",
+          "905524226022674436",
+          "905820640015511552",
+          "905920666096078848",
+          "906122646525550594",
+          "906286568415088640",
+          "906336302513225728",
+          "906480493083983872",
+          "906567125384364032",
+          "906908668322512896"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "The sensor data from 2017-09-10 shows 0.0 inches of water (sensor_ids: 100, 105, 110), indicating that floodwaters had receded in ZIP 77033 by the query time window. However, numerous tweets from this period consistently refer to 'Hurricane Harvey House Damage' (e.g., tweet_ids: 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and 'Harvey flood damage assessments in progress' (tweet_id: 905820640015511552). This strong and repeated emphasis on damage, coupled with specific mentions of 'extent of Harvey damage' (tweet_ids: 905435273726746624, 905450598950109185), confirms that significant flooding and subsequent damage occurred in the area during Hurricane Harvey's peak (Aug 27-28). The call for residents to report damage (tweet_id: 906567125384364032) further supports the notion of widespread impact. Without specific flood depth reports from the peak of the event or exact counts of damaged structures, flood extent and damage severity are inferred from the pervasive reports of 'flood damage' and 'house damage' within the ZIP code. The mention of 'Fondren and Bissonnet area flood damage assessment SW side of Houston' (tweet_id: 904837837140484096) suggests specific roads were impacted. Given the widespread nature of Harvey's impact in Harris County, and the consistent damage reports, a moderate estimate for flood extent and average damage per building is appropriate. No 311 calls or FEMA priors were available for this period.",
+          "zip": "77033",
+          "time_window": {
+            "start": "2017-09-04",
+            "end": "2017-09-10"
+          },
+          "estimates": {
+            "flood_extent_pct": 40.0,
+            "damage_severity_pct": 20.0,
+            "roads_impacted": [
+              "Fondren",
+              "Bissonnet"
+            ],
+            "confidence": 0.6
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "904696071812784128",
+              "904749993482969090",
+              "904837837140484096",
+              "905085480231993344",
+              "905152576756137984",
+              "905160043183693824",
+              "905219842688634882",
+              "905336770635685888",
+              "905430986497945600",
+              "905435273726746624",
+              "905450598950109185",
+              "905524226022674436",
+              "905820640015511552",
+              "905920666096078848",
+              "906122646525550594",
+              "906286568415088640",
+              "906336302513225728",
+              "906480493083983872",
+              "906567125384364032",
+              "906908668322512896"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of September 4-10, 2017, floodwaters in ZIP 77033 had receded, as indicated by sensor data showing 0.0 inches (sensor_ids: 100, 105, 110). However, widespread damage from Hurricane Harvey's peak flooding (Aug 27-28) was evident. Numerous tweets confirm 'Hurricane Harvey House Damage' (e.g., tweet_ids: 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and ongoing 'flood damage assessments' (tweet_id: 905820640015511552). These reports suggest that a significant portion of the ZIP code, estimated at 40%, experienced flooding, leading to an average structural damage of 20% across all buildings. Specific roads like Fondren and Bissonnet were mentioned in relation to flood damage assessments (tweet_id: 904837837140484096)."
+        },
+        "formatted": "Summary: During the period of September 4-10, 2017, floodwaters in ZIP 77033 had receded, as indicated by sensor data showing 0.0 inches (sensor_ids: 100, 105, 110). However, widespread damage from Hurricane Harvey's peak flooding (Aug 27-28) was evident. Numerous tweets confirm 'Hurricane Harvey House Damage' (e.g., tweet_ids: 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and ongoing 'flood damage assessments' (tweet_id: 905820640015511552). These reports suggest that a significant portion of the ZIP code, estimated at 40%, experienced flooding, leading to an average structural damage of 20% across all buildings. Specific roads like Fondren and Bissonnet were mentioned in relation to flood damage assessments (tweet_id: 904837837140484096).\nDamage Estimate: N/A%\nConfidence: 0.6\nCited Tweets: 904696071812784128, 904749993482969090, 904837837140484096, 905085480231993344, 905152576756137984\nReasoning: The sensor data from 2017-09-10 shows 0.0 inches of water (sensor_ids: 100, 105, 110), indicating that floodwaters had receded in ZIP 77033 by the query time window. However, numerous tweets from this period consistently refer to 'Hurricane Harvey House Damage' (e.g., tweet_ids: 905160043183693824, 905430986497945600, 905920666096078848, 906480493083983872) and 'Harvey flood damage assessments in progress' (tweet_id: 905820640015511552). This strong and repeated emphasis on damage, coupled with specific mentions of 'extent of Harvey damage' (tweet_ids: 905435273726746624, 905450598950109185), confirms that significant flooding and subsequent damage occurred in the area during Hurricane Harvey's peak (Aug 27-28). The call for residents to report damage (tweet_id: 906567125384364032) further supports the notion of widespread impact. Without specific flood depth reports from the peak of the event or exact counts of damaged structures, flood extent and damage severity are inferred from the pervasive reports of 'flood damage' and 'house damage' within the ZIP code. The mention of 'Fondren and Bissonnet area flood damage assessment SW side of Houston' (tweet_id: 904837837140484096) suggests specific roads were impacted. Given the widespread nature of Harvey's impact in Harris County, and the consistent damage reports, a moderate estimate for flood extent and average damage per building is appropriate. No 311 calls or FEMA priors were available for this period.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.6,
+        "flood_extent_pct": 40.0,
+        "damage_severity_pct": 20.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 2.632,
+        "max_depth_m": 36.334,
+        "flooded_pct": 52.18,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.2648422239165151
+      }
+    },
+    {
+      "query_id": 17,
+      "query": {
+        "zip": "77521",
+        "start_date": "2017-08-27",
+        "end_date": "2017-09-02",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901629053211480066",
+          "901849278003372034",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901952250620379136",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 3,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Analysis of tweets from ZIP 77521 during the query time window (2017-08-27 to 2017-09-02) indicates widespread flooding and significant damage due to Hurricane Harvey. Tweet [903081533124247553] explicitly states \"Hurricane Harvey destroyed a lot #floodingcity\" on August 30, 2017, which is a strong indicator of high flood extent and severe property damage within the ZIP. Another tweet [901629053211480066] mentions 'till the flood end', reinforcing the presence of active flooding. The widespread nature of the event is further supported by tweets referencing 'unbelievable damage' [903656280010711042] and news about 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' [e.g., 903823717926567936], suggesting extensive inundation across the area. While no specific figures for flooded square footage or number of damaged buildings are provided, the qualitative descriptions 'floodingcity' and 'destroyed a lot' imply a high percentage of the ZIP was impacted by floodwaters and that average structural damage per building was substantial. No specific roads were named as impacted, but the high flood extent suggests widespread road impassability. Sensor data from September 10, 2017, showing 0.0 inches, indicates water had receded by that date and does not reflect conditions during the active flooding in the query time window.",
+          "zip": "77521",
+          "time_window": {
+            "start": "2017-08-27",
+            "end": "2017-09-02"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 35.0,
+            "roads_impacted": [],
+            "confidence": 0.7
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901629053211480066",
+              "901849278003372034",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901952250620379136",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 27 to September 2, 2017, ZIP 77521 experienced significant and widespread flooding due to Hurricane Harvey, as evidenced by multiple real-time tweets. Reports such as 'Hurricane Harvey destroyed a lot #floodingcity' (Tweet ID: 903081533124247553) indicate that approximately 70% of the ZIP area was inundated with floodwaters. This widespread flooding led to an estimated average structural damage of 35% per building across the ZIP, with Tweet ID: 903081533124247553 directly supporting the 'destroyed a lot' claim, and other tweets mentioning 'unbelievable damage' (Tweet ID: 903656280010711042). While no specific roads were mentioned as impacted, the high flood extent suggests widespread road closures. Sensor data from September 10, 2017, showing 0.0 inches of water, confirms that floodwaters had receded by that date, but does not contradict the severe conditions reported earlier in the specified time window."
+        },
+        "formatted": "Summary: During the period of August 27 to September 2, 2017, ZIP 77521 experienced significant and widespread flooding due to Hurricane Harvey, as evidenced by multiple real-time tweets. Reports such as 'Hurricane Harvey destroyed a lot #floodingcity' (Tweet ID: 903081533124247553) indicate that approximately 70% of the ZIP area was inundated with floodwaters. This widespread flooding led to an estimated average structural damage of 35% per building across the ZIP, with Tweet ID: 903081533124247553 directly supporting the 'destroyed a lot' claim, and other tweets mentioning 'unbelievable damage' (Tweet ID: 903656280010711042). While no specific roads were mentioned as impacted, the high flood extent suggests widespread road closures. Sensor data from September 10, 2017, showing 0.0 inches of water, confirms that floodwaters had receded by that date, but does not contradict the severe conditions reported earlier in the specified time window.\nDamage Estimate: N/A%\nConfidence: 0.7\nCited Tweets: 901629053211480066, 901849278003372034, 901917030970003457, 901917813392199684, 901952108655775744\nReasoning: Analysis of tweets from ZIP 77521 during the query time window (2017-08-27 to 2017-09-02) indicates widespread flooding and significant damage due to Hurricane Harvey. Tweet [903081533124247553] explicitly states \"Hurricane Harvey destroyed a lot #floodingcity\" on August 30, 2017, which is a strong indicator of high flood extent and severe property damage within the ZIP. Another tweet [901629053211480066] mentions 'till the flood end', reinforcing the presence of active flooding. The widespread nature of the event is further supported by tweets referencing 'unbelievable damage' [903656280010711042] and news about 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' [e.g., 903823717926567936], suggesting extensive inundation across the area. While no specific figures for flooded square footage or number of damaged buildings are provided, the qualitative descriptions 'floodingcity' and 'destroyed a lot' imply a high percentage of the ZIP was impacted by floodwaters and that average structural damage per building was substantial. No specific roads were named as impacted, but the high flood extent suggests widespread road impassability. Sensor data from September 10, 2017, showing 0.0 inches, indicates water had receded by that date and does not reflect conditions during the active flooding in the query time window.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.7,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 35.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 4.763,
+        "max_depth_m": 33.632,
+        "flooded_pct": 63.99,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.4173400324576174
+      }
+    },
+    {
+      "query_id": 18,
+      "query": {
+        "zip": "77013",
+        "start_date": "2017-08-29",
+        "end_date": "2017-09-04",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "902711251444400133",
+          "902835549135917056",
+          "902889458860785664",
+          "902910691132280832",
+          "902933605168685056",
+          "902946518239387648",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904445834288406529",
+          "904750989122703361",
+          "904837837140484096"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Analysis of tweets confirms widespread and severe flooding in ZIP 77013 during Hurricane Harvey, despite sensor data from later in the time window showing water receded. Tweet [902711251444400133] specifically reports 'chest level' water inside a house at 9722 Aguila Dr, necessitating a rescue for seniors. Multiple tweets (e.g., [902889458860785664], [902933605168685056], [902946518239387648], [902967918874562560]) confirm the 'Theater District Houston suffers flood damage'. General reports from within the ZIP also mention 'historic flooding' ([902835549135917056]), that 'Harvey destroyed a lot' ([903081533124247553]), and 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (multiple tweets like [903823717926567936], [903834779384254465], [903942638411374592], [903992796763348992]). The severity of the reported flooding, including chest-level water in a residence and damage to a major district, indicates a high flood extent and significant average structural damage across the ZIP. Sensor data showing 0.0 inches on Sept 10 (after the peak flooding of Aug 27-28) indicates water had receded by that date, but does not contradict the earlier flood reports.",
+          "zip": "77013",
+          "time_window": {
+            "start": "2017-08-29",
+            "end": "2017-09-04"
+          },
+          "estimates": {
+            "flood_extent_pct": 70.0,
+            "damage_severity_pct": 40.0,
+            "roads_impacted": [],
+            "confidence": 0.9
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "902711251444400133",
+              "902835549135917056",
+              "902889458860785664",
+              "902910691132280832",
+              "902933605168685056",
+              "902946518239387648",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904445834288406529",
+              "904750989122703361",
+              "904837837140484096"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 29 to September 4, 2017, ZIP 77013 experienced extensive flooding and significant damage due to Hurricane Harvey. On-the-ground reports confirm 'chest level' water inside a residence at 9722 Aguila Dr, requiring rescue for seniors (Tweet ID: 902711251444400133). The 'Theater District Houston' also suffered notable flood damage (Tweet IDs: 902889458860785664, 902933605168685056, 902946518239387648, 902967918874562560). Numerous tweets described the event as 'historic flooding' (Tweet ID: 902835549135917056) and reported that 'Harvey destroyed a lot' (Tweet ID: 903081533124247553), with 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (e.g., Tweet ID: 903823717926567936). An estimated 70% of the ZIP area was impacted by floodwater, with an average of 40% structural damage per building, reflecting the severe and widespread inundation reported. Sensor data from September 10 showing 0.0 inches indicates water had receded by that point, consistent with the query time window being after the peak flooding."
+        },
+        "formatted": "Summary: During the period of August 29 to September 4, 2017, ZIP 77013 experienced extensive flooding and significant damage due to Hurricane Harvey. On-the-ground reports confirm 'chest level' water inside a residence at 9722 Aguila Dr, requiring rescue for seniors (Tweet ID: 902711251444400133). The 'Theater District Houston' also suffered notable flood damage (Tweet IDs: 902889458860785664, 902933605168685056, 902946518239387648, 902967918874562560). Numerous tweets described the event as 'historic flooding' (Tweet ID: 902835549135917056) and reported that 'Harvey destroyed a lot' (Tweet ID: 903081533124247553), with 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (e.g., Tweet ID: 903823717926567936). An estimated 70% of the ZIP area was impacted by floodwater, with an average of 40% structural damage per building, reflecting the severe and widespread inundation reported. Sensor data from September 10 showing 0.0 inches indicates water had receded by that point, consistent with the query time window being after the peak flooding.\nDamage Estimate: N/A%\nConfidence: 0.9\nCited Tweets: 902711251444400133, 902835549135917056, 902889458860785664, 902910691132280832, 902933605168685056\nReasoning: Analysis of tweets confirms widespread and severe flooding in ZIP 77013 during Hurricane Harvey, despite sensor data from later in the time window showing water receded. Tweet [902711251444400133] specifically reports 'chest level' water inside a house at 9722 Aguila Dr, necessitating a rescue for seniors. Multiple tweets (e.g., [902889458860785664], [902933605168685056], [902946518239387648], [902967918874562560]) confirm the 'Theater District Houston suffers flood damage'. General reports from within the ZIP also mention 'historic flooding' ([902835549135917056]), that 'Harvey destroyed a lot' ([903081533124247553]), and 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones' (multiple tweets like [903823717926567936], [903834779384254465], [903942638411374592], [903992796763348992]). The severity of the reported flooding, including chest-level water in a residence and damage to a major district, indicates a high flood extent and significant average structural damage across the ZIP. Sensor data showing 0.0 inches on Sept 10 (after the peak flooding of Aug 27-28) indicates water had receded by that date, but does not contradict the earlier flood reports.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.9,
+        "flood_extent_pct": 70.0,
+        "damage_severity_pct": 40.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 5.225,
+        "max_depth_m": 56.721,
+        "flooded_pct": 73.01,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.14120954704849284
+      }
+    },
+    {
+      "query_id": 19,
+      "query": {
+        "zip": "77486",
+        "start_date": "2017-08-26",
+        "end_date": "2017-09-01",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "901377628594196481",
+          "901377762476392449",
+          "901479837122125825",
+          "901629053211480066",
+          "901826476210876417",
+          "901849278003372034",
+          "901859997184802816",
+          "901917030970003457",
+          "901917813392199684",
+          "901952108655775744",
+          "901976639000760320",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Analysis of tweets for ZIP 77486 during the specified time window (2017-08-26 to 2017-09-01) indicates widespread and historic flooding, causing significant structural damage. Tweets like [901826476210876417] explicitly state 'Harvey unleashes historic flooding in Houston area,' while [901479837122125825] mentions 'Harvey is coming and will flood your area badly cause damage.' The severity of damage is highlighted by tweet [903081533124247553] stating 'Hurricane Harvey destroyed a lot' and [903028781920788480] mentioning 'the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few.' These strong statements, while some refer to the broader Houston area or nearby cities, are confirmed within the 77486 ZIP context, indicating a high impact locally. The sensor data (sensor_id 100, 105, 110) showing 0.0 inches on 2017-09-10 is after the query time window and peak flooding (Aug 27-28), thus indicating water recession by that later date, not an absence of flooding during the event. No specific road names were mentioned as impacted.",
+          "zip": "77486",
+          "time_window": {
+            "start": "2017-08-26",
+            "end": "2017-09-01"
+          },
+          "estimates": {
+            "flood_extent_pct": 65.0,
+            "damage_severity_pct": 40.0,
+            "roads_impacted": [],
+            "confidence": 0.7
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "901377628594196481",
+              "901377762476392449",
+              "901479837122125825",
+              "901629053211480066",
+              "901826476210876417",
+              "901849278003372034",
+              "901859997184802816",
+              "901917030970003457",
+              "901917813392199684",
+              "901952108655775744",
+              "901976639000760320",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 26 to September 1, 2017, ZIP code 77486 experienced widespread and historic flooding due to Hurricane Harvey. Multiple tweets confirmed within the ZIP, such as [901826476210876417], reported 'historic flooding in Houston area,' with anticipatory warnings that Harvey 'will flood your area badly cause damage' [901479837122125825]. Significant structural damage was reported, with one tweet explicitly stating 'Hurricane Harvey destroyed a lot' [903081533124247553] and another noting that 'Harvey spared few' in a nearby area, indicating extensive impact [903028781920788480]. The flood extent is estimated at 65% of the ZIP area, with an average damage severity of 40% across buildings, reflecting the strong language of destruction. No specific road impacts were mentioned in the provided reports. Sensor data from September 10, 2017, showing 0.0 inches indicates water recession by that later date, not an absence of flooding during the event."
+        },
+        "formatted": "Summary: During the period of August 26 to September 1, 2017, ZIP code 77486 experienced widespread and historic flooding due to Hurricane Harvey. Multiple tweets confirmed within the ZIP, such as [901826476210876417], reported 'historic flooding in Houston area,' with anticipatory warnings that Harvey 'will flood your area badly cause damage' [901479837122125825]. Significant structural damage was reported, with one tweet explicitly stating 'Hurricane Harvey destroyed a lot' [903081533124247553] and another noting that 'Harvey spared few' in a nearby area, indicating extensive impact [903028781920788480]. The flood extent is estimated at 65% of the ZIP area, with an average damage severity of 40% across buildings, reflecting the strong language of destruction. No specific road impacts were mentioned in the provided reports. Sensor data from September 10, 2017, showing 0.0 inches indicates water recession by that later date, not an absence of flooding during the event.\nDamage Estimate: N/A%\nConfidence: 0.7\nCited Tweets: 901377628594196481, 901377762476392449, 901479837122125825, 901629053211480066, 901826476210876417\nReasoning: Analysis of tweets for ZIP 77486 during the specified time window (2017-08-26 to 2017-09-01) indicates widespread and historic flooding, causing significant structural damage. Tweets like [901826476210876417] explicitly state 'Harvey unleashes historic flooding in Houston area,' while [901479837122125825] mentions 'Harvey is coming and will flood your area badly cause damage.' The severity of damage is highlighted by tweet [903081533124247553] stating 'Hurricane Harvey destroyed a lot' and [903028781920788480] mentioning 'the amount of flood damage I've seen up close in Bellaire, Texas. Harvey spared few.' These strong statements, while some refer to the broader Houston area or nearby cities, are confirmed within the 77486 ZIP context, indicating a high impact locally. The sensor data (sensor_id 100, 105, 110) showing 0.0 inches on 2017-09-10 is after the query time window and peak flooding (Aug 27-28), thus indicating water recession by that later date, not an absence of flooding during the event. No specific road names were mentioned as impacted.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.7,
+        "flood_extent_pct": 65.0,
+        "damage_severity_pct": 40.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 5.791,
+        "max_depth_m": 43.492,
+        "flooded_pct": 56.72,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    },
+    {
+      "query_id": 20,
+      "query": {
+        "zip": "77630",
+        "start_date": "2017-08-29",
+        "end_date": "2017-09-04",
+        "comment": ""
+      },
+      "retrieval_metadata": {
+        "tweet_count": 20,
+        "tweet_ids": [
+          "902388226442264576",
+          "902835549135917056",
+          "902855359995539457",
+          "902889458860785664",
+          "902933605168685056",
+          "902967918874562560",
+          "903028781920788480",
+          "903081533124247553",
+          "903112917180178432",
+          "903356586973913088",
+          "903399005224357889",
+          "903419965331697664",
+          "903656280010711042",
+          "903823717926567936",
+          "903834779384254465",
+          "903942638411374592",
+          "903992796763348992",
+          "904445834288406529",
+          "904750989122703361",
+          "904837837140484096"
+        ],
+        "gauge_count": 0,
+        "sensor_ids": [],
+        "call_311_count": 0,
+        "call_311_ids": [],
+        "imagery_tile_count": 6,
+        "has_sensor_data": true
+      },
+      "model_response": {
+        "raw": {
+          "reasoning": "Sensor data from 2017-09-10 shows 0.0 inches of water (sensor_ids: 100, 105, 110), indicating that floodwaters had receded by that date, which is after the query window and the peak flooding of Hurricane Harvey (Aug 27-28). Therefore, this sensor data reflects post-event conditions and does not contradict earlier flooding. Primary evidence comes from tweets within the specified time window.\nTweet [902855359995539457] provides critical on-the-ground confirmation of severe flooding within ZIP 77630, reporting residents at '1507 Chapman St Orange, Tx 77630' were 'flooded in and can't get help'. This directly indicates significant water intrusion into a specific home and implies impassable local roads. Numerous other tweets, while some mention other cities (e.g., Houston, Bellaire), are confirmed for ZIP 77630 and describe 'historic flooding' [902835549135917056], 'Hurricane Harvey destroyed a lot' [903081533124247553], 'unbelievable damage' [903656280010711042], and that 'Harvey spared few' [903028781920788480]. Multiple tweets ([903823717926567936], [903834779384254465], [903942638411374592], [903992796763348992]) explicitly state that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones', suggesting extensive and widespread inundation across the area. The combination of specific internal flooding at a residence and numerous reports of widespread, severe damage points to a high flood extent and significant average damage per building within the ZIP. The inability to get assistance for flooded residents also confirms localized road impacts.",
+          "zip": "77630",
+          "time_window": {
+            "start": "2017-08-29",
+            "end": "2017-09-04"
+          },
+          "estimates": {
+            "flood_extent_pct": 65.0,
+            "damage_severity_pct": 45.0,
+            "roads_impacted": [
+              "Chapman St (vicinity of 1507 Chapman St)"
+            ],
+            "confidence": 0.85
+          },
+          "evidence_refs": {
+            "imagery_tile_ids": [],
+            "tweet_ids": [
+              "902388226442264576",
+              "902835549135917056",
+              "902855359995539457",
+              "902889458860785664",
+              "902933605168685056",
+              "902967918874562560",
+              "903028781920788480",
+              "903081533124247553",
+              "903112917180178432",
+              "903356586973913088",
+              "903399005224357889",
+              "903419965331697664",
+              "903656280010711042",
+              "903823717926567936",
+              "903834779384254465",
+              "903942638411374592",
+              "903992796763348992",
+              "904445834288406529",
+              "904750989122703361",
+              "904837837140484096"
+            ],
+            "call_311_ids": [],
+            "sensor_ids": [],
+            "kb_refs": []
+          },
+          "natural_language_summary": "During the period of August 29 to September 4, 2017, ZIP 77630 experienced extensive flooding and severe property damage due to Hurricane Harvey. A direct report via Tweet ID [902855359995539457] confirms a residence at 1507 Chapman St was 'flooded in and can't get help', indicating significant water intrusion and impassable roads in that vicinity. Numerous other tweets, including IDs [902835549135917056], [903081533124247553], and [903656280010711042], describe 'historic flooding,' widespread destruction, and 'unbelievable damage,' with many homes affected. The sentiment that 'Harvey spared few' and that 'Water Damage Extended Far Beyond Flood Zones' (e.g., Tweet IDs [903823717926567936], [903992796763348992]) supports an estimated flood extent of 65% across the ZIP and an average damage severity of 45% per building. Sensor data from September 10 showing 0.0 inches of water indicates recession of floodwaters after this period, not an absence of flooding during the event."
+        },
+        "formatted": "Summary: During the period of August 29 to September 4, 2017, ZIP 77630 experienced extensive flooding and severe property damage due to Hurricane Harvey. A direct report via Tweet ID [902855359995539457] confirms a residence at 1507 Chapman St was 'flooded in and can't get help', indicating significant water intrusion and impassable roads in that vicinity. Numerous other tweets, including IDs [902835549135917056], [903081533124247553], and [903656280010711042], describe 'historic flooding,' widespread destruction, and 'unbelievable damage,' with many homes affected. The sentiment that 'Harvey spared few' and that 'Water Damage Extended Far Beyond Flood Zones' (e.g., Tweet IDs [903823717926567936], [903992796763348992]) supports an estimated flood extent of 65% across the ZIP and an average damage severity of 45% per building. Sensor data from September 10 showing 0.0 inches of water indicates recession of floodwaters after this period, not an absence of flooding during the event.\nDamage Estimate: N/A%\nConfidence: 0.85\nCited Tweets: 902388226442264576, 902835549135917056, 902855359995539457, 902889458860785664, 902933605168685056\nReasoning: Sensor data from 2017-09-10 shows 0.0 inches of water (sensor_ids: 100, 105, 110), indicating that floodwaters had receded by that date, which is after the query window and the peak flooding of Hurricane Harvey (Aug 27-28). Therefore, this sensor data reflects post-event conditions and does not contradict earlier flooding. Primary evidence comes from tweets within the specified time window.\nTweet [902855359995539457] provides critical on-the-ground confirmation of severe flooding within ZIP 77630, reporting residents at '1507 Chapman St Orange, Tx 77630' were 'flooded in and can't get help'. This directly indicates significant water intrusion into a specific home and implies impassable local roads. Numerous other tweets, while some mention other cities (e.g., Houston, Bellaire), are confirmed for ZIP 77630 and describe 'historic flooding' [902835549135917056], 'Hurricane Harvey destroyed a lot' [903081533124247553], 'unbelievable damage' [903656280010711042], and that 'Harvey spared few' [903028781920788480]. Multiple tweets ([903823717926567936], [903834779384254465], [903942638411374592], [903992796763348992]) explicitly state that 'Water Damage From Hurricane Harvey Extended Far Beyond Flood Zones', suggesting extensive and widespread inundation across the area. The combination of specific internal flooding at a residence and numerous reports of widespread, severe damage points to a high flood extent and significant average damage per building within the ZIP. The inability to get assistance for flooded residents also confirms localized road impacts.",
+        "flood_impact_pct": 0.0,
+        "confidence": 0.85,
+        "flood_extent_pct": 65.0,
+        "damage_severity_pct": 45.0
+      },
+      "ground_truth": {
+        "mean_depth_m": 6.103,
+        "max_depth_m": 35.576,
+        "flooded_pct": 65.53,
+        "claim_count": 0,
+        "total_claim_amount": 0.0,
+        "pde_damage_score": 0.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Update the paper to correctly reflect ZIP code counts:
+
+- 139 ZIPs: Have complete ground truth (both flood extent AND damage data)
+- 149 ZIPs: Total evaluated (50 dev + 99 test, no overlap)
+- 10 ZIPs: Have flood extent data but NOT damage data (included in evaluation for extent metric only)
+
+When updating:
+- Use "139 ZIPs" when referring to damage ground truth coverage or complete ground truth
+- Use "149 ZIPs" when referring to total evaluation set
+- The dataset_stats table already correctly shows "139 ZIPs" for PDE - keep this
+- Add clarification: "Evaluation covers 149 ZIPs total, with 139 ZIPs having complete ground truth for both metrics"
+
+Check all sections (introduction, methodology, experiments, results) and ensure consistent usage of these numbers.

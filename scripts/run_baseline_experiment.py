@@ -39,7 +39,11 @@ from app.core.retrieval.context_packager import package_context
 from app.core.retrieval.retriever import Retriever
 from app.core.retrieval.selector import select_candidates
 from app.core.retrieval.selector import select_candidates
-from app.core.eval.ground_truth import ClaimsGroundTruth, FloodDepthGroundTruth, PDEGroundTruth
+from app.core.eval.ground_truth import (
+    ClaimsGroundTruth,
+    FloodDepthGroundTruth,
+    PDEGroundTruth,
+)
 
 
 def compute_config_hash(config: dict) -> str:
@@ -78,25 +82,29 @@ def extract_retrieval_metadata(context: Dict[str, Any]) -> Dict[str, Any]:
     tweets = context.get("tweets", [])
     calls = context.get("calls", [])
     gauges = context.get("gauges", [])
-    
+
     # Extract IDs with fallback chain
     tweet_ids = []
     for t in tweets:
         tid = t.get("doc_id") or t.get("tweet_id") or t.get("id") or ""
         tweet_ids.append(tid)
-    
+
     call_ids = []
     for c in calls:
         cid = c.get("doc_id") or c.get("record_id") or c.get("id") or ""
         call_ids.append(cid)
-    
+
     # Extract sensor IDs from gauges
     sensor_ids = []
     for g in gauges:
-        sid = g.get("sensor_id") or g.get("doc_id", "").replace("gauge_", "").split("_")[0] or ""
+        sid = (
+            g.get("sensor_id")
+            or g.get("doc_id", "").replace("gauge_", "").split("_")[0]
+            or ""
+        )
         if sid and sid not in sensor_ids:
             sensor_ids.append(sid)
-    
+
     return {
         "tweet_count": len(tweets),
         "tweet_ids": tweet_ids,
@@ -151,12 +159,19 @@ def run_baseline_experiment(
     # Initialize components
     locator = DataLocator(Path(config.get("data_dir", "data")))
     retriever = Retriever(locator)
+    # Ensure consistent model usage: default to gemini if not specified
+    # This ensures all experiments use the same model regardless of config
+    provider = config.get("provider", "gemini")
+    if provider != "gemini" and provider != "openai":
+        logger.warning(f"Unknown provider '{provider}', defaulting to 'gemini'")
+        provider = "gemini"
+    
     client = SplitPipelineClient(
-        provider=config.get("provider", "gemini"),
+        provider=provider,
         enable_visual=config.get("enable_visual", True),
-        visual_provider=config.get("visual_provider"),
-        visual_model=config.get("visual_model"),
+        use_llm_fusion=False,  # Use heuristic fusion with confirmation logic
     )
+    logger.info(f"Using provider: {provider} for {experiment_name}")
     # Use flood depth as ground truth (more accurate than claims)
     flood_depth_path = locator.base_dir / "processed" / "flood_depth_by_zip.json"
     if flood_depth_path.exists():
@@ -165,9 +180,11 @@ def run_baseline_experiment(
     else:
         gt = ClaimsGroundTruth(locator.table_path("claims"))
         logger.warning("Flood depth not found, falling back to ClaimsGroundTruth")
-    
+
     # Initialize PDE Ground Truth for Damage Severity
-    pde_path = locator.base_dir / "processed" / "damage_by_zip.json" # verifying file path?
+    pde_path = (
+        locator.base_dir / "processed" / "damage_by_zip.json"
+    )  # verifying file path?
     # Actually, previous interaction said data/processed/pde_by_zip.json
     pde_path = locator.base_dir / "processed" / "pde_by_zip.json"
     pde_gt = None
@@ -175,7 +192,9 @@ def run_baseline_experiment(
         pde_gt = PDEGroundTruth(pde_path)
         logger.info("Using PDEGroundTruth for Damage Severity")
     else:
-        logger.warning(f"PDE data not found at {pde_path}, Damage Severity metric will be empty")
+        logger.warning(
+            f"PDE data not found at {pde_path}, Damage Severity metric will be empty"
+        )
 
     # Optional: Initialize judge for quality check
     judge_client = None
@@ -189,6 +208,7 @@ def run_baseline_experiment(
             logger.warning(f"Failed to initialize judge: {e}")
 
     # Experiment metadata
+    import os
     experiment_meta = {
         "experiment_name": experiment_name,
         "timestamp": datetime.now().isoformat(),
@@ -199,6 +219,13 @@ def run_baseline_experiment(
             "enable_geo_boost": settings.enable_geo_boost,
             "filter_negative_captions": settings.filter_negative_captions,
             "dense_top_k": settings.dense_top_k,
+            # Model configuration for reproducibility
+            "model_provider": provider,
+            "gemini_model": os.getenv("GEMINI_MODEL", "gemini-1.5-flash") if provider == "gemini" else None,
+            "openai_model": os.getenv("OPENAI_MODEL", "gpt-4o-mini") if provider == "openai" else None,
+            "visual_model_provider": client.visual_provider if hasattr(client, 'visual_provider') else provider,
+            "gemini_vision_model": os.getenv("GEMINI_VISION_MODEL") if provider == "gemini" else None,
+            "openai_vision_model": os.getenv("OPENAI_VISION_MODEL") if provider == "openai" else None,
         },
         "total_queries": len(queries),
     }
@@ -280,7 +307,9 @@ def run_baseline_experiment(
                     "flooded_pct": truth.get("flooded_pct", 0.0),
                     "claim_count": truth.get("claim_count", 0),
                     "total_claim_amount": round(truth.get("total_amount", 0.0), 2),
-                    "pde_damage_score": pde_gt.score(query.zip).get("mean_pde", 0.0) if pde_gt else 0.0,
+                    "pde_damage_score": (
+                        pde_gt.score(query.zip).get("mean_pde", 0.0) if pde_gt else 0.0
+                    ),  # Raw mean_pde (0-1): average damage per building in the ZIP
                 },
             }
 
@@ -345,21 +374,30 @@ def run_baseline_experiment(
     successful_records = [r for r in records if "error" not in r]
     if successful_records:
         # 1. Flood Extent (Hazard) vs FEMA Depth Grid (flooded_pct)
-        extent_preds = [r["model_response"]["flood_extent_pct"] for r in successful_records]
+        extent_preds = [
+            r["model_response"]["flood_extent_pct"] for r in successful_records
+        ]
         extent_targets = [r["ground_truth"]["flooded_pct"] for r in successful_records]
         extent_errors = [abs(p - a) for p, a in zip(extent_preds, extent_targets)]
-        
-        # 2. Damage Severity (Consequence) vs PDE (0-1 scaled to 0-100)
-        damage_preds = [r["model_response"]["damage_severity_pct"] for r in successful_records]
-        # PDE score is 0-1, multiply by 100
-        damage_targets = [r["ground_truth"].get("pde_damage_score", 0.0) * 100.0 for r in successful_records]
+
+        # 2. Damage Severity (Consequence) vs PDE (normalized 0-100%)
+        damage_preds = [
+            r["model_response"]["damage_severity_pct"] for r in successful_records
+        ]
+        # pde_damage_score is stored as normalized damage_pct (0-100%), already in percentage
+        damage_targets = [
+            r["ground_truth"].get("pde_damage_score", 0.0)
+            * 100.0  # Convert from 0-1 to 0-100
+            for r in successful_records
+        ]
         damage_errors = [abs(p - a) for p, a in zip(damage_preds, damage_targets)]
 
         n = len(successful_records)
-        
+
         # Helper metrics
-        def safe_mean(lst): return sum(lst) / len(lst) if lst else 0.0
-        
+        def safe_mean(lst):
+            return sum(lst) / len(lst) if lst else 0.0
+
         experiment_meta["summary_stats"] = {
             "successful_queries": n,
             "failed_queries": len(records) - n,
@@ -383,9 +421,12 @@ def run_baseline_experiment(
     logger.success(f"✓ Saved experiment results to {output_file}")
     if "summary_stats" in experiment_meta:
         stats = experiment_meta["summary_stats"]
-        logger.info(f"  MAE: {stats['mae']:.2f}% | RMSE: {stats['rmse']:.2f}%")
-        logger.info(f"  Spearman ρ: {stats.get('spearman_rho', 'N/A')} | R²: {stats.get('r_squared', 'N/A')}")
-        logger.info(f"  Successful: {stats['successful_queries']}/{len(records)}")
+        logger.info(
+            f"  Extent MAE: {stats.get('extent_mae', 'N/A')}% | Damage MAE: {stats.get('damage_mae', 'N/A')}%"
+        )
+        logger.info(
+            f"  Successful: {stats.get('successful_queries', len(records))}/{len(records)}"
+        )
 
 
 if __name__ == "__main__":

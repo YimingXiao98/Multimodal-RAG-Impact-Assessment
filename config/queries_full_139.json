@@ -1,0 +1,902 @@
+{
+  "name": "full_139_zips",
+  "description": "Full dataset: 50 dev + 99 held-out test ZIPs",
+  "created": "2025-12-12T19:27:26.259983",
+  "queries": [
+    {
+      "zip": "77096",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77008",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77022",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77026",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77028",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77009",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77075",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77007",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77088",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77016",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77004",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77034",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77017",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77033",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77025",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77035",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77087",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77018",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77078",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77089",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77074",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77045",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77020",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77021",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77093",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77079",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77072",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77063",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77077",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77099",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77023",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77091",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77013",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77006",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77048",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "high_311_coverage"
+    },
+    {
+      "zip": "77479",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "suburban"
+    },
+    {
+      "zip": "77486",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "suburban"
+    },
+    {
+      "zip": "77642",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "suburban"
+    },
+    {
+      "zip": "77833",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "suburban"
+    },
+    {
+      "zip": "77539",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "suburban"
+    },
+    {
+      "zip": "78412",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "suburban"
+    },
+    {
+      "zip": "77407",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "suburban"
+    },
+    {
+      "zip": "77520",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "suburban"
+    },
+    {
+      "zip": "77571",
+      "start": "2017-08-26",
+      "end": "2017-09-01",
+      "category": "suburban"
+    },
+    {
+      "zip": "77521",
+      "start": "2017-08-27",
+      "end": "2017-09-02",
+      "category": "suburban"
+    },
+    {
+      "zip": "77468",
+      "start": "2017-08-28",
+      "end": "2017-09-03",
+      "category": "suburban"
+    },
+    {
+      "zip": "77630",
+      "start": "2017-08-29",
+      "end": "2017-09-04",
+      "category": "suburban"
+    },
+    {
+      "zip": "77386",
+      "start": "2017-09-01",
+      "end": "2017-09-07",
+      "category": "suburban"
+    },
+    {
+      "zip": "77058",
+      "start": "2017-09-04",
+      "end": "2017-09-10",
+      "category": "suburban"
+    },
+    {
+      "zip": "77546",
+      "start": "2017-08-25",
+      "end": "2017-08-31",
+      "category": "suburban"
+    },
+    {
+      "zip": "77002",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77003",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77005",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77010",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77011",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77012",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77014",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77015",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77019",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77024",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77027",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77029",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77030",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77031",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77032",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77036",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77037",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77038",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77039",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77040",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77041",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77042",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77043",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77044",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77046",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77047",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77049",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77050",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77051",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77053",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77054",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77055",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77056",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77057",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77059",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77060",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77061",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77062",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77064",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77065",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77066",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77067",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77068",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77069",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77070",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77071",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77073",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77076",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77080",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77081",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77082",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77083",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77084",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77085",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77086",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77090",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77092",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77094",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77095",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77098",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77336",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77338",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77339",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77345",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77346",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77357",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77365",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77373",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77375",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77377",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77379",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77388",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77389",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77396",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77401",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77429",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77433",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77447",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77449",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77450",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77477",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77484",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77489",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77493",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77494",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77502",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77503",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77504",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77505",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77506",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77530",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77532",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77536",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77547",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77562",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77581",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77586",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77587",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    },
+    {
+      "zip": "77598",
+      "start_date": "2017-08-25",
+      "end_date": "2017-08-31",
+      "comment": "held-out test"
+    }
+  ],
+  "provider": "gemini"
+}

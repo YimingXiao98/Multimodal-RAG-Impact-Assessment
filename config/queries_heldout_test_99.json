@@ -1,0 +1,608 @@
+{
+  "name": "held_out_test_99",
+  "description": "Held-out test set: 99 ZIPs not seen during development",
+  "created": "2025-12-12T19:27:26.258440",
+  "split_info": {
+    "dev_set": "queries_50_mixed.json",
+    "dev_size": 50,
+    "test_size": 99,
+    "overlap": 0
+  },
+  "queries": [
+    {
+      "zip": "77002",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77003",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77005",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77010",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77011",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77012",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77014",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77015",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77019",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77024",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77027",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77029",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77030",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77031",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77032",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77036",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77037",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77038",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77039",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77040",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77041",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77042",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77043",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77044",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77046",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77047",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77049",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77050",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77051",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77053",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77054",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77055",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77056",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77057",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77059",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77060",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77061",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77062",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77064",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77065",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77066",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77067",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77068",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77069",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77070",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77071",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77073",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77076",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77080",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77081",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77082",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77083",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77084",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77085",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77086",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77090",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77092",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77094",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77095",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77098",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77336",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77338",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77339",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77345",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77346",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77357",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77365",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77373",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77375",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77377",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77379",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77388",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77389",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77396",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77401",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77429",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77433",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77447",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77449",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77450",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77477",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77484",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77489",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77493",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77494",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77502",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77503",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77504",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77505",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77506",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77530",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77532",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77536",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77547",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77562",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77581",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77586",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77587",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    },
+    {
+      "zip": "77598",
+      "comment": "held-out test",
+      "start": "2017-08-25",
+      "end": "2017-08-31"
+    }
+  ],
+  "provider": "gemini"
+}

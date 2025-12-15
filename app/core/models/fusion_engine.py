@@ -13,22 +13,35 @@ FUSION_PROMPT = """
 You are a disaster impact analyst combining evidence from multiple sources.
 
 You have two independent assessments:
-1. TEXT ANALYSIS: Based on tweets, 311 calls, and sensor data
-2. VISUAL ANALYSIS: Based on aerial/satellite imagery
+1. TEXT ANALYSIS: Based on tweets, 311 calls, and sensor data (REAL-TIME during event)
+2. VISUAL ANALYSIS: Based on aerial/satellite imagery (POST-EVENT snapshot, Aug 31, 2017)
 
-Your task is to:
-1. Compare the two assessments for consistency
-2. Resolve any conflicts using the most reliable evidence
-3. Produce a final, unified damage estimate
+## CRITICAL INSIGHT:
+Satellite imagery was captured 3-4 days AFTER peak flooding. Floodwaters had RECEDED.
+This creates CONFLICTS between text (flooding reported) and visual (no flooding visible).
 
-CONFLICT RESOLUTION RULES:
-- If text reports flooding but images show dry conditions, note the discrepancy and consider:
-  - Images may be from before/after the flooding peak
-  - Ground-level reports can capture conditions not visible from above
-- If images show damage but text has no reports, consider:
-  - The area may be sparsely populated or inaccessible
-  - Visual evidence is direct and generally reliable
-- When in doubt, favor the evidence with higher confidence scores
+## VISUAL CONFIRMATION ONLY STRATEGY:
+To avoid errors from conflicting signals, use visual ONLY when it CONFIRMS text:
+
+### For FLOOD EXTENT:
+- TEXT is your PRIMARY source (real-time reports during event)
+- If text says flooding AND visual shows flooding → CONFIRMED, use average
+- If text says flooding BUT visual shows dry → Use TEXT only (water receded)
+- If CONFLICT between text and visual → IGNORE visual, use TEXT
+
+### For DAMAGE:
+- TEXT is your baseline (internal damage not visible from aerial)
+- If text says damage AND visual shows damage → CONFIRMED, use higher value
+- If text says damage BUT visual shows none → Use TEXT (internal damage)
+- Visual can BOOST damage if it shows debris/destruction text missed
+
+### Key Rule: When in CONFLICT, default to TEXT. Visual is confirmatory only.
+
+| Text | Visual | Action |
+|------|--------|--------|
+| High | High   | CONFIRM: Average/boost |
+| High | Low    | CONFLICT: Use TEXT only |
+| Low  | High   | Use TEXT (don't trust visual alone for flood) |
 
 Respond with valid JSON only.
 """
@@ -63,10 +76,14 @@ class FusionEngine:
 
                 self.api_key = api_key or os.getenv("OPENAI_API_KEY")
                 if not self.api_key:
-                    logger.warning("OPENAI_API_KEY not set, falling back to heuristic fusion")
+                    logger.warning(
+                        "OPENAI_API_KEY not set, falling back to heuristic fusion"
+                    )
                     self.use_llm_fusion = False
                 else:
-                    self.model_name = model_name or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+                    self.model_name = model_name or os.getenv(
+                        "OPENAI_MODEL", "gpt-4o-mini"
+                    )
                     self.client = OpenAI(api_key=self.api_key)
             except ImportError:
                 logger.warning("OpenAI not available, falling back to heuristic fusion")
@@ -92,9 +109,13 @@ class FusionEngine:
             Unified assessment with combined evidence
         """
         if self.use_llm_fusion:
-            return self._llm_fusion(text_analysis, visual_analysis, zip_code, time_window)
+            return self._llm_fusion(
+                text_analysis, visual_analysis, zip_code, time_window
+            )
         else:
-            return self._heuristic_fusion(text_analysis, visual_analysis, zip_code, time_window)
+            return self._heuristic_fusion(
+                text_analysis, visual_analysis, zip_code, time_window
+            )
 
     def _heuristic_fusion(
         self,
@@ -108,29 +129,91 @@ class FusionEngine:
         text_estimates = text_analysis.get("estimates", {})
         visual_overall = visual_analysis.get("overall_assessment", {})
 
-        text_damage = text_estimates.get("structural_damage_pct", 0.0)
-        visual_damage = visual_overall.get("structural_damage_pct", 0.0)
-        visual_flood = visual_overall.get("flood_severity_pct", 0.0)
+        # Get damage estimates (try both old and new schema names)
+        text_damage = text_estimates.get(
+            "damage_severity_pct", text_estimates.get("structural_damage_pct", 0.0)
+        )
+        text_flood = text_estimates.get("flood_extent_pct", 0.0)
+
+        visual_damage = visual_overall.get(
+            "damage_severity_pct", visual_overall.get("structural_damage_pct", 0.0)
+        )
+        # Support new schema: flood_evidence_pct (post-flood indicators)
+        visual_flood = visual_overall.get(
+            "flood_evidence_pct",
+            visual_overall.get(
+                "flood_extent_pct", visual_overall.get("flood_severity_pct", 0.0)
+            ),
+        )
+
+        # NEW: Get text confirmation level from visual analysis
+        text_confirmation = visual_overall.get("text_confirmation_level", "unknown")
 
         text_confidence = text_estimates.get("confidence", 0.5)
         visual_confidence = visual_overall.get("confidence", 0.5)
 
-        # Weighted average based on confidence
-        total_confidence = text_confidence + visual_confidence
-        if total_confidence > 0:
-            weight_text = text_confidence / total_confidence
-            weight_visual = visual_confidence / total_confidence
+        # TEXT-GUIDED VISUAL CONFIRMATION FUSION:
+        # Visual analysis now explicitly reports whether it confirms text.
+        # Use this to make smarter fusion decisions.
+
+        # Flood extent:
+        # - Text is always the baseline (real-time reports)
+        # - Visual can BOOST if it confirms (shows flood evidence/debris)
+        # - Visual cannot reduce (water receded, but damage happened)
+
+        if text_confirmation == "strong":
+            # Visual strongly confirms text - boost confidence, slight increase
+            fused_flood = text_flood * 1.1  # 10% boost
+            fused_flood = min(fused_flood, 100)  # Cap at 100
+            fusion_note = "visual_confirms_strong"
+        elif text_confirmation == "partial":
+            # Partial confirmation - use text as-is with confidence boost
+            fused_flood = text_flood
+            fusion_note = "visual_confirms_partial"
+        elif text_confirmation == "contradicts":
+            # Visual contradicts - but we trust text (temporal mismatch)
+            fused_flood = text_flood
+            fusion_note = "visual_contradicts_trust_text"
+        elif text_flood > 20 and visual_flood > 20:
+            # Fallback: both show evidence - average
+            fused_flood = text_flood * 0.6 + visual_flood * 0.4
+            fusion_note = "both_show_evidence"
+        elif text_flood > 0:
+            # Only text shows flooding
+            fused_flood = text_flood
+            fusion_note = "text_only"
         else:
-            weight_text = weight_visual = 0.5
+            # No text signal - use visual as fallback
+            fused_flood = visual_flood
+            fusion_note = "visual_fallback"
 
-        # Fused damage estimate
-        fused_damage = text_damage * weight_text + visual_damage * weight_visual
+        # Damage:
+        # - Text is baseline (internal damage not visible)
+        # - Visual can BOOST if it confirms (shows debris/damage)
+        # - Visual cannot REDUCE (may miss internal damage)
+        if text_damage > 20 and visual_damage > 20:
+            # CONFIRMATION: Both show damage - use the higher one
+            fused_damage = max(text_damage, visual_damage)
+        elif visual_damage > text_damage + 20:
+            # Visual shows significant damage text missed - boost slightly
+            fused_damage = text_damage + (visual_damage - text_damage) * 0.3
+        else:
+            # Default to text (visual can't veto)
+            fused_damage = text_damage
 
-        # Detect conflicts
+        # Detect conflicts (for logging only, not used in decision)
+        AGREEMENT_THRESHOLD = 30  # percentage points
         conflicts = []
-        if abs(text_damage - visual_damage) > 30:
+        text_visual_flood_diff = abs(text_flood - visual_flood)
+        text_visual_damage_diff = abs(text_damage - visual_damage)
+
+        if text_visual_flood_diff > AGREEMENT_THRESHOLD:
             conflicts.append(
-                f"Text reports {text_damage:.0f}% damage, visual shows {visual_damage:.0f}%"
+                f"Flood CONFLICT: Text={text_flood:.0f}%, Visual={visual_flood:.0f}% → Used {fusion_note}"
+            )
+        if text_visual_damage_diff > AGREEMENT_THRESHOLD:
+            conflicts.append(
+                f"Damage CONFLICT: Text={text_damage:.0f}%, Visual={visual_damage:.0f}%"
             )
 
         # Combine evidence refs
@@ -160,17 +243,18 @@ class FusionEngine:
             "zip": zip_code,
             "time_window": time_window,
             "estimates": {
-                "structural_damage_pct": round(fused_damage, 1),
-                "flood_severity_pct": round(visual_flood, 1),
+                "flood_extent_pct": round(fused_flood, 1),
+                "damage_severity_pct": round(fused_damage, 1),
                 "confidence": round((text_confidence + visual_confidence) / 2, 2),
             },
             "text_analysis": {
+                "flood_pct": text_flood,
                 "damage_pct": text_damage,
                 "confidence": text_confidence,
             },
             "visual_analysis": {
-                "damage_pct": visual_damage,
                 "flood_pct": visual_flood,
+                "damage_pct": visual_damage,
                 "confidence": visual_confidence,
             },
             "conflicts": conflicts,
@@ -198,13 +282,17 @@ Combine these two independent damage assessments for ZIP {zip_code} ({time_windo
 
 Produce a unified assessment. Identify and resolve any conflicts.
 
+CRITICAL FUSION RULES:
+- For FLOOD EXTENT: TRUST TEXT. If text reports flooding but visual shows dry, the water receded before image capture. Use text estimate.
+- For DAMAGE: Visual is ADDITIVE. If visual shows damage, boost the estimate. If visual shows "no damage" but text reports damage, trust text (internal damage hidden).
+
 Respond with JSON:
 {{
     "zip": "{zip_code}",
     "time_window": {json.dumps(time_window)},
     "estimates": {{
-        "structural_damage_pct": float,  // 0-100, your best unified estimate
-        "flood_severity_pct": float,  // 0-100
+        "flood_extent_pct": float,  // 0-100, HAZARD: % of area flooded. TRUST TEXT over visual.
+        "damage_severity_pct": float,  // 0-100, CONSEQUENCE: structural damage. Visual can boost, not veto.
         "confidence": float  // 0.0-1.0
     }},
     "conflicts": list[str],  // any discrepancies between text and visual
@@ -323,4 +411,3 @@ class MultimodalPipelineClient:
             fused_result = self.verifier.verify(fused_result, context)
 
         return fused_result
-

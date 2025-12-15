@@ -1,0 +1,19 @@
+Update the paper with correct data counts:
+
+TWEETS:
+- Pre-filter total: 27 million → ~24 million (23,942,892)
+- Filtered tweets: ~450,000 → ~458,000 (458,453)
+- Acceptance rate: ~1.7% → ~1.9% (1.91%)
+
+RAINFALL SENSORS:
+- 150+ → 15 unique sensors
+- Total gauge records: 330
+
+311 CALLS:
+- 26,107 ✅ (already correct)
+
+Update these numbers in:
+- Abstract (if mentioned)
+- Methodology section (Data Sources)
+- Dataset statistics table
+- Any other sections mentioning these counts
