@@ -29,26 +29,21 @@ conda activate harvey-rag
 pip install -e .
 ```
 
-### 3. Prepare data
+### 3. Download data from Hugging Face
 
-Place raw data files in `data/raw/` and run the processing scripts:
+The processed data (~3.2 GB) is hosted on Hugging Face Hub. Download it using:
 
 ```bash
-# Process 311 emergency calls
-python scripts/fetch_311.py --input data/raw/houston_311.csv --output data/processed/311.parquet
+# Install huggingface_hub if needed
+pip install huggingface_hub
 
-# Process rainfall gauges
-python scripts/fetch_gauges.py --input data/raw/gauges.csv --output data/processed/gauges.parquet
-
-# Build text corpus and embeddings
-python scripts/build_text_corpus.py --data-dir data --output data/processed/text_corpus.jsonl
-python scripts/index_embeddings.py \
-  --corpus data/processed/text_corpus.jsonl \
-  --index data/processed/text_embeddings.faiss \
-  --ids data/processed/text_embeddings_ids.json \
-  --meta data/processed/text_embeddings_meta.json \
-  --model sentence-transformers/all-MiniLM-L6-v2
+# Download data to the correct location
+huggingface-cli download Ymx1025/CrisiSense-RAG-dataset --local-dir data --repo-type dataset
 ```
+
+This will download all processed files (text corpus, embeddings, claims, imagery metadata) to `data/processed/`.
+
+> **Note**: If you want to rebuild the data from raw sources, see the Data Processing section in the documentation.
 
 ### 4. Run tests
 
